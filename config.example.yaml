@@ -1,0 +1,20 @@
+scoring:
+  provider: heuristic
+  model: gpt-4.1-mini
+  base_url: https://api.openai.com/v1
+  api_key_env: OPENAI_API_KEY
+  timeout_seconds: 90
+  enabled: true
+
+transcription:
+  provider: none
+  model: gpt-4o-mini-transcribe
+  base_url: https://api.openai.com/v1
+  api_key_env: OPENAI_API_KEY
+  timeout_seconds: 120
+  enabled: true
+
+reporting:
+  output_dir: outputs/latest
+  json_name: report.json
+  markdown_name: report.md

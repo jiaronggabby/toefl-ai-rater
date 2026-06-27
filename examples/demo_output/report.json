@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-06-27T16:40:30.804074+00:00",
+  "dry_run": true,
+  "config": {
+    "scoring": {
+      "provider": "heuristic",
+      "model": "gpt-4.1-mini",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "enabled": true
+    },
+    "transcription": {
+      "provider": "none",
+      "model": "gpt-4o-mini-transcribe",
+      "base_url": "https://api.openai.com/v1",
+      "api_key_env": "OPENAI_API_KEY",
+      "enabled": true
+    },
+    "reporting": {
+      "output_dir": "outputs/latest",
+      "json_name": "report.json",
+      "markdown_name": "report.md"
+    }
+  },
+  "counts": {
+    "speaking": 1,
+    "writing": 1
+  },
+  "results": [
+    {
+      "item_id": "speaking_q1",
+      "item_type": "speaking",
+      "provider": "heuristic",
+      "prompt_text": "Do you prefer studying alone or studying with a small group? Give one reason and one example.",
+      "response_text": "",
+      "transcript_text": "I prefer studying with a small group because discussion helps me notice ideas that I would miss on my own. For example, when I prepared for a history quiz with two classmates last month, one friend explained the timeline in a much clearer way than the textbook. As a result, I remembered the details better and felt more confident during the test.",
+      "overall_score": 3.1,
+      "dimensions": [
+        {
+          "name": "task_fulfillment",
+          "score": 3.2,
+          "rationale": "Heuristic estimate from length and prompt engagement."
+        },
+        {
+          "name": "delivery_and_fluency",
+          "score": 2.9,
+          "rationale": "Heuristic estimate from connector use and response continuity."
+        },
+        {
+          "name": "language_use",
+          "score": 3.3,
+          "rationale": "Heuristic estimate from lexical variety and repetition."
+        },
+        {
+          "name": "topic_development",
+          "score": 3.1,
+          "rationale": "Heuristic estimate from detail density and connectors."
+        }
+      ],
+      "strengths": [
+        "Response length is already close to a full TOEFL practice turn.",
+        "The answer uses causal or example markers instead of listing ideas only.",
+        "Word choice is not overly repetitive for a practice draft."
+      ],
+      "weaknesses": [],
+      "revision_plan": [],
+      "sample_revision": "I would answer directly, give one reason, add a concrete example, and end with the result. That structure usually sounds more complete and more TOEFL-ready.",
+      "notes": [
+        "Dry run enabled: outputs were produced without forcing API calls."
+      ],
+      "audio_path": null,
+      "transcript_source": "existing_file"
+    },
+    {
+      "item_id": "writing_q1",
+      "item_type": "writing",
+      "provider": "heuristic",
+      "prompt_text": "Some people believe students should spend more time on practical job skills, while others think they should focus on broad academic subjects. Which view do you agree with and why?",
+      "response_text": "I believe students should still spend most of their time on broad academic subjects because strong general knowledge makes later job training easier. For example, students who read widely and practice analytical writing can adapt faster when a company introduces new tools or new workflows. Practical skills matter, but they often change quickly. A broad academic foundation helps people learn, question, and communicate well in many different jobs. For that reason, I think broad academic study is the better long-term investment.",
+      "transcript_text": "",
+      "overall_score": 2.8,
+      "dimensions": [
+        {
+          "name": "task_fulfillment",
+          "score": 2.5,
+          "rationale": "Heuristic estimate from length and directness."
+        },
+        {
+          "name": "organization",
+          "score": 3.1,
+          "rationale": "Heuristic estimate from transitions and paragraph flow."
+        },
+        {
+          "name": "development",
+          "score": 1.9,
+          "rationale": "Heuristic estimate from detail density."
+        },
+        {
+          "name": "language_use",
+          "score": 3.7,
+          "rationale": "Heuristic estimate from lexical variety and repetition."
+        }
+      ],
+      "strengths": [
+        "The response shows some logical progression instead of isolated claims.",
+        "Vocabulary reuse is not excessive."
+      ],
+      "weaknesses": [
+        "The response needs one more concrete example or supporting detail."
+      ],
+      "revision_plan": [
+        "Add a specific scenario, example, or consequence sentence."
+      ],
+      "sample_revision": "State your position in the first sentence, add one concrete example, explain why it matters, and end with a clean conclusion.",
+      "notes": [
+        "The draft is short for a high-band practice answer.",
+        "Dry run enabled: outputs were produced without forcing API calls."
+      ],
+      "audio_path": null,
+      "transcript_source": null
+    }
+  ]
+}
