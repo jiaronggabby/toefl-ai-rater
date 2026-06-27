@@ -1,6 +1,6 @@
 # TOEFL Speaking & Writing AI Rater / 托福 AI 口语写作评分
 
-![TOEFL AI Rater product preview](docs/assets/product-preview.svg)
+![TOEFL AI Rater product preview](docs/assets/product-preview.png)
 
 **TOEFL Speaking & Writing AI Rater** is a free, local-first workflow for TOEFL speaking and writing practice. It is also designed for Chinese learners searching for a practical **托福 AI 口语写作评分** tool, including local TOEFL speaking scoring (托福口语评分) and TOEFL writing feedback (托福写作评分).
 
