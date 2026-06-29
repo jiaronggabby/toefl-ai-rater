@@ -16,6 +16,8 @@ This is not an official ETS scorer and it does not claim verified high-stakes ac
 - Reuse of existing transcripts, with optional API transcription for audio
 - Heuristic local scoring for smoke tests and offline scaffolding
 - OpenAI-compatible LLM scoring for richer rubric-aware feedback
+- 11-task Speaking merge from 0-5 task diagnostics into a local 1-6 tracking band
+- A reusable scoring workflow guide at `skills/toefl-ai-auditor/SKILL.md` for local TOEFL speaking audits
 - JSON and Markdown reports for downstream tools and human review
 - A residual scanner to help keep public repos free of private paths, handles, tokens, and old project leftovers
 

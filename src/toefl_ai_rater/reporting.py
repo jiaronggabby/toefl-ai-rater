@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .config import AppConfig
 from .models import EvaluationResult, RunArtifacts
+from .scale import merged_speaking_summary, score5_to_tracking6
 
 
 def write_reports(
@@ -18,6 +19,7 @@ def write_reports(
     json_path = output_dir / config.reporting.json_name
     markdown_path = output_dir / config.reporting.markdown_name
 
+    speaking_summary = merged_speaking_summary(results)
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "dry_run": dry_run,
@@ -26,6 +28,7 @@ def write_reports(
             "speaking": sum(1 for item in results if item.item_type == "speaking"),
             "writing": sum(1 for item in results if item.item_type == "writing"),
         },
+        "speaking_summary": speaking_summary,
         "results": [item.as_dict() for item in results],
     }
     json_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -37,6 +40,10 @@ def write_reports(
         f"- Dry run: {'yes' if dry_run else 'no'}",
         f"- Speaking items: {summary['counts']['speaking']}",
         f"- Writing items: {summary['counts']['writing']}",
+        f"- Speaking merged score (1-6 tracking): {speaking_summary['final_tracking_1_6'] if speaking_summary['final_tracking_1_6'] is not None else 'N/A'}",
+        f"- Speaking average (0-5): {speaking_summary['average_0_5'] if speaking_summary['average_0_5'] is not None else 'N/A'}",
+        f"- Speaking likely band (1-6): {speaking_summary['likely_band_1_6'] if speaking_summary['likely_band_1_6'] is not None else 'N/A'}",
+        f"- Speaking session status: {speaking_summary['status']}",
         "",
     ]
 
@@ -57,6 +64,9 @@ def write_reports(
                 f"- Overall score (0-5): {result.overall_score if result.overall_score is not None else 'N/A'}",
             ]
         )
+        if result.item_type == "speaking":
+            score6 = score5_to_tracking6(result.overall_score)
+            lines.append(f"- Tracking score (1-6): {score6 if score6 is not None else 'N/A'}")
         if result.audio_path:
             lines.append(f"- Audio: `{result.audio_path}`")
         if result.transcript_source:
