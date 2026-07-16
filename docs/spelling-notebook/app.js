@@ -4,6 +4,19 @@
   const DATA = window.TOEFL_NOTEBOOK_DATA;
   const STORAGE_KEY = "toefl-spelling-notebook-progress-v1";
   const MAX_CONFIRMATIONS = 5;
+  const GENERIC_TIP = "先判断词性，再锁定已给字母与缺失长度。";
+  const FALLBACK_MEANINGS = Object.freeze({
+    against: "反对；对抗", animal: "动物", around: "大约；在周围", away: "离开；远离", be: "是；存在",
+    breaking: "分解；破坏", called: "被称为", carve: "雕刻；刻出", centimeter: "厘米", change: "改变；变化",
+    climates: "气候（复数）", conditions: "条件；状况", engage: "参与；吸引", expression: "表达；表现",
+    footprints: "足迹", frequency: "频率", galaxies: "星系（复数）", greatest: "最伟大的", hand: "手；交给",
+    heated: "加热的", historical: "历史的", innovation: "创新", interactions: "互动；相互作用", leaving: "留下；离开",
+    legs: "腿；支柱", longer: "更长的", meat: "肉", missions: "任务；使命", move: "移动；改变位置",
+    multiple: "多个的", needed: "需要的", once: "一次；一旦", perspective: "视角；观点", pots: "锅；罐（复数）",
+    producing: "生产；产生", protect: "保护", provide: "提供", reusable: "可重复使用的", shaped: "成形的；塑造的",
+    simple: "简单的", stone: "石头", strategies: "策略（复数）", stretch: "拉伸；延伸", through: "通过；穿过",
+    tools: "工具（复数）", weapons: "武器（复数）", what: "什么；所……的", which: "哪个；哪些", who: "谁；……的人"
+  });
 
   if (!DATA || !Array.isArray(DATA.words)) {
     const errorBox = document.getElementById("app-error");
@@ -117,6 +130,12 @@
     return remainingConfirmations(word) === 0;
   }
 
+  function firstPassErrorWords() {
+    return DATA.words.filter((word) => (
+      word.kind === "error" && Number(progressFor(word.id).attempts || 0) === 0
+    ));
+  }
+
   function todayRecord() {
     const key = localDateKey();
     if (!state.daily[key]) state.daily[key] = { attempts: 0, correct: 0, unique: {} };
@@ -166,6 +185,39 @@
 
   function escapeRegExp(value) {
     return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function meaningFor(word) {
+    if (word.meaning && word.meaning !== "答题后查看中文语境") return word.meaning;
+    return FALLBACK_MEANINGS[normalizeAnswer(word.word)] || "词义请结合当前句意理解";
+  }
+
+  function sentenceMeaning(word) {
+    const source = sourceMap.get(word.sourceIds[0]);
+    if (!source || !source.passage || !source.passageZh || !word.sentence) return "";
+    const englishSentences = source.passage.match(/[^.!?]+[.!?]+(?=\s|$)/g) || [];
+    const englishIndex = englishSentences.findIndex((sentence) => (
+      sentence.replace(/\s+/g, " ").trim() === word.sentence.replace(/\s+/g, " ").trim()
+    ));
+    if (englishIndex < 0) return "";
+    const chineseSentences = source.passageZh.match(/[^。！？]+[。！？]?/g) || [];
+    return (chineseSentences[englishIndex] || "").trim();
+  }
+
+  function memoryTipFor(word) {
+    if (word.tip && word.tip !== GENERIC_TIP) return word.tip;
+    const lower = normalizeAnswer(word.word);
+    if (lower.endsWith("tion")) return "易错点：结尾是 -tion，注意不要漏掉 o。";
+    if (lower.endsWith("sion")) return "易错点：结尾是 -sion，先记住 s 后面的 ion。";
+    if (lower.endsWith("able")) return "易错点：结尾是 -able，a 后面接 b，不要写成 -ible。";
+    if (lower.endsWith("ible")) return "易错点：结尾是 -ible，i 后面接 b。";
+    if (lower.endsWith("ance")) return "易错点：结尾是 -ance，注意 a-n-c-e 的顺序。";
+    if (lower.endsWith("ence")) return "易错点：结尾是 -ence，注意 e-n-c-e 的顺序。";
+    if (lower.endsWith("ment")) return "记忆法：词根 + -ment 表示结果或状态，最后是 m-e-n-t。";
+    if (lower.endsWith("ous")) return "易错点：结尾是 -ous，最后三个字母是 o-u-s。";
+    if (lower.endsWith("ity")) return "易错点：结尾是 -ity，最后三个字母是 i-t-y。";
+    if (lower.includes("ie")) return "易错点：留意 i/e 的顺序；先默写词根，再补后缀。";
+    return "记忆法：把单词分成词根和后缀，结合当前句意默写；重点检查缺失字母的顺序。";
   }
 
   function sourceName(source) {
@@ -231,8 +283,12 @@
 
   function buildQueue(limit = state.settings.dailyGoal, onlyIds = null) {
     const allowedIds = onlyIds ? new Set(onlyIds) : null;
-    return DATA.words
+    const candidates = DATA.words
       .filter((word) => (!allowedIds || allowedIds.has(word.id)) && remainingConfirmations(word) > 0)
+    const firstPass = !onlyIds && firstPassErrorWords().length > 0
+      ? candidates.filter((word) => word.kind === "error" && Number(progressFor(word.id).attempts || 0) === 0)
+      : candidates;
+    return (firstPass.length ? firstPass : candidates)
       .sort(compareScores)
       .slice(0, Math.max(1, Number(limit) || DATA.dailyGoal));
   }
@@ -240,6 +296,7 @@
   function renderHome() {
     const errors = DATA.words.filter((word) => word.kind === "error");
     const active = DATA.words.filter((word) => remainingConfirmations(word) > 0);
+    const firstPassRemaining = firstPassErrorWords().length;
     const retired = errors.length - active.length;
     const progressValues = Object.values(state.words);
     const attempts = progressValues.reduce((sum, item) => sum + Number(item.attempts || 0), 0);
@@ -253,7 +310,9 @@
     byId("vocab-count").textContent = DATA.targetOccurrences;
     byId("accuracy").textContent = attempts ? `${accuracy}%` : "尚未开始";
     byId("mastered-count").textContent = `${retired}/${errors.length}`;
-    byId("due-count").textContent = `${active.length} 个在队列`;
+    byId("due-count").textContent = firstPassRemaining
+      ? `首轮还剩 ${firstPassRemaining} 个`
+      : `${active.length} 个在队列`;
     byId("today-count").textContent = reviewedToday;
     byId("daily-goal").textContent = goal;
     byId("goal-select").value = String(goal);
@@ -284,9 +343,11 @@
   }
 
   function startSession(mode, onlyIds = null) {
+    const firstPass = !onlyIds && firstPassErrorWords().length > 0;
     const queue = buildQueue(onlyIds ? onlyIds.length : state.settings.dailyGoal, onlyIds);
     activeSession = {
       mode,
+      firstPass,
       queue,
       index: 0,
       attempts: 0,
@@ -406,7 +467,7 @@
     if (correct) {
       activeSession.correct += 1;
       const progress = recordAttempt(word, true, userValue, activeSession.assisted);
-      if (remainingConfirmations(word, progress) > 0) activeSession.queue.push(word);
+      if (!activeSession.firstPass && remainingConfirmations(word, progress) > 0) activeSession.queue.push(word);
       activeSession.answered = true;
       completeAnswer(word, progress);
       return;
@@ -414,7 +475,7 @@
 
     if (!activeSession.wrongIds.includes(word.id)) activeSession.wrongIds.push(word.id);
     const progress = recordAttempt(word, false, userValue, activeSession.assisted);
-    if (remainingConfirmations(word, progress) > 0) activeSession.queue.push(word);
+    if (!activeSession.firstPass && remainingConfirmations(word, progress) > 0) activeSession.queue.push(word);
 
     activeSession.correctionPending = true;
     byId("practice-title").textContent = "先订正，再继续";
@@ -458,14 +519,14 @@
     const queueText = remaining > 0
       ? `还需独立拼对 ${remaining} 次；本词已滚动到队尾。`
       : `已退出当前复习队列；${word.kind === "error" ? "历史错词记录仍永久保留。" : "以后答错时会重新增加巩固次数。"}`;
-    const source = sourceMap.get(word.sourceIds[0]);
-    const chineseContext = word.meaning === "答题后查看中文语境" && source && source.passageZh
-      ? `<br><span class="small"><strong>中文语境：</strong>${escapeHtml(source.passageZh)}</span>`
+    const sentenceZh = sentenceMeaning(word);
+    const chineseContext = sentenceZh
+      ? `<br><span class="small"><strong>句意：</strong>${escapeHtml(sentenceZh)}</span>`
       : "";
     feedback.innerHTML = `
       ${resultText}<br>
-      <strong>${escapeHtml(word.meaning)}</strong> · ${escapeHtml(word.part)}<br>
-      <span class="small">${escapeHtml(word.phrase)}<br>${escapeHtml(word.tip)}<br>${escapeHtml(queueText)}</span>${chineseContext}`;
+      <strong>词义：</strong>${escapeHtml(meaningFor(word))} · ${escapeHtml(word.part)}${chineseContext}<br>
+      <span class="small"><strong>搭配：</strong>${escapeHtml(word.phrase)}<br><strong>记忆/易错点：</strong>${escapeHtml(memoryTipFor(word))}<br>${escapeHtml(queueText)}</span>`;
 
     const hasNext = activeSession.index + 1 < activeSession.queue.length;
     byId("next-button").textContent = hasNext ? "下一词" : "查看本轮结果";
@@ -509,8 +570,9 @@
       return word && !isRetired(word);
     }).length;
     byId("summary-score").textContent = attempts ? `${activeSession.correct} / ${attempts}` : "队列已清空";
+    const firstPassRemaining = firstPassErrorWords().length;
     byId("summary-detail").textContent = attempts
-      ? `本轮正确率 ${accuracy}%。${stillActive ? `还有 ${stillActive} 个词未退出，可继续练习。` : "本轮词已全部退出队列；历史错词仍保留在错题本。"}`
+      ? `本轮正确率 ${accuracy}%。${firstPassRemaining ? `首轮还有 ${firstPassRemaining} 个错词未过，可继续先扩展覆盖。` : stillActive ? `首轮已完成；还有 ${stillActive} 个词按错误频率继续巩固。` : "本轮词已全部退出队列；历史错词仍保留在错题本。"}`
       : "当前没有需要复习的词。";
     byId("retry-wrong").hidden = true;
     byId("session-progress").style.width = "100%";
@@ -551,7 +613,7 @@
       .filter((word) => source === "all" || word.sourceIds.includes(source))
       .filter((word) => {
         if (!query) return true;
-        const haystack = [word.word, word.meaning, word.phrase, word.tip, word.userAnswer].join(" ").toLocaleLowerCase("en-US");
+        const haystack = [word.word, meaningFor(word), word.phrase, memoryTipFor(word), word.userAnswer].join(" ").toLocaleLowerCase("en-US");
         return haystack.includes(query);
       })
       .sort((a, b) => {
@@ -582,14 +644,14 @@
           <div class="word-card-head">
             <div>
               <h3>${escapeHtml(word.word)} <span class="muted small">${escapeHtml(word.part)}</span></h3>
-              <p class="meaning">${escapeHtml(word.meaning)}</p>
+              <p class="meaning">${escapeHtml(meaningFor(word))}</p>
             </div>
             ${status}
           </div>
           <p class="phrase">${escapeHtml(word.phrase)}</p>
           <p class="muted small">${escapeHtml(sourceLabel(word))}</p>
           ${errorNote}
-          <p class="tip-note">${escapeHtml(word.tip)}</p>
+          <p class="tip-note">${escapeHtml(memoryTipFor(word))}</p>
           <div class="mastery-line">
             <span>${escapeHtml(queueNote)}</span>
             <button class="button button-small" type="button" data-speak="${escapeHtml(word.id)}">发音</button>

@@ -43,6 +43,7 @@ Run one command and get:
 [`在线打开拼写错题本`](https://jiaronggabby.github.io/toefl-ai-rater/spelling-notebook/)。
 它使用本地存储保存进度，并支持在“错题本”页面导出/导入学习进度。
 答错后会先要求手动订正一次，订正正确后才进入下一词并显示中文解释。
+首轮会优先让你把全部历史错词各练一遍，之后才按错误频率重复巩固。
 
 ## Quick Start
 
