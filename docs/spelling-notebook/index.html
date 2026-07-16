@@ -966,9 +966,9 @@
     <section id="home-view" class="view" aria-labelledby="home-title">
       <div class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Spelling first</p>
+          <p class="eyebrow">拼写练习</p>
           <h1 id="home-title">先把错过的词，<br>真正拼对。</h1>
-          <p class="lead">已核对 PRACTICE 第 1–40 套：Model 1 每套两篇、Model 2 每套一篇，共 120 篇；完全重复原文去重后 118 篇、1,180 个填词位。整篇未开始不计错，做过的原文中留空才计错；未掌握错词随机抽取，答对或订正后移出当前队列，但历史记录保留。</p>
+          <p class="lead">从未掌握的错词中随机抽取；答对或订正后移出当前队列，历史记录保留。</p>
           <div class="button-row">
             <button id="start-cloze" class="button button-primary" type="button">开始错词冲刺</button>
             <button id="start-spelling" class="button" type="button">错词整词默写</button>
@@ -996,10 +996,10 @@
 
         <aside class="goal-card" aria-labelledby="goal-title">
           <div>
-            <p class="eyebrow">Daily target</p>
+            <p class="eyebrow">今日目标</p>
             <h2 id="goal-title">今日目标</h2>
             <div class="goal-number"><span id="today-count">0</span><span class="muted"> / </span><span id="daily-goal">20</span></div>
-            <p class="muted small">整篇未开始不计错；做过的原文中留空才计为不会。每次从未掌握错词中随机抽取；答对或订正后移出队列，退出后再次进入会重新随机。</p>
+            <p class="muted small">本轮只练尚未掌握的错词；答对或订正后自动移出。</p>
             <div class="progress-track" aria-label="今日目标进度">
               <div id="today-progress" class="progress-bar"></div>
             </div>
@@ -1020,7 +1020,7 @@
         <section class="panel" aria-labelledby="weak-title">
           <div class="panel-header">
             <div>
-              <p class="eyebrow">Priority queue</p>
+              <p class="eyebrow">复习队列</p>
               <h2 id="weak-title">现在最该复习</h2>
             </div>
             <span id="due-count" class="pill pill-error">— 待复习</span>
@@ -1029,9 +1029,9 @@
         </section>
 
         <aside class="panel" aria-labelledby="source-mini-title">
-          <p class="eyebrow">Current batch</p>
-          <h2 id="source-mini-title">本批来源</h2>
-          <p class="muted small">40 套三组填词均已入库；2 组完全重复阅读已去重，截图中的相同原文也已合并，并纠正 2 处明显平台答案错误。</p>
+          <p class="eyebrow">题库状态</p>
+          <h2 id="source-mini-title">题库已整理</h2>
+          <p class="muted small">需要核对标准答案时，再打开“原题校正”。</p>
           <ul id="source-summary" class="source-mini-list"></ul>
         </aside>
       </div>
@@ -1049,10 +1049,10 @@
 
         <div class="practice-meta">
           <span id="practice-mode-label" class="pill">补全字母</span>
-          <span id="practice-source" class="pill">题源</span>
+          <span id="practice-source" class="pill" hidden>题源</span>
           <span id="practice-kind" class="pill pill-error">错词</span>
         </div>
-        <p class="eyebrow">Context first</p>
+        <p class="eyebrow">先看语境</p>
         <h1 id="practice-title" class="practice-meaning">先根据英文语境完成拼写</h1>
         <div id="practice-prompt" class="practice-prompt" aria-live="polite"></div>
 
@@ -1076,7 +1076,7 @@
       </div>
 
       <div id="session-summary" class="session-summary summary-card" hidden>
-        <p class="eyebrow">Session complete</p>
+        <p class="eyebrow">本轮完成</p>
         <h2>本轮完成</h2>
         <div id="summary-score" class="summary-score">—</div>
         <p id="summary-detail" class="muted">—</p>
@@ -1090,7 +1090,7 @@
     <section id="notebook-view" class="view" aria-labelledby="notebook-title" hidden>
       <div class="view-header">
         <div>
-          <p class="eyebrow">Notebook</p>
+          <p class="eyebrow">错题本</p>
           <h1 id="notebook-title">填词错题本</h1>
           <p class="lead">曾经错过的词永不删除；答对或订正后只移出当前练习队列，需要时可重新加入。后续题目继续去重追加到同一词库。</p>
         </div>
@@ -1131,7 +1131,7 @@
     <section id="sources-view" class="view" aria-labelledby="sources-title" hidden>
       <div class="view-header">
         <div>
-          <p class="eyebrow">Answer audit</p>
+          <p class="eyebrow">答案核对</p>
           <h1 id="sources-title">原题与答案核对</h1>
           <p class="lead">这里保留第 1–40 套的 118 篇唯一填词原文、每篇 10 个正确答案；完全重复阅读不重复计数，明显错误的平台标准答案单独标记并按正确英语练习。</p>
         </div>
