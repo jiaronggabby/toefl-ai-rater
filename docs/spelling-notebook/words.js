@@ -15,7 +15,7 @@
   "attemptedTargetOccurrences": 930,
   "historicalErrorOccurrences": 249,
   "uniqueCompletedWords": 712,
-  "historyRule": "只把飞马实际提交过且答错的字母记入历史；整篇未开始不计错，做过的原文中留空才计为不会。历史错词永久保留；一次错词独立拼对 1 次即退出，重复错误按不同原文中的错误频率增加巩固次数。",
+  "historyRule": "只把实际提交过且答错的字母记入历史；整篇未开始不计错，做过的原文中留空才计为不会。历史错词永久保留；答对或订正后移出当前队列，需要时可从错题本恢复。",
   "sources": [
     {
       "id": "t1-m1-1",

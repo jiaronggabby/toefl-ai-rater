@@ -48,7 +48,7 @@
 
   function createDefaultState() {
     return {
-      schema: 2,
+      schema: 3,
       settings: { dailyGoal: DATA.dailyGoal || 20 },
       words: {},
       daily: {}
@@ -65,7 +65,8 @@
       practiceWrong: Number(progress.practiceWrong ?? progress.wrong ?? 0),
       lastSeen: progress.lastSeen || null,
       lastAnswer: progress.lastAnswer || "",
-      exitedAt: progress.exitedAt || null
+      exitedAt: progress.exitedAt || null,
+      mastered: Boolean(progress.mastered || progress.exitedAt)
     };
   }
 
@@ -84,7 +85,7 @@
       const migrated = {
         ...fallback,
         ...parsed,
-        schema: 2,
+        schema: 3,
         settings: { ...fallback.settings, ...(parsed.settings || {}) },
         words: migratedWords,
         daily: parsed.daily || {}
@@ -119,21 +120,17 @@
   }
 
   function requiredConfirmations(word, progress = progressFor(word.id)) {
+    if (word.kind === "error") return progress.mastered ? 0 : 1;
     return Math.min(MAX_CONFIRMATIONS, baseConfirmations(word) + Number(progress.practiceWrong || 0));
   }
 
   function remainingConfirmations(word, progress = progressFor(word.id)) {
+    if (word.kind === "error") return progress.mastered ? 0 : 1;
     return Math.max(0, requiredConfirmations(word, progress) - Number(progress.practiceCorrect || 0));
   }
 
   function isRetired(word) {
     return remainingConfirmations(word) === 0;
-  }
-
-  function firstPassErrorWords() {
-    return DATA.words.filter((word) => (
-      word.kind === "error" && Number(progressFor(word.id).attempts || 0) === 0
-    ));
   }
 
   function todayRecord() {
@@ -152,6 +149,7 @@
       progress.correct += 1;
       progress.streak += 1;
       if (!assisted) progress.practiceCorrect += 1;
+      if (!assisted && word.kind === "error") progress.mastered = true;
     } else {
       progress.wrong += 1;
       progress.practiceWrong += 1;
@@ -159,7 +157,7 @@
       progress.streak = 0;
     }
 
-    progress.exitedAt = remainingConfirmations(word, progress) === 0 ? new Date().toISOString() : null;
+    progress.exitedAt = progress.mastered ? new Date().toISOString() : null;
     state.words[word.id] = progress;
 
     const daily = todayRecord();
@@ -234,7 +232,7 @@
 
   function kindLabel(word) {
     if (word.kind === "error") return "历史错词";
-    if (word.kind === "fm-history") return "飞马已做题";
+    if (word.kind === "fm-history") return "已做题";
     return "拓展生词";
   }
 
@@ -257,46 +255,49 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function wordSortScore(word) {
-    const progress = progressFor(word.id);
-    const reviewedToday = Boolean(todayRecord().unique[word.id]);
-    return [
-      reviewedToday ? 1 : 0,
-      word.kind === "error" ? 0 : word.kind === "fm-history" ? 1 : 2,
-      -Number(word.historicalErrors || 0),
-      -Number(progress.practiceWrong || 0),
-      -remainingConfirmations(word, progress),
-      Number(progress.attempts || 0),
-      normalizeAnswer(word.word)
-    ];
+  function shuffle(values) {
+    const items = [...values];
+    for (let index = items.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      [items[index], items[swapIndex]] = [items[swapIndex], items[index]];
+    }
+    return items;
   }
 
-  function compareScores(a, b) {
-    const scoreA = wordSortScore(a);
-    const scoreB = wordSortScore(b);
-    for (let index = 0; index < scoreA.length; index += 1) {
-      if (scoreA[index] < scoreB[index]) return -1;
-      if (scoreA[index] > scoreB[index]) return 1;
-    }
-    return 0;
+  function markMastered(word) {
+    const progress = { ...progressFor(word.id), mastered: true, exitedAt: new Date().toISOString() };
+    state.words[word.id] = progress;
+    saveState();
+    return progress;
+  }
+
+  function restoreWord(wordId) {
+    const word = wordMap.get(wordId);
+    if (!word || word.kind !== "error") return;
+    state.words[word.id] = {
+      ...progressFor(word.id),
+      mastered: false,
+      practiceCorrect: 0,
+      exitedAt: null
+    };
+    saveState();
+    renderHome();
+    renderNotebook();
   }
 
   function buildQueue(limit = state.settings.dailyGoal, onlyIds = null) {
     const allowedIds = onlyIds ? new Set(onlyIds) : null;
-    const candidates = DATA.words
-      .filter((word) => (!allowedIds || allowedIds.has(word.id)) && remainingConfirmations(word) > 0)
-    const firstPass = !onlyIds && firstPassErrorWords().length > 0
-      ? candidates.filter((word) => word.kind === "error" && Number(progressFor(word.id).attempts || 0) === 0)
-      : candidates;
-    return (firstPass.length ? firstPass : candidates)
-      .sort(compareScores)
-      .slice(0, Math.max(1, Number(limit) || DATA.dailyGoal));
+    const candidates = DATA.words.filter((word) => (
+      word.kind === "error" &&
+      (!allowedIds || allowedIds.has(word.id)) &&
+      !isRetired(word)
+    ));
+    return shuffle(candidates).slice(0, Math.max(1, Number(limit) || DATA.dailyGoal));
   }
 
   function renderHome() {
     const errors = DATA.words.filter((word) => word.kind === "error");
-    const active = DATA.words.filter((word) => remainingConfirmations(word) > 0);
-    const firstPassRemaining = firstPassErrorWords().length;
+    const active = errors.filter((word) => !isRetired(word));
     const retired = errors.length - active.length;
     const progressValues = Object.values(state.words);
     const attempts = progressValues.reduce((sum, item) => sum + Number(item.attempts || 0), 0);
@@ -310,19 +311,17 @@
     byId("vocab-count").textContent = DATA.targetOccurrences;
     byId("accuracy").textContent = attempts ? `${accuracy}%` : "尚未开始";
     byId("mastered-count").textContent = `${retired}/${errors.length}`;
-    byId("due-count").textContent = firstPassRemaining
-      ? `首轮还剩 ${firstPassRemaining} 个`
-      : `${active.length} 个在队列`;
+    byId("due-count").textContent = active.length ? `${active.length} 个待复习` : "已全部过完";
     byId("today-count").textContent = reviewedToday;
     byId("daily-goal").textContent = goal;
     byId("goal-select").value = String(goal);
     byId("today-progress").style.width = `${Math.min(100, (reviewedToday / goal) * 100)}%`;
 
-    const weakWords = [...active].sort(compareScores).slice(0, 5);
+    const weakWords = shuffle(active).slice(0, 5);
     byId("weak-list").innerHTML = weakWords.length ? weakWords.map((word) => {
       const remaining = remainingConfirmations(word);
       const history = Number(word.historicalErrors || 0);
-      const stateLabel = history ? `历史错 ${history} 次 · 还需 ${remaining} 次` : `还需正确 ${remaining} 次`;
+      const stateLabel = history ? `历史错 ${history} 次 · 本轮未过` : `本轮未过`;
       return `
         <li class="weak-item">
           <span>
@@ -343,11 +342,9 @@
   }
 
   function startSession(mode, onlyIds = null) {
-    const firstPass = !onlyIds && firstPassErrorWords().length > 0;
     const queue = buildQueue(onlyIds ? onlyIds.length : state.settings.dailyGoal, onlyIds);
     activeSession = {
       mode,
-      firstPass,
       queue,
       index: 0,
       attempts: 0,
@@ -457,7 +454,7 @@
       activeSession.correctionPending = false;
       activeSession.answered = true;
       activeSession.answerWasCorrect = false;
-      completeAnswer(word, progressFor(word.id));
+      completeAnswer(word, markMastered(word));
       return;
     }
 
@@ -467,15 +464,13 @@
     if (correct) {
       activeSession.correct += 1;
       const progress = recordAttempt(word, true, userValue, activeSession.assisted);
-      if (!activeSession.firstPass && remainingConfirmations(word, progress) > 0) activeSession.queue.push(word);
       activeSession.answered = true;
       completeAnswer(word, progress);
       return;
     }
 
     if (!activeSession.wrongIds.includes(word.id)) activeSession.wrongIds.push(word.id);
-    const progress = recordAttempt(word, false, userValue, activeSession.assisted);
-    if (!activeSession.firstPass && remainingConfirmations(word, progress) > 0) activeSession.queue.push(word);
+    recordAttempt(word, false, userValue, activeSession.assisted);
 
     activeSession.correctionPending = true;
     byId("practice-title").textContent = "先订正，再继续";
@@ -517,8 +512,8 @@
       ? `<strong>正确。</strong> <span class="answer-reveal">${escapeHtml(word.word)}</span>${activeSession.assisted ? "（用了提示，本次不计入退出次数）" : ""}`
       : `<strong>已订正。</strong> <span class="answer-reveal">${escapeHtml(word.word)}</span>`;
     const queueText = remaining > 0
-      ? `还需独立拼对 ${remaining} 次；本词已滚动到队尾。`
-      : `已退出当前复习队列；${word.kind === "error" ? "历史错词记录仍永久保留。" : "以后答错时会重新增加巩固次数。"}`;
+      ? "本词保留在待复习池，下次进入时会重新随机抽取。"
+      : "已退出当前复习队列；历史记录仍永久保留，需要时可从错题本恢复。";
     const sentenceZh = sentenceMeaning(word);
     const chineseContext = sentenceZh
       ? `<br><span class="small"><strong>句意：</strong>${escapeHtml(sentenceZh)}</span>`
@@ -565,16 +560,17 @@
     summary.hidden = false;
     const attempts = activeSession.attempts;
     const accuracy = attempts ? Math.round((activeSession.correct / attempts) * 100) : 0;
-    const stillActive = activeSession.initialIds.filter((id) => {
+    const remainingPool = DATA.words.filter((word) => word.kind === "error" && !isRetired(word)).length;
+    const retryableIds = uniqueIds(activeSession.wrongIds).filter((id) => {
       const word = wordMap.get(id);
       return word && !isRetired(word);
-    }).length;
+    });
     byId("summary-score").textContent = attempts ? `${activeSession.correct} / ${attempts}` : "队列已清空";
-    const firstPassRemaining = firstPassErrorWords().length;
     byId("summary-detail").textContent = attempts
-      ? `本轮正确率 ${accuracy}%。${firstPassRemaining ? `首轮还有 ${firstPassRemaining} 个错词未过，可继续先扩展覆盖。` : stillActive ? `首轮已完成；还有 ${stillActive} 个词按错误频率继续巩固。` : "本轮词已全部退出队列；历史错词仍保留在错题本。"}`
+      ? `本轮正确率 ${accuracy}%。${remainingPool ? `还有 ${remainingPool} 个未掌握错词，下次会重新随机抽取。` : "全部错词都已过完；历史错词仍保留在错题本。"}`
       : "当前没有需要复习的词。";
-    byId("retry-wrong").hidden = true;
+    byId("retry-wrong").hidden = retryableIds.length === 0;
+    byId("retry-wrong").dataset.ids = JSON.stringify(retryableIds);
     byId("session-progress").style.width = "100%";
   }
 
@@ -638,7 +634,10 @@
       const errorNote = word.kind === "error"
         ? `<p class="error-note">历史错误写法：${escapeHtml(word.userAnswer || "空白")}</p>`
         : "";
-      const queueNote = remaining > 0 ? `还需独立拼对 ${remaining} 次` : "已退出队列（记录保留）";
+      const queueNote = remaining > 0 ? "尚未掌握" : "已退出队列（记录保留）";
+      const restoreButton = word.kind === "error" && isRetired(word)
+        ? `<button class="button button-small" type="button" data-restore="${escapeHtml(word.id)}">重新加入队列</button>`
+        : "";
       return `
         <article class="word-card">
           <div class="word-card-head">
@@ -655,6 +654,7 @@
           <div class="mastery-line">
             <span>${escapeHtml(queueNote)}</span>
             <button class="button button-small" type="button" data-speak="${escapeHtml(word.id)}">发音</button>
+            ${restoreButton}
           </div>
         </article>`;
     }).join("");
@@ -764,7 +764,10 @@
     activeSession = null;
     showView("home");
   });
-  byId("retry-wrong").addEventListener("click", () => {});
+  byId("retry-wrong").addEventListener("click", (event) => {
+    const ids = JSON.parse(event.currentTarget.dataset.ids || "[]");
+    if (ids.length) startSession("cloze", ids);
+  });
   byId("back-home").addEventListener("click", () => {
     activeSession = null;
     showView("home");
@@ -780,6 +783,11 @@
   byId("export-button").addEventListener("click", exportProgress);
   byId("import-progress").addEventListener("change", importProgress);
   byId("word-list").addEventListener("click", (event) => {
+    const restoreButton = event.target.closest("[data-restore]");
+    if (restoreButton) {
+      restoreWord(restoreButton.dataset.restore);
+      return;
+    }
     const button = event.target.closest("[data-speak]");
     if (!button) return;
     const word = wordMap.get(button.dataset.speak);

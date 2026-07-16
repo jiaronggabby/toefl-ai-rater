@@ -1,4 +1,4 @@
-const CACHE_NAME = "toefl-spelling-notebook-v2026-07-17.3";
+const CACHE_NAME = "toefl-spelling-notebook-v2026-07-17.4";
 const APP_ASSETS = [
   "./",
   "./index.html",

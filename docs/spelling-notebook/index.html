@@ -949,7 +949,7 @@
         <span class="brand-mark" aria-hidden="true">SP</span>
         <span>
           <span class="brand-title">TOEFL 拼写本</span>
-          <span class="brand-subtitle">飞马 1–40 · 永久错词 · 本地保存</span>
+          <span class="brand-subtitle">1–40 套题库 · 永久错词 · 本地保存</span>
         </span>
       </div>
       <nav class="nav" aria-label="主要页面">
@@ -968,7 +968,7 @@
         <div class="hero-copy">
           <p class="eyebrow">Spelling first</p>
           <h1 id="home-title">先把错过的词，<br>真正拼对。</h1>
-          <p class="lead">已只读核对飞马 PRACTICE 第 1–40 套：Model 1 每套两篇、Model 2 每套一篇，共 120 篇；完全重复原文去重后 118 篇、1,180 个填词位。整篇未开始不计错，做过的原文中留空才计错；只让历史错词进入冲刺队列，订正正确也不删除记录。</p>
+          <p class="lead">已核对 PRACTICE 第 1–40 套：Model 1 每套两篇、Model 2 每套一篇，共 120 篇；完全重复原文去重后 118 篇、1,180 个填词位。整篇未开始不计错，做过的原文中留空才计错；未掌握错词随机抽取，答对或订正后移出当前队列，但历史记录保留。</p>
           <div class="button-row">
             <button id="start-cloze" class="button button-primary" type="button">开始错词冲刺</button>
             <button id="start-spelling" class="button" type="button">错词整词默写</button>
@@ -980,7 +980,7 @@
               <strong id="error-count" class="stat-value">—</strong>
             </div>
             <div class="stat">
-              <span class="stat-label">飞马填词位</span>
+              <span class="stat-label">题库填词位</span>
               <strong id="vocab-count" class="stat-value">—</strong>
             </div>
             <div class="stat">
@@ -999,7 +999,7 @@
             <p class="eyebrow">Daily target</p>
             <h2 id="goal-title">今日目标</h2>
             <div class="goal-number"><span id="today-count">0</span><span class="muted"> / </span><span id="daily-goal">20</span></div>
-            <p class="muted small">整篇未开始不计错；做过的原文中留空才计为不会。先把所有历史错词各过一遍，再按错误频率滚动巩固；答错后先订正一次。</p>
+            <p class="muted small">整篇未开始不计错；做过的原文中留空才计为不会。每次从未掌握错词中随机抽取；答对或订正后移出队列，退出后再次进入会重新随机。</p>
             <div class="progress-track" aria-label="今日目标进度">
               <div id="today-progress" class="progress-bar"></div>
             </div>
@@ -1091,8 +1091,8 @@
       <div class="view-header">
         <div>
           <p class="eyebrow">Notebook</p>
-          <h1 id="notebook-title">飞马填词错题本</h1>
-          <p class="lead">曾经错过的词永不删除；后来订正正确只会减少当前巩固次数。后续截图继续去重追加到同一词库。</p>
+          <h1 id="notebook-title">填词错题本</h1>
+          <p class="lead">曾经错过的词永不删除；答对或订正后只移出当前练习队列，需要时可重新加入。后续题目继续去重追加到同一词库。</p>
         </div>
         <div class="notebook-actions">
           <button id="export-button" class="button" type="button">导出学习进度</button>
@@ -1112,7 +1112,7 @@
             <select id="kind-filter" class="filter-select">
               <option value="all">全部</option>
               <option value="error">历史错词</option>
-              <option value="fm-history">飞马已做题</option>
+              <option value="fm-history">已做题</option>
               <option value="vocabulary">拓展生词</option>
             </select>
           </div>
@@ -1132,7 +1132,7 @@
       <div class="view-header">
         <div>
           <p class="eyebrow">Answer audit</p>
-          <h1 id="sources-title">飞马原题与答案核对</h1>
+          <h1 id="sources-title">原题与答案核对</h1>
           <p class="lead">这里保留第 1–40 套的 118 篇唯一填词原文、每篇 10 个正确答案；完全重复阅读不重复计数，明显错误的平台标准答案单独标记并按正确英语练习。</p>
         </div>
       </div>
