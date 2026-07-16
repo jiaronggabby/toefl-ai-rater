@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">TOEFL 拼写本</title>
+  <desc id="desc">深绿色方形图标，中央为 SP 字母</desc>
+  <rect width="512" height="512" rx="112" fill="#132b28"/>
+  <circle cx="256" cy="256" r="164" fill="#167f72" opacity=".9"/>
+  <text x="256" y="292" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="138" font-weight="700" letter-spacing="-10">SP</text>
+</svg>

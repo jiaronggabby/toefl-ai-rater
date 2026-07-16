@@ -1,0 +1,19 @@
+{
+  "name": "TOEFL 拼写错题本",
+  "short_name": "TOEFL 拼写本",
+  "description": "TOEFL 填词拼写错题本，支持手机、平板和电脑练习。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f2",
+  "theme_color": "#132b28",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

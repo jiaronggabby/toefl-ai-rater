@@ -37,6 +37,13 @@ Run one command and get:
 - Sample generated report: [examples/demo_output/report.md](examples/demo_output/report.md)
 - Sample JSON output: [examples/demo_output/report.json](examples/demo_output/report.json)
 
+### 拼写错题本
+
+配套的 TOEFL 填词拼写错题本可直接在手机、平板或电脑上练习：
+[`在线打开拼写错题本`](https://jiaronggabby.github.io/toefl-ai-rater/spelling-notebook/)。
+它使用本地存储保存进度，并支持在“错题本”页面导出/导入学习进度。
+答错后会先要求手动订正一次，订正正确后才进入下一词并显示中文解释。
+
 ## Quick Start
 
 ### 1. Create an environment
