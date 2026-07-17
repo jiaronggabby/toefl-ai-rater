@@ -48,10 +48,11 @@
 
   function createDefaultState() {
     return {
-      schema: 4,
+      schema: 5,
       settings: { dailyGoal: DATA.dailyGoal || 20 },
       words: {},
-      daily: {}
+      daily: {},
+      reviewCycle: { phase: "first", seen: [] }
     };
   }
 
@@ -67,6 +68,8 @@
 
   function migrateProgress(progress = {}, word = null) {
     const wasExited = Boolean(progress.mastered || progress.exitedAt);
+    const legacyCorrection = Boolean(progress.correctionPending)
+      || (word?.kind === "error" && wasExited && looksLikeLegacyCorrectionExit(progress, word));
     return {
       attempts: Number(progress.attempts || 0),
       correct: Number(progress.correct || 0),
@@ -77,7 +80,8 @@
       lastSeen: progress.lastSeen || null,
       lastAnswer: progress.lastAnswer || "",
       exitedAt: progress.exitedAt || null,
-      mastered: wasExited && !looksLikeLegacyCorrectionExit(progress, word)
+      correctionPending: legacyCorrection,
+      mastered: wasExited && !legacyCorrection
     };
   }
 
@@ -96,10 +100,14 @@
       const migrated = {
         ...fallback,
         ...parsed,
-        schema: 4,
+        schema: 5,
         settings: { ...fallback.settings, ...(parsed.settings || {}) },
         words: migratedWords,
-        daily: parsed.daily || {}
+        daily: parsed.daily || {},
+        reviewCycle: {
+          phase: parsed.reviewCycle?.phase === "rolling" ? "rolling" : "first",
+          seen: Array.isArray(parsed.reviewCycle?.seen) ? parsed.reviewCycle.seen : []
+        }
       };
       window.localStorage.setItem(STORAGE_KEY, JSON.stringify(migrated));
       return migrated;
@@ -131,12 +139,12 @@
   }
 
   function requiredConfirmations(word, progress = progressFor(word.id)) {
-    if (word.kind === "error") return progress.mastered ? 0 : 1;
+    if (word.kind === "error") return progress.mastered && !progress.correctionPending ? 0 : 1;
     return Math.min(MAX_CONFIRMATIONS, baseConfirmations(word) + Number(progress.practiceWrong || 0));
   }
 
   function remainingConfirmations(word, progress = progressFor(word.id)) {
-    if (word.kind === "error") return progress.mastered ? 0 : 1;
+    if (word.kind === "error") return progress.mastered && !progress.correctionPending ? 0 : 1;
     return Math.max(0, requiredConfirmations(word, progress) - Number(progress.practiceCorrect || 0));
   }
 
@@ -160,12 +168,20 @@
       progress.correct += 1;
       progress.streak += 1;
       if (!assisted) progress.practiceCorrect += 1;
-      if (!assisted && word.kind === "error") progress.mastered = true;
+      if (word.kind === "error" && !assisted) {
+        progress.mastered = true;
+        progress.correctionPending = false;
+      }
     } else {
       progress.wrong += 1;
       progress.practiceWrong += 1;
       progress.practiceCorrect = Math.max(0, progress.practiceCorrect - 1);
       progress.streak = 0;
+      // A new wrong answer always reopens the word. This also repairs older
+      // progress where a correction was mistakenly treated as mastery.
+      progress.mastered = false;
+      if (word.kind === "error") progress.correctionPending = true;
+      progress.exitedAt = null;
     }
 
     progress.exitedAt = progress.mastered ? new Date().toISOString() : null;
@@ -276,7 +292,12 @@
   }
 
   function markMastered(word) {
-    const progress = { ...progressFor(word.id), mastered: true, exitedAt: new Date().toISOString() };
+    const progress = {
+      ...progressFor(word.id),
+      mastered: true,
+      correctionPending: false,
+      exitedAt: new Date().toISOString()
+    };
     state.words[word.id] = progress;
     saveState();
     return progress;
@@ -286,9 +307,10 @@
     const word = wordMap.get(wordId);
     if (!word || word.kind !== "error") return;
     state.words[word.id] = {
-      ...progressFor(word.id),
-      mastered: false,
-      practiceCorrect: 0,
+        ...progressFor(word.id),
+        mastered: false,
+        correctionPending: false,
+        practiceCorrect: 0,
       exitedAt: null
     };
     saveState();
@@ -303,7 +325,35 @@
       (!allowedIds || allowedIds.has(word.id)) &&
       !isRetired(word)
     ));
-    return shuffle(candidates).slice(0, Math.max(1, Number(limit) || DATA.dailyGoal));
+    const size = Math.max(1, Number(limit) || DATA.dailyGoal);
+    if (allowedIds) return shuffle(candidates).slice(0, size);
+
+    const cycle = state.reviewCycle || (state.reviewCycle = { phase: "first", seen: [] });
+    const seen = new Set(Array.isArray(cycle.seen) ? cycle.seen : []);
+    const unseen = candidates.filter((word) => !seen.has(word.id));
+    if (unseen.length) return shuffle(unseen).slice(0, size);
+
+    // The broad first pass is complete. From here, keep the most frequently
+    // missed words at the front; mastered words are already excluded above.
+    cycle.phase = "rolling";
+    cycle.seen = [];
+    saveState();
+    return [...candidates]
+      .sort((a, b) => {
+        const scoreA = Number(a.historicalErrors || 0) + Number(progressFor(a.id).practiceWrong || 0);
+        const scoreB = Number(b.historicalErrors || 0) + Number(progressFor(b.id).practiceWrong || 0);
+        return scoreB - scoreA || a.word.localeCompare(b.word, "en");
+      })
+      .slice(0, size);
+  }
+
+  function markCycleSeen(word) {
+    if (!activeSession || activeSession.onlyIds || !state.reviewCycle || state.reviewCycle.phase !== "first") return;
+    const seen = new Set(Array.isArray(state.reviewCycle.seen) ? state.reviewCycle.seen : []);
+    if (seen.has(word.id)) return;
+    seen.add(word.id);
+    state.reviewCycle.seen = [...seen];
+    saveState();
   }
 
   function renderHome() {
@@ -366,7 +416,8 @@
       correctionAttempts: 0,
       answerWasCorrect: false,
       wrongIds: [],
-      initialIds: uniqueIds(queue.map((word) => word.id))
+      initialIds: uniqueIds(queue.map((word) => word.id)),
+      onlyIds: Boolean(onlyIds)
     };
     byId("session-summary").hidden = true;
     byId("practice-panel").hidden = false;
@@ -398,6 +449,8 @@
       finishSession();
       return;
     }
+
+    markCycleSeen(word);
 
     activeSession.answered = false;
     activeSession.assisted = false;
@@ -743,12 +796,16 @@
         state = {
           ...fallback,
           ...imported,
-          schema: 2,
+          schema: 5,
           settings: { ...fallback.settings, ...(imported.settings || {}) },
           words: Object.fromEntries(
             Object.entries(imported.words || {}).map(([id, progress]) => [id, migrateProgress(progress, wordMap.get(id))])
           ),
-          daily: imported.daily || {}
+          daily: imported.daily || {},
+          reviewCycle: {
+            phase: imported.reviewCycle?.phase === "rolling" ? "rolling" : "first",
+            seen: Array.isArray(imported.reviewCycle?.seen) ? imported.reviewCycle.seen : []
+          }
         };
         saveState();
         renderHome();

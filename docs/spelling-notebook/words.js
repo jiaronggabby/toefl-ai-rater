@@ -1,8 +1,5 @@
-(() => {
-  "use strict";
-
-  window.TOEFL_NOTEBOOK_DATA = {
-  "version": "2026-07-17.1",
+window.TOEFL_NOTEBOOK_DATA = {
+  "version": "2026-07-17.5",
   "updatedAt": "2026-07-17",
   "dailyGoal": 20,
   "completedTests": 40,
@@ -13,7 +10,7 @@
   "model2Sources": 40,
   "targetOccurrences": 1180,
   "attemptedTargetOccurrences": 930,
-  "historicalErrorOccurrences": 250,
+  "historicalErrorOccurrences": 644,
   "uniqueCompletedWords": 712,
   "historyRule": "只把实际提交过且答错的字母记入历史；整篇未开始不计错，做过的原文中留空才计为不会。历史错词永久保留；独立答对后移出当前队列，订正会滚动到队尾再测，需要时可从错题本恢复。",
   "sources": [
@@ -1765,12 +1762,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "adj. 能够的",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "le",
+          "correct": "able",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "about",
@@ -1801,12 +1808,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "out",
+          "correct": "about",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "abroad",
@@ -1836,12 +1853,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "act",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-2",
@@ -1851,6 +1868,15 @@
           "correct": "abroad",
           "origin": "fm-practice-history",
           "explain": "解析：这里描述销售地点在国外。单词 'abroad' 是副词，意为“在国外”或“海外”，表示销售的地理位置。\n待填入部分 'abr###' 中，'abr' 是常见开头，需要添加字母形成 'abroad'。\n填入 'oad' 后，形成 'abroad'，符合句意：'sale abroad'（在国外销售）。\n注意：'abroad' 的拼写是 a-b-r-o-a-d，共6个字母，待填入部分有3个#，对应 'oad' 3个字母。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "oad",
+          "correct": "abroad",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -1929,12 +1955,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "lating",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t11-m1-2",
@@ -1944,6 +1970,15 @@
           "correct": "accumulation",
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 上下文分析：短语 'the accumu###### of green##### gases' 中，'accumu######' 是名词，意为 '积累'，与 'of' 连用表示 '...的积累'。'accumulation' 是标准名词形式，指逐渐增加或聚集的过程。\n2. 语法和语义：'accumulation' 使短语完整，描述温室气体在大气中逐渐增多的现象，这是气候变化的核心概念之一。\n3. 字母数量：'accumu######' 有12个字母，其中已给出 'accumu'，需要填入6个字母，'accumulation' 正好符合（'accumulate' 去 'e' 加 'ion' 变名词）。\n4. 验证：填入 'lation' 后形成 'accumulation'，'the accumulation of greenhouse gases' 是科学文本中标准表达，准确传达含义。"
+        },
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "lation",
+          "correct": "accumulation",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -2022,12 +2057,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "oss",
+          "correct": "across",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "activities",
@@ -2178,12 +2223,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "ionist",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t16-m1-2",
@@ -2193,6 +2238,15 @@
           "correct": "adaptations",
           "origin": "fm-practice-history",
           "explain": "解析：'adapt######' 有11个字母，其中前5个字母是 'adapt'，后6个字母需要填入。根据上下文 'Specialized adapt###### have evo####'，意思是“专门的适应机制已经演化”，因此应填入 'adaptations'。参考答案 'ations' 与 'adapt' 组合成 'adaptations'。\n\n  语法分析：'adaptations' 是名词 'adaptation' 的复数形式，作主语，与 'have evolved' 构成主谓结构。\n\n  词义确认：'adaptations' 意为“适应、适应性特征”，指生物为适应环境而发展的特性，是生物学常见术语。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ations",
+          "correct": "adaptations",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -2356,12 +2410,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ncing",
+          "correct": "advancing",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "advantageous",
@@ -2451,12 +2515,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "动词，意为'影响'。此处为及物动词，主语是such decisions（复数），故用原形。注意不要与effect混淆。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ect",
+          "correct": "affect",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "affecting",
@@ -2487,12 +2561,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "cting",
+          "correct": "affecting",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "against",
@@ -2523,12 +2607,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "inst",
+          "correct": "against",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "ago",
@@ -2608,12 +2702,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：agriculture（农业）\n解析：此处需要填入字母组成'agriculture'，意为'农业'。冰川融水支持农业，因此'supporting agriculture'（支持农业）符合语境。该词由'agri'（农业）和'culture'（文化/培育）组成。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ulture",
+          "correct": "agriculture",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "aiming",
@@ -2644,12 +2748,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ing",
+          "correct": "aiming",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "allow",
@@ -2710,7 +2824,7 @@
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t32-m1-2",
@@ -2720,6 +2834,15 @@
           "correct": "allow",
           "origin": "fm-practice-history",
           "explain": "该空位于'al###'，需要填入三个字母以构成动词'allow'，意为'允许'或'使能够'。主语是'Advanced methods'，宾语是'archaeologists'，后面跟不定式't to trace'，表示这些方法使考古学家能够追踪。"
+        },
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "low",
+          "correct": "allow",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -2899,12 +3022,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "so",
+          "correct": "also",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "amount",
@@ -3185,12 +3318,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词ancient意思是“古代的、古老的”。这里修饰climates（气候）和events（事件），指古代的气候和地质事件。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ient",
+          "correct": "ancient",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "and",
@@ -3819,12 +3962,175 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "连词，意为'和、与'。连接两个并列成分：about resource allocation和how such decisions...。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 18,
+      "historyOccurrences": [
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "and",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "animal",
@@ -4031,12 +4337,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "iate",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t9-m1-2",
@@ -4046,6 +4352,15 @@
           "correct": "approach",
           "origin": "fm-practice-history",
           "explain": "解析：根据题干上下文，'appr####' 应该是动词，与 'problems' 搭配。结合参考答案 'oach'，填入后形成 'approach'（处理、接近）。句子 'allows students to appr#### problems' 意思是让学生能够处理问题，所以 'approach' 合适。\n单词 'approach' 在这里是动词，意为 'to deal with or handle'。\n填入过程：appr#### → 填入 'oach' → approach。"
+        },
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "oach",
+          "correct": "approach",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -4265,12 +4580,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 'are' 是系动词，意为“是”。\n题干中 'Leaves a## the pri#### sites' 表示“叶子是主要场所”，\n'a##' 由 'a' 和两个 '#' 组成，\n填入 're' 后得到 'are'，\n与上下文 'Leaves are the primary sites' 相符。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "re",
+          "correct": "are",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "areas",
@@ -4455,12 +4780,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：artificial（人工的，人造的）。\n解析：artificial 意为“人工的”，与 natural（自然的）相对。\n此处 artificial photosynthesis 意为“人工光合作用”。\n词根：art（技艺）+ -ficial（做）→ 用技艺做出的。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "icial",
+          "correct": "Artificial",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "artisans",
@@ -4552,12 +4887,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "fits",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t12-m1-2",
@@ -4567,6 +4902,15 @@
           "correct": "artistic",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，游客理解艺术运动，'artistic' 意思是艺术的，修饰 'movements'。单词 'artistic' 拼写为 a-r-t-i-s-t-i-c。在题干中，'arti####' 表示需要填入四个字母，以完成 'artistic' 单词。填入 'stic' 后，形成 'artistic'，符合句意。\n\n句子翻译：理解艺术运动。"
+        },
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "stic",
+          "correct": "artistic",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -4612,12 +4956,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 艺术家（复数）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ists",
+          "correct": "artists",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "as",
@@ -4777,12 +5131,12 @@
           "qno": 6
         }
       ],
-      "userAnswer": "t",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "单词：as\n释义：prep. 作为；像；如同\n解析：此处需要填入一个介词，与“such”搭配构成固定短语“such as”，意为“例如”。因此填入字母“s”构成“as”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-1",
@@ -4792,6 +5146,33 @@
           "correct": "As",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子“A# glaciers mo##, they ca### out val#### and fjords...”中，“A#”引导一个时间状语从句，表示“当...时”。\n  2. 语义推断：这里需要一个连词来连接“glaciers mo##”和主句“they ca### out...”，表示同时发生的事件。\n  3. 字母匹配：待填空部分“A#”有一个#，对应“As”的第二个字母“s”。\n  4. 验证：填入“s”后形成“As”，句子变为“As glaciers move, they carve out valleys and fjords...”，意思为“当冰川移动时，它们雕刻出山谷和峡湾...”，语法正确，表达时间关系。"
+        },
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "s",
+          "correct": "As",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "s",
+          "correct": "As",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "s",
+          "correct": "As",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -4872,12 +5253,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "iates",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t5-m1-2",
@@ -4887,6 +5268,15 @@
           "correct": "associated",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“cost assoc##### with sp### travel”，这里“assoc#####”是动词或形容词的一部分，与“with”搭配，表示“与...相关”。\n  2. 语法和词性：空格在“assoc#####”中，需要填入后缀使成为形容词“associated”，修饰“cost”。\n  3. 单词推断：常见短语“associated with”意为“与...相关”，符合上下文“与太空旅行相关的成本”。\n  4. 字母匹配：空格有6个#，对应“iated”，将“assoc”和“iated”组合成“associated”。\n  5. 验证：填入后句子为“cost associated with...”，是标准英语表达，意思准确。"
+        },
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "iated",
+          "correct": "associated",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -5037,12 +5427,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ay",
+          "correct": "away",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "back",
@@ -5109,12 +5509,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ance",
+          "correct": "balance",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "based",
@@ -5194,12 +5604,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "e",
+          "correct": "be",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "because",
@@ -5243,12 +5663,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "待填入字母的单词是“Bec####”，需要填入4个字母以构成完整单词“Because”（因为）。连词，引导原因状语从句，解释为什么现代知识是推断的。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ause",
+          "correct": "because",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "becomes",
@@ -5351,12 +5781,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "es",
+          "correct": "bees",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "before",
@@ -5639,12 +6079,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ween",
+          "correct": "between",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "biodiversity-v",
@@ -5769,12 +6219,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "ow",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-2",
@@ -5784,6 +6234,15 @@
           "correct": "blue",
           "origin": "fm-practice-history",
           "explain": "解析：这里描述鸟的颜色，斯皮克斯金刚鹦鹉以其鲜艳的蓝色羽毛而闻名。单词 'blue' 意为“蓝色”，是形容词，用于修饰鸟的外观。\n待填入部分 'bl##' 中，'bl' 是常见开头，表示颜色相关，需要添加字母形成 'blue'。\n填入 'ue' 后，形成 'blue'，符合句意：'this vibrant blue bird'（这种鲜艳的蓝色鸟类）。\n注意：'blue' 的拼写是 b-l-u-e，共4个字母，待填入部分有2个#，对应 'ue' 2个字母。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ue",
+          "correct": "blue",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -5852,12 +6311,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ain",
+          "correct": "brain",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "breaking",
@@ -5962,12 +6431,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "ain",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
       "priority": 4,
       "kind": "error",
-      "historicalErrors": 2,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t29-m1-2",
@@ -5986,6 +6455,24 @@
           "correct": "broad",
           "origin": "fm-practice-history",
           "explain": "单词 'broad' 意为“宽阔的”。\n题干中 'Their br###, flat surfaces' 表示“它们宽阔、平坦的表面”，\n'br###' 由 'br' 和三个 '#' 组成，\n填入 'oad' 后得到 'broad'，\n与上下文 'broad, flat surfaces' 相符。"
+        },
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "oad",
+          "correct": "broad",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "oad",
+          "correct": "broad",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -6116,12 +6603,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "名词，意为'企业、商业机构'。原形business加-es构成复数。注意拼写：business的复数形式为businesses。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "esses",
+          "correct": "businesses",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "esses",
+          "correct": "businesses",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "busy",
@@ -6315,12 +6821,49 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 by 是介词，意为“通过，由”，此处表示“以……为特点”。填入字母 y 后，单词完整。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 4,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "y",
+          "correct": "by",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "y",
+          "correct": "by",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "y",
+          "correct": "by",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "y",
+          "correct": "by",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "called",
@@ -6364,12 +6907,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "led",
+          "correct": "called",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "camels",
@@ -6524,12 +7077,40 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：can（能，可以）。\n解析：can 是情态动词，表示能力或可能性。\n此处 can theoretically produce 意为“理论上可以产生”。\n注意：原题“c##”应补全为“can”，参考答案“an”可能不完整。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 3,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "an",
+          "correct": "can",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "an",
+          "correct": "can",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "an",
+          "correct": "can",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "carried",
@@ -6651,12 +7232,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "rategy",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t7-m1-2",
@@ -6666,6 +7247,15 @@
           "correct": "catastrophic",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，'catast######' 应该是一个形容词，表示'灾难性的'。'catastrophic' 意为'灾难性的'，符合句意。\n\n单词结构：'catastrophic' 由词根 'catastrophe'（名词，意为'灾难'）和后缀 '-ic'（形容词后缀，表示'...的'）组成。\n\n在句子中：'...catastrophic events...' 意为'...灾难性事件...'，'events' 是名词，被'catastrophic'修饰，表示'事件的性质是灾难性的'。\n\n常见搭配：'catastrophic' 常与'events'、'damage'、'failure'等名词搭配，这里搭配正确。"
+        },
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "rophic",
+          "correct": "catastrophic",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -6744,12 +7334,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ses",
+          "correct": "causes",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "cells",
@@ -6962,12 +7562,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "nnel",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 4,
       "kind": "error",
-      "historicalErrors": 2,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t1-m1-1",
@@ -6986,6 +7586,24 @@
           "correct": "changes",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，'cha####' 应该是一个名词，表示'变化'。'changes' 意为'变化'，符合句意。\n\n单词结构：'changes' 由词根 'change'（来自古法语 'changier'，意为'改变'）和复数后缀 '-s' 组成。\n\n在句子中：'...environmental changes...' 意为'...环境变化...'，'environmental' 是形容词，修饰'changes'，表示'环境的'。\n\n常见搭配：'changes' 常与'environmental'、'climate'、'social'等形容词搭配，这里搭配正确。"
+        },
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "nges",
+          "correct": "changes",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "nges",
+          "correct": "changes",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -7053,12 +7671,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "torized",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t16-m1-2",
@@ -7068,6 +7686,15 @@
           "correct": "characterized",
           "origin": "fm-practice-history",
           "explain": "解析：'charac#######' 有12个字母，其中前6个字母是 'charac'，后7个字母需要填入。根据句子结构 'are charac####### by'，这是一个被动语态，表示“以...为特征”，因此应填入 'characterized'。参考答案 'terized' 与 'charac' 组合成 'characterized'。\n\n  语法分析：'are characterized by' 是固定搭配，意为“以...为特征”，常用于描述事物特点。\n\n  词义确认：'characterized' 是动词 'characterize' 的过去分词形式，在这里构成被动语态，表示这些区域被恶劣条件所特征化。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "terized",
+          "correct": "characterized",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -7104,13 +7731,22 @@
       "tip": "拼写是 charact + ers；中间是 e，不是 o。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t39-m1-2",
           "userAnswer": "charactors",
           "correct": "characters",
           "origin": "earlier-screenshot"
+        },
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "cters",
+          "correct": "characters",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -7143,12 +7779,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ical",
+          "correct": "chemical",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "choices",
@@ -7178,12 +7824,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "rnic",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "复数或三单；检查主谓一致和名词单复数。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t26-m1-2",
@@ -7193,6 +7839,15 @@
           "correct": "choices",
           "origin": "fm-practice-history",
           "explain": "名词，意为'选择'。原形choice加-s构成复数。短语make choices about...意为'做出关于……的选择'。"
+        },
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ices",
+          "correct": "choices",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -7249,12 +7904,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "气候，填入'ates'得到'climate'（气候）。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "mate",
+          "correct": "climate",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "climates",
@@ -7429,12 +8094,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "itive",
+          "correct": "cognitive",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "coherent",
@@ -7647,12 +8322,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "rful",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-2",
@@ -7662,6 +8337,15 @@
           "correct": "colonies",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，珊瑚虫是群体生活的动物，因此这里需要一个表示“群体”或“殖民地”的名词。原句是“by colo#### of tiny animals called coral polyps”，结合常识，珊瑚虫通常形成群体，所以单词应为“colonies”。填入“nies”后，完整单词为“colonies”，意思是“群体”或“殖民地”，在这里指珊瑚虫的群体。\n\n注意：单词“colony”的复数形式是“colonies”，拼写为c-o-l-o-n-i-e-s，这里需要填入的是“nies”部分，因为“colo”已经给出。"
+        },
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "nies",
+          "correct": "colonies",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -7739,13 +8423,23 @@
           "qno": 2
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "commistagtes",
+      "status": "historical-error",
+      "tip": "commission + -ed：commissioned 结尾是 -sioned，注意 s-i-o-n-e-d。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m2-1",
+          "qno": 2,
+          "userAnswer": "commistagtes",
+          "missingLetters": "sioned",
+          "correct": "commissioned",
+          "origin": "screenshot",
+          "explain": "截图中该空被判错；commissioned 表示“受委托创作的”，拼写为 commis+sioned。"
+        }
+      ]
     },
     {
       "id": "common",
@@ -7776,12 +8470,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "mon",
+          "correct": "common",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "commonly",
@@ -7897,12 +8601,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nities",
+          "correct": "communities",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "community",
@@ -8017,7 +8731,7 @@
           "qno": 2
         }
       ],
-      "userAnswer": "comfact",
+      "userAnswer": "pete",
       "status": "historical-error",
       "tip": "这里是 complex（复杂的），不是 compact（紧凑的）。记住 com + plex。",
       "priority": 4,
@@ -8069,12 +8783,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "onent",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "复数或三单；many/some 后多用复数。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t31-m1-2",
@@ -8084,6 +8798,15 @@
           "correct": "compounds",
           "origin": "fm-practice-history",
           "explain": "单词：compounds（化合物）。\n解析：compound 意为“化合物”，由不同元素组成。\n此处 organic compounds 指“有机化合物”。\n复数形式 compounds。\n词根：com-（一起）+ pound（放置）→ 放在一起的东西。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ounds",
+          "correct": "compounds",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -8116,12 +8839,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "concentrate → concentration。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "tration",
+          "correct": "concentration",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "concept",
@@ -8198,12 +8931,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"conclusions\"意为“结论”。该词由\"conclusion\"（结论）加复数后缀\"-s\"构成。在上下文\"specific conclusions\"（具体结论）中，需要填入字母\"usions\"以完成单词。注意：前面已有\"concl\"，因此填入\"usions\"共6个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "usions",
+          "correct": "conclusions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "conditions",
@@ -8260,12 +9003,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "tions",
+          "correct": "conditions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "connect",
@@ -8296,12 +9049,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 connect 意为“连接，联系”。此处根据上下文“联系、分享想法”可知，需填入字母“nect”。\n- 词根：con-（一起）+ nect（连接）\n- 常见短语：connect with（与……联系）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "nect",
+          "correct": "connect",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "connection",
@@ -8367,12 +9130,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "quently",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t24-m1-2",
@@ -8382,6 +9145,15 @@
           "correct": "Consciousness",
           "origin": "fm-practice-history",
           "explain": "解析：\n    1. 根据题干上下文，句子为“Consci#######, the st### of being aware of one's thoughts and surroundings”，意思是“意识，即意识到自己的思想和周围环境的状态”。\n    2. 名词“consciousness”意为“意识、知觉”，是认知科学和哲学中的关键概念，描述觉醒或感知状态。\n    3. 单词“consciousness”由“conscious”（有意识的）和后缀“-ness”（状态）组成。\n    4. 待填空部分“consci#######”有9个#，对应“ousness”，因为“consci”已给出，所以填入“ousness”完成单词。"
+        },
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ousness",
+          "correct": "Consciousness",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -8414,12 +9186,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "该空位于'consid#######'，需要填入七个字母以构成名词'consideration'，意为'考虑'，与'careful'搭配，表示'仔细考虑'。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "eration",
+          "correct": "consideration",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "considered",
@@ -8553,12 +9335,12 @@
           "qno": 6
         }
       ],
-      "userAnswer": "erved",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先识别前缀，再看词性和上下文。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t32-m1-2",
@@ -8568,6 +9350,15 @@
           "correct": "construct",
           "origin": "fm-practice-history",
           "explain": "该空位于'cons#####'，需要填入五个字母以构成动词'construct'，意为'构建'或'建立'，与'chronologies'搭配，表示'构建年代序列'。"
+        },
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "truct",
+          "correct": "construct",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -8636,12 +9427,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "sation",
+          "correct": "conversation",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "conversely",
@@ -8803,12 +9604,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "v. 创作；创造",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ate",
+          "correct": "create",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "created",
@@ -9088,12 +9899,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ures",
+          "correct": "cultures",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "currents",
@@ -9235,12 +10056,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 daily，意为“日常的”。\n- 形容词：修饰 life。\n- 词根：day 的变形。\n- 注意：单词为 da###，所以前两个字母是 da，后三个字母是 ily，合起来为 daily。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ily",
+          "correct": "daily",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "decline",
@@ -9306,12 +10137,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "ines",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-2",
@@ -9321,6 +10152,15 @@
           "correct": "declined",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里描述数量下降或减少。单词 'declined' 是动词 'decline' 的过去式，意为“下降”或“减少”，常用于表示种群数量减少。\n待填入部分 'decl####' 中，'decl' 是词根，表示“向下”或“减少”，需要添加后缀形成过去式。\n填入 'ined' 后，形成 'declined'，符合句意：'The population... declined because of...'（数量...下降由于...）。\n注意：'declined' 的拼写是 d-e-c-l-i-n-e-d，共8个字母，待填入部分有4个#，对应 'ined' 4个字母。'decline' 的过去式规则变化为加 -d，但这里需要完整拼写 'ined' 以匹配#数量。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ined",
+          "correct": "declined",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -9471,12 +10311,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "eases",
+          "correct": "decreases",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "deeply",
@@ -9624,13 +10474,23 @@
           "qno": 4
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "depistes",
+      "status": "historical-error",
+      "tip": "depict 的过去式是 depicted；结尾是 -cted，不要写成 -stes。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m2-1",
+          "qno": 4,
+          "userAnswer": "depistes",
+          "missingLetters": "cted",
+          "correct": "depicted",
+          "origin": "screenshot",
+          "explain": "截图中该空被判错；depicted 是 depict 的过去式，表示“描绘”。"
+        }
+      ]
     },
     {
       "id": "derived",
@@ -9697,12 +10557,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"derives\"意为“推导出”。该词是动词\"derive\"（推导）的第三人称单数形式。在上下文\"derives specific conclusions\"（推导出具体结论）中，需要填入字母\"ives\"以完成单词。注意：前面已有\"der\"，因此填入\"ives\"共4个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ives",
+          "correct": "derives",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "describe",
@@ -9805,12 +10675,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "gned",
+          "correct": "designed",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "despite",
@@ -9887,12 +10767,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "v. 发展；提出",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "elop",
+          "correct": "develop",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "developed",
@@ -9969,12 +10859,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "id",
+          "correct": "did",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "discipline",
@@ -10030,12 +10930,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "discisions",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "固定拆分 disci + pline；不要和 decision 混写。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t37-m1-1",
@@ -10046,6 +10946,24 @@
           "explain": "单词discipline意为“学科”。这里指考古学是一门学科。 词根：discip-（学习）+ -line（后缀） 注意：disci后面有5个#，填入pline后构成discipline。",
           "meaning": "学科",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "pline",
+          "correct": "discipline",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "pline",
+          "correct": "discipline",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -10160,12 +11078,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ibute",
+          "correct": "distribute",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "diverse",
@@ -10209,12 +11137,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "adj. 多样的",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "erse",
+          "correct": "diverse",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "diversity",
@@ -10316,12 +11254,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "nants",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "过去式/过去分词；常表示过去动作或被动状态。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t27-m1-2",
@@ -10331,6 +11269,15 @@
           "correct": "dominated",
           "origin": "fm-practice-history",
           "explain": "原词为 dominate，意为“主导，支配”。\n- 动词形式：dominated 是过去分词，表示被动或完成。\n- 句子结构：Feudalism dominated the social structure，封建主义主导了社会结构。\n- 词根：domin- 来自拉丁语 dominus，意为“主人”。\n- 同根词：dominant（主要的），dominion（统治权）。\n- 注意：此处需填入 nated，因为 dominate 的过去分词是 dominated，去掉 ed 后剩余 domin，但单词为 domi#####，所以前四个字母是 domi，后五个字母是 nated，合起来为 dominated。"
+        },
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "nated",
+          "correct": "dominated",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -10497,12 +11444,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 During 意为“在……期间”。\nfill 中的 Dur### 表示需要填入 3 个字母。\nDur 开头后接 ing 形成 During，指文艺复兴时期。\n注意：首字母 D 已大写，填入字母需小写。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ing",
+          "correct": "during",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "each",
@@ -10690,12 +11647,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 easier 意为“更容易的”。此处根据上下文“使得……更容易”可知，需填入字母“ier”。\n- 词根：easy（容易的）的比较级形式。\n- 用法：make it easier to do（使做某事更容易）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ier",
+          "correct": "easier",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "ecological",
@@ -10726,12 +11693,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "ecological 是形容词，意为“生态的”。本句中修饰 significance（意义），指沙漠的生态意义。填写的字母为 gical，构成完整单词。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "gical",
+          "correct": "ecological",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "economic",
@@ -10955,13 +11932,23 @@
           "qno": 3
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "empeires",
+      "status": "historical-error",
+      "tip": "emperor 的复数是 emperors；中间是 -or-，不要写成 -eir-。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m2-1",
+          "qno": 3,
+          "userAnswer": "empeires",
+          "missingLetters": "rors",
+          "correct": "emperors",
+          "origin": "screenshot",
+          "explain": "截图中该空被判错；emperor 的复数直接加 s，正确拼写是 emperors。"
+        }
+      ]
     },
     {
       "id": "employ",
@@ -10996,7 +11983,7 @@
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-1",
@@ -11006,6 +11993,15 @@
           "correct": "employ",
           "origin": "fm-practice-history",
           "explain": "解析：\n    1. 单词分析：根据题干文本“Farmers emp### various techn##### such a# plowing a## irrigation t# manage la## effectively.”，这里需要填入一个动词，表示“采用”或“使用”。\n    2. 上下文线索：句子描述农民使用技术来管理土地，需要一个动词来连接“farmers”和“techniques”。\n    3. 字母数量：emp### 有3个#，表示需要填入3个字母。\n    4. 答案推导：基础单词是“employ”，意思是“采用”或“雇用”，填入“loy”后形成“employ”。\n    5. 验证：填入后句子为“Farmers employ various techniques such as plowing and irrigation to manage land effectively.”，语法正确，意思表达农民采用技术。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "loy",
+          "correct": "employ",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -11038,12 +12034,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 'employment' 意为 '就业、工作'。需要填入 'yment' 完成单词，注意拼写为 e-m-p-l-o-y-m-e-n-t。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "yment",
+          "correct": "employment",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "enables",
@@ -11169,12 +12175,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "raging",
+          "correct": "encouraging",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "engage",
@@ -11277,12 +12293,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 工程师（复数）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "neers",
+          "correct": "Engineers",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "enhances",
@@ -11490,12 +12516,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nments",
+          "correct": "environments",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "equipped",
@@ -11598,12 +12634,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "as",
+          "correct": "eras",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "eruptions",
@@ -11647,12 +12693,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "tions",
+          "correct": "eruptions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "escape",
@@ -11696,12 +12752,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"escape\"意为\"逃脱\"。\"esc\"后加\"ape\"构成动词原形。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ape",
+          "correct": "escape",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "essential",
@@ -11832,12 +12898,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "lished",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t1-m1-2",
@@ -11847,6 +12913,15 @@
           "correct": "establishes",
           "origin": "fm-practice-history",
           "explain": "解析：'estab######' 需要填入七个字母，以形成动词 'establishes'，意为“建立”。该词是 'establish' 的第三人称单数形式，与主语 'Each male tiger' 一致。句子意思是每只雄性老虎建立对领地的控制。因此，填入 'lishes' 完成单词 'establishes'。"
+        },
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "lishes",
+          "correct": "establishes",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -12026,12 +13101,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词events意思是“事件”。这里指地质事件，如地震、火山喷发等。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "nts",
+          "correct": "events",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nts",
+          "correct": "events",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "everyday",
@@ -12124,12 +13218,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词evidence源自拉丁语evidentia，意为“明显、证据”。这里指保存了古代气候和地质事件的证据。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ence",
+          "correct": "evidence",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "evolved",
@@ -12160,12 +13264,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "lved",
+          "correct": "evolved",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "examine",
@@ -12245,12 +13359,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "动词原形为examine，意为'检查、考察'。句子主语为it（指经济学），谓语动词需用第三人称单数形式，故填ines。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ines",
+          "correct": "examines",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "example",
@@ -12362,12 +13486,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "excellent",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "excess + ive = excessive；excellent 是“优秀的”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -12378,6 +13502,15 @@
           "explain": "单词：excessive，意为“过度的，过多的”。 分析：原词为excessive，题干中给出exce#####，需要填入5个字母。根据上下文“exce##### reliance”，可知此处为excessive。 填入字母：s, s, i, v, e。",
           "meaning": "过度的，过多的",
           "tip": "形容词；通常放在名词前修饰名词。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ssive",
+          "correct": "excessive",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -12410,12 +13543,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 exert，意为“施加，运用”。\n- 动词形式：exerted 是过去式或过去分词。\n- 句子结构：The Church exerted substantial influence，教会施加了巨大影响。\n- 词根：ex- 向外，ert- 来自拉丁语 serere，意为“连接”，引申为“施展”。\n- 注意：单词为 exe####，所以前三个字母是 exe，后四个字母是 rted，合起来为 exerted。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "rted",
+          "correct": "exerted",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "exhaustion",
@@ -12492,12 +13635,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ibit",
+          "correct": "exhibit",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "exhibits",
@@ -12528,12 +13681,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "bits",
+          "correct": "Exhibits",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "expand",
@@ -12564,12 +13727,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "and",
+          "correct": "expand",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "expansion",
@@ -12705,12 +13878,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "esure",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "n. 经历；体验",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t17-m1-2",
@@ -12720,6 +13893,24 @@
           "correct": "experience",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里需要描述“subjective”（主观的）所修饰的名词。填入字母“ience”后，形成单词“experience”，意为“经验”，与“subjective”结合表示主观经验。\n\n语法分析：名词“experience”受形容词“subjective”修饰，作为“questions”涉及的主题之一。\n\n词汇提示：单词“experience”拼写为e-x-p-e-r-i-e-n-c-e，这里基于“exper-”部分，需要补全“ience”。"
+        },
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ience",
+          "correct": "experience",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ience",
+          "correct": "experience",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -12879,12 +14070,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "explored",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "全文用一般现在时，主语 It 要用 explores，不是过去式 explored。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t37-m1-2",
@@ -12895,6 +14086,15 @@
           "explain": "单词 'explores' 意为“探讨”或“探究”。 原词为 'explores'，动词，第三人称单数形式。 在句中，主语 'It' 指代哲学，所以用一般现在时第三人称单数。 待填入字母为 'ores'，共4个#，对应字母 o r e s。",
           "meaning": "探讨",
           "tip": "复数或三单；检查主谓一致和名词单复数。"
+        },
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ores",
+          "correct": "explores",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -12962,12 +14162,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "expect",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "can 后接原形 expose；固定结构 expose A to B。expect 是“预期”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -12978,6 +14178,15 @@
           "explain": "单词：expose，意为“使暴露，使面临”。 分析：原词为expose，题干中给出exp###，需要填入3个字母。根据上下文“exp### economies to”，可知此处为expose。 填入字母：o, s, e。",
           "meaning": "使暴露，使面临",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ose",
+          "correct": "expose",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -13045,12 +14254,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "fabrating",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "be able to 后接动词原形：to fabricate，不是 to fabricating。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t38-m1-2",
@@ -13061,6 +14270,15 @@
           "explain": "单词：fabricate，意为“制造，生产”。 题目中“fabr#####”需要填入5个字母，构成单词fabricate。 解析：动词，表示工程师能够制造轻巧坚固的部件，因此填入“icate”形成fabricate。",
           "meaning": "制造，生产",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "icate",
+          "correct": "fabricate",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -13093,12 +14311,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ities",
+          "correct": "facilities",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "factories",
@@ -13129,12 +14357,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 'factories' 是 'factory' 的复数形式，意为 '工厂'。需要填入 'ories' 完成单词，注意 'factory' 变复数时 y 变 i 加 es。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ories",
+          "correct": "factories",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "factors",
@@ -13178,12 +14416,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "tors",
+          "correct": "factors",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "far",
@@ -13591,12 +14839,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "rm",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t31-m1-2",
@@ -13606,6 +14854,15 @@
           "correct": "food",
           "origin": "fm-practice-history",
           "explain": "单词：food（食物）。\n解析：food 意为“食物”，不可数名词。\n此处 food chains 意为“食物链”。\n注意：原题“fo##”应补全为“food”，参考答案“od”可能不完整。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "od",
+          "correct": "food",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -13752,12 +15009,40 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 3,
+      "historyOccurrences": [
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "or",
+          "correct": "for",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "or",
+          "correct": "for",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "or",
+          "correct": "for",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "formation",
@@ -13824,12 +15109,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：forming（形成）。\n解析：forming 是 form 的现在分词形式，意为“形成、构成”。\n此处 forming the foundation 意为“形成基础”。\n动词原形 form，过去式 formed。\n词根：form（形状）。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ming",
+          "correct": "forming",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "fostering",
@@ -13859,12 +15154,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "fosterier",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "foster + ing = fostering；不是 -ied。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -13875,6 +15170,15 @@
           "explain": "单词：fostering，意为“促进，培养”。 分析：原词为fostering，题干中给出fost####，需要填入4个字母。根据上下文“fost##### international interde########”，结合常见表达“fostering international interdependence”，可知此处为fostering。 填入字母：e, r, i, n, g? 注意：fostering有9个字母，fost是4个，剩余5个字母ering，但题干是4个#？实际题干是fost#####（5个#），答案ering是5个字母，正确。",
           "meaning": "促进，培养",
           "tip": "动名词或现在分词；可作主语或修饰名词。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ering",
+          "correct": "fostering",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -13954,12 +15258,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：foundation（基础，基金会）。\n解析：foundation 意为“基础”，指事物建立的基础。\n此处 the foundation of food chains 意为“食物链的基础”。\n词根：found（基础）+ -ation（名词后缀）。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ation",
+          "correct": "foundation",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "frequency",
@@ -14002,12 +15316,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "uents",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t14-m1-1",
@@ -14017,6 +15331,15 @@
           "correct": "frequency",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“Natural selection explains how advantageous traits increase in freq##### in a popul#####.”，意思是“自然选择解释了有利特征如何在种群中增加频率。”\n  2. 语法和逻辑：这里需要一个名词，作为介词“in”的宾语，表示“频率”。\n  3. 单词推断：在进化论中，“frequency”常用来描述特征在种群中的出现频率。\n  4. 字母填入：原单词为“freq#####”，有5个#，对应填入“uency”，形成“frequency”。\n  5. 验证：填入后单词为“frequency”，名词形式正确，句子意思清晰。"
+        },
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "uency",
+          "correct": "frequency",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -14088,12 +15411,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"from\"意为“从”。在上下文\"from specific observations\"（从具体观察）中，需要填入字母\"om\"以完成单词。注意：前面已有\"fr\"，因此填入\"om\"共2个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "om",
+          "correct": "from",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "om",
+          "correct": "from",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "fuels",
@@ -14137,12 +15479,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "els",
+          "correct": "fuels",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "full",
@@ -14343,12 +15695,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "mental",
+          "correct": "fundamental",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "fungi-v",
@@ -14660,12 +16022,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "ass",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t22-m1-2",
@@ -14675,6 +16037,15 @@
           "correct": "globe",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：短语为\"across the gl###\"，意为\"跨越...\"，其中\"the gl###\"应指地球或全球。\n  2. 单词识别：\"gl###\"应为\"globe\"，名词意为\"地球\"或\"全球\"。\n  3. 字母填入：\"gl###\"有5个字母，已知部分为\"gl\"，后面有3个#。完整单词为\"globe\"，所以填入\"obe\"。\n  4. 验证：\"across the globe\"是固定短语，表示遍及全球，与洋流分配热量的上下文一致。"
+        },
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "obe",
+          "correct": "globe",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -14706,12 +16077,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "rting",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "动名词或现在分词；可作主语或修饰名词。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t27-m1-2",
@@ -14721,6 +16092,15 @@
           "correct": "governing",
           "origin": "fm-practice-history",
           "explain": "原词为 govern，意为“统治，管理”。\n- 动词形式：governing 是现在分词，表示主动进行。\n- 句子结构：lords governing lands，领主统治土地。\n- 词根：govern- 来自拉丁语 gubernare，意为“掌舵”。\n- 注意：单词为 gove###，所以前四个字母是 gove，后四个字母是 rning，合起来为 governing。"
+        },
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "rning",
+          "correct": "governing",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -14753,12 +16133,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "名词，意为'政府'。由govern（统治）加-ment（名词后缀）加-s构成复数。与individuals、households并列为主语。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "nments",
+          "correct": "governments",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "gravity",
@@ -14942,12 +16332,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "wed",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t20-m1-2",
@@ -14957,6 +16347,15 @@
           "correct": "groups",
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 上下文分析：句子描述狮群是“群体”，因此需要填入一个名词的复数形式。\n2. 单词结构：待填入部分“gro###”是单词“groups”的一部分。\n3. 语法和语义：\n   - “groups”是“group”的复数形式，意为“群体、组”。\n   - 在句子中，它作为表语，说明狮群的本质是群体。\n4. 答案确认：填入“ups”后，完整单词为“groups”，与参考答案“ups”一致。"
+        },
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ups",
+          "correct": "groups",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -15025,12 +16424,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "tats",
+          "correct": "habitats",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "had",
@@ -15142,12 +16551,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "bit",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t16-m1-2",
@@ -15157,6 +16566,15 @@
           "correct": "harsh",
           "origin": "fm-practice-history",
           "explain": "解析：'ha###' 有5个字母，其中前两个字母是 'ha'，后三个字母需要填入。根据上下文 'ha### conditions'，意思是“恶劣的条件”，因此应填入 'harsh'。参考答案 'rsh' 与 'ha' 组合成 'harsh'。\n\n  语法分析：'harsh' 是形容词，修饰名词 'conditions'，符合形容词作定语的用法。\n\n  词义确认：'harsh' 意为“严酷的、恶劣的”，常用于描述环境或条件，与沙漠的极端环境相符。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "rsh",
+          "correct": "harsh",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -15241,12 +16659,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "动词 'have' 表示‘有’。这里 'camels have to travel' 意为‘骆驼必须旅行’。'have to' 是固定短语，表示‘必须’。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ve",
+          "correct": "have",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ve",
+          "correct": "have",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "hazard",
@@ -15395,12 +16832,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "lp",
+          "correct": "help",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "helps",
@@ -15444,12 +16891,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "lps",
+          "correct": "helps",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "lps",
+          "correct": "helps",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "hibernation",
@@ -15738,12 +17204,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "hold",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "host 作动词可表示“为生物提供栖息地”；这里不是 hold。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t35-m1-2",
@@ -15754,6 +17220,15 @@
           "explain": "host 是动词，意为“容纳， hosting”。they host 指沙漠容纳生物。填写的字母为 st，构成完整单词。",
           "meaning": "容纳， ing",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "st",
+          "correct": "host",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -15835,12 +17310,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ow",
+          "correct": "how",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ow",
+          "correct": "how",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "however",
@@ -15897,12 +17391,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "该空位于'How####'，需要填入四个字母以构成副词'However'，意为'然而'，用于转折，引出下文对解读发现所需谨慎考虑的论述。注意首字母大写。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ever",
+          "correct": "however",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ever",
+          "correct": "however",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "human",
@@ -15946,12 +17459,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "该空位于'hu###'，需要填入三个字母以构成形容词'human'，修饰'migration patterns'，意为'人类的迁徙模式'。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "man",
+          "correct": "human",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "humans",
@@ -16126,12 +17649,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 ideas 意为“想法，观念”。此处根据上下文“分享想法”可知，需填入字母“eas”。\n- 注意：idea 的复数形式。\n- 常见短语：exchange ideas（交换意见）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "eas",
+          "correct": "ideas",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "identifying",
@@ -16198,12 +17731,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "tity",
+          "correct": "identity",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "illegal",
@@ -16233,12 +17776,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "ness",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-2",
@@ -16248,6 +17791,15 @@
           "correct": "illegal",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里描述捕猎是非法的。单词 'illegal' 是形容词，意为“非法的”，用于修饰 trapping（捕猎）。\n待填入部分 'ill####' 中，'ill' 是前缀，表示“不”或“非”，需要添加字母形成 'illegal'。\n填入 'egal' 后，形成 'illegal'，符合句意：'illegal trapping for sale abroad'（非法捕猎以在国外销售）。\n注意：'illegal' 的拼写是 i-l-l-e-g-a-l，共7个字母，待填入部分有4个#，对应 'egal' 4个字母。前缀 'il-' 是 'in-' 的变体，表示否定，加上 'legal'（合法的）形成反义词。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "egal",
+          "correct": "illegal",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -16351,12 +17903,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "ress",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t15-m1-2",
@@ -16366,6 +17918,15 @@
           "correct": "impacts",
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 上下文分析：句子为 '...asteroid imp####, and cli#### change.'，意思是 '...小行星撞击和气候变化。'。'imp####' 需要填入字母以形成一个名词，表示 '撞击'。\n2. 语法和词性：'imp####' 是名词，作为 'asteroid' 修饰的中心词，且根据上下文，应使用复数形式，因为小行星撞击可能指多次事件或泛指。\n3. 单词构建：'impact' 是基础名词，意为 '撞击' 或 '影响'；其复数形式为 'impacts'，通过添加 's' 构成。这里 'imp####' 有四个 #，对应 'acts'，形成 'impacts'。注意：'impact' 的拼写为 i-m-p-a-c-t，复数加 's' 为 i-m-p-a-c-t-s。\n4. 验证：填入 'acts' 后，单词为 'impacts'，符合句子意思和语法，与 'asteroid' 搭配，表示小行星撞击事件。"
+        },
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "acts",
+          "correct": "impacts",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -16567,12 +18128,58 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：in\n含义：在……中\n解析：短语“originated i# Athens”需要一个介词，in 表示“在……里”。拼写：i-n。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 5,
+      "historyOccurrences": [
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "in",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "in",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "in",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "in",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "in",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "incidents",
@@ -16603,12 +18210,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "dents",
+          "correct": "incidents",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "include",
@@ -16651,12 +18268,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "lues",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t7-m1-1",
@@ -16666,6 +18283,24 @@
           "correct": "include",
           "origin": "fm-practice-history",
           "explain": "解析：根据题干上下文，'These inc#### the wa## that peo### interpret sensory sig####'，意思是'这些包括人们解释感官信号的方式'。'inc####' 需要填入字母以形成一个单词，表示'包括'。结合参考答案'lude'，填入后得到单词'include'。\n单词'include'是动词，意为'包括、包含'，常用于列举事物。\n在句子中，'These include...' 是常见表达，指代前文提到的'mental processes'。\n因此，填入'lude'是正确的，完成单词'include'。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "lude",
+          "correct": "include",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "lude",
+          "correct": "include",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -16907,12 +18542,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "名词，意为'个人、个体'。由前缀in-和词根divid（分）组成，后缀-ual加-s表示复数。与households（家庭）、businesses（企业）并列。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "iduals",
+          "correct": "individuals",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "iduals",
+          "correct": "individuals",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "inductive",
@@ -16943,12 +18597,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"inductive\"意为“归纳的”。在上下文\"inductive thinking\"（归纳思维）中，需要填入字母\"ctive\"以完成单词。注意：前面已有\"indu\"，因此填入\"ctive\"共5个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ctive",
+          "correct": "inductive",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "industrial",
@@ -17026,12 +18690,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 influence，意为“影响”。\n- 名词：substantial influence 巨大影响。\n- 词根：in- 进入，flu- 流，合起来“流入”，引申为“影响”。\n- 注意：单词为 infl#####，所以前四个字母是 infl，后五个字母是 uence，合起来为 influence。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "uence",
+          "correct": "influence",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "influx",
@@ -17061,12 +18735,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "infect",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "the influx of workers，in + flux。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t33-m1-2",
@@ -17077,6 +18751,15 @@
           "explain": "单词 'influx' 意为 '涌入、流入'，这里指大量工人涌入城市。需要填入 'lux' 完成单词，注意拼写为 i-n-f-l-u-x。",
           "meaning": "",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "lux",
+          "correct": "influx",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -17109,12 +18792,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "mation",
+          "correct": "information",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "innovation",
@@ -17145,12 +18838,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ation",
+          "correct": "innovation",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "innovative",
@@ -17253,12 +18956,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "tead",
+          "correct": "instead",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "institutions",
@@ -17289,12 +19002,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 institutions 意为“机构，制度”。此处根据上下文“个人和机构”可知，需填入字母“utions”。\n- 词根：in-（在……里）+ stitut（建立）+ -ion（名词后缀）+ -s（复数）\n- 常见搭配：financial institutions（金融机构）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "utions",
+          "correct": "institutions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "instruments",
@@ -17444,12 +19167,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ense",
+          "correct": "intense",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "interact",
@@ -17516,12 +19249,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ctions",
+          "correct": "interactions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "interdependence",
@@ -17551,12 +19294,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "[blank]",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "inter-（相互）+ dependence（依赖）。先分块再拼。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -17567,6 +19310,15 @@
           "explain": "单词：interdependence，意为“相互依赖”。 分析：原词为interdependence，题干中给出interde########，需要填入8个字母。根据上下文“fostering international interde########”，可知此处为interdependence。 填入字母：p, e, n, d, e, n, c, e。",
           "meaning": "相互依赖",
           "tip": "先识别前缀，再看词性和上下文。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "pendence",
+          "correct": "interdependence",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -17687,12 +19439,40 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词into是介词，表示“进入……之中”。这里指将沉积物转变成固体岩石，所以用into表示转变的结果状态。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 3,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "to",
+          "correct": "into",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "to",
+          "correct": "into",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "to",
+          "correct": "into",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "intricate",
@@ -17722,12 +19502,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "oduce",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t3-m1-2",
@@ -17737,6 +19517,15 @@
           "correct": "intricate",
           "origin": "fm-practice-history",
           "explain": "单词解析：\n    待填入单词为 \"intr#####\"，根据上下文 \"perform intr##### dances...\"，意思是 \"表演复杂的舞蹈...\"。\n    待填入部分应为 \"icate\"，形成单词 \"intricate\"，意为 \"复杂的、精细的\"。\n    解析细节：\n        - 单词 \"intricate\" 是形容词，修饰名词 \"dances\"，描述舞蹈的复杂性。\n        - 在生物学中，蜜蜂的摇摆舞被认为是复杂的行为，用于交流信息。\n        - 从上下文看，它与前文 \"complex interactions\" 和 \"complex social organization\" 呼应，强调行为的复杂性。\n        - 参考答案中提供的字母串为 \"icate\"，验证了这一点。\n    因此，填入 \"icate\" 完成单词 \"intricate\"。"
+        },
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "icate",
+          "correct": "intricate",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -17840,12 +19629,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "ments",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t24-m1-2",
@@ -17855,6 +19644,15 @@
           "correct": "investigate",
           "origin": "fm-practice-history",
           "explain": "解析：\n    1. 根据题干上下文，句子为“Researchers invest##### the mecha##### underlying cogn##### processes”，意思是“研究人员调查认知过程背后的机制”。\n    2. 动词“investigate”意为“调查、研究”，符合语境，表示研究人员在研究这些机制。\n    3. 单词“investigate”由前缀“in-”（进入）和词根“vestigare”（追踪）组成，常见于学术研究场景。\n    4. 待填空部分“invest#####”有6个#，对应“igate”，因为“invest”已给出，所以填入“igate”完成单词。"
+        },
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "igate",
+          "correct": "investigate",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -17933,12 +19731,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"involves\"意为“涉及”。该词是动词\"involve\"（涉及）的第三人称单数形式。在上下文\"involves drawing\"（涉及得出）中，需要填入字母\"lves\"以完成单词。注意：前面已有\"invo\"，因此填入\"lves\"共4个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "lves",
+          "correct": "involves",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "involving",
@@ -18129,10 +19937,10 @@
           "sourceId": "t10-m1-1",
           "qno": 10,
           "userAnswer": "f",
-          "missingLetters": "f",
-          "correct": "Is",
+          "missingLetters": "s",
+          "correct": "is",
           "origin": "fm-practice-history",
-          "explain": "解析：单词 'I#' 需要填入1个字母以构成一个完整的单词。根据上下文，这里是一个疑问句的开头，询问这种技能是天生的还是由经验塑造的。结合句意和常见词汇，'Is' 意为“是”，符合语境。填入 's' 后，'I#' 变为 'Is'，与后面的 'this skill innate' 形成连贯的疑问句，意为“这种技能是天生的吗？”。\n\n提示：'Is' 是动词 'be' 的第三人称单数形式，常用于构成疑问句或陈述句，在这里引导一个一般疑问句。"
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -18242,12 +20050,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "n",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 3,
+      "historicalErrors": 5,
       "historyOccurrences": [
         {
           "sourceId": "t28-m1-1",
@@ -18271,10 +20079,28 @@
           "sourceId": "t13-m1-1",
           "qno": 1,
           "userAnswer": "n",
-          "missingLetters": "n",
-          "correct": "It",
+          "missingLetters": "t",
+          "correct": "it",
           "origin": "fm-practice-history",
-          "explain": "解析：\n1. 上下文分析：句子开头“I# emerged fr## early investi####### into nat#### process li## fermentation a## digestion”描述了生物化学的起源。根据语法，这里需要一个主语，指代前一句提到的“modern biochemistry”（现代生物化学）。\n2. 单词推断：在英语中，常用代词“It”来指代前文提到的单数名词或概念，以避免重复。这里“It”指代“modern biochemistry”，表示“它起源于...”。\n3. 字母填入：单词“It”由两个字母组成，第一个字母是“I”，第二个字母是“t”。题干中“I#”表示第一个字母已给出为“I”，第二个字母需要填入。因此，填入“t”形成完整单词“It”。\n4. 验证：填入后句子为“It emerged from early investigations into natural processes like fermentation and digestion”，意思通顺，符合上下文逻辑。"
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "t",
+          "correct": "it",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "t",
+          "correct": "it",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -18461,12 +20287,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nds",
+          "correct": "kinds",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "knowledge",
@@ -18510,12 +20346,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：knowledge\n意思：知识\n解析：该单词意为“知识”。这里需要填入5个字母“ledge”，构成“knowledge”，作为句子的主语。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ledge",
+          "correct": "knowledge",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "known",
@@ -18635,7 +20481,7 @@
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-1",
@@ -18645,6 +20491,15 @@
           "correct": "land",
           "origin": "fm-practice-history",
           "explain": "解析：\n    1. 单词分析：根据题干文本“Farmers emp### various techn##### such a# plowing a## irrigation t# manage la## effectively.”，这里需要填入一个名词，表示“土地”。\n    2. 上下文线索：前文提到农业活动，如犁地和灌溉，这些都与土地管理相关。\n    3. 字母数量：la## 有2个#，表示需要填入2个字母。\n    4. 答案推导：基础单词是“land”，意思是“土地”，填入“nd”后形成“land”。\n    5. 验证：填入后句子为“Farmers employ various techniques such as plowing and irrigation to manage land effectively.”，意思完整，表示管理土地。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "land",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -18726,12 +20581,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "uage",
+          "correct": "language",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "large",
@@ -18762,12 +20627,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "rge",
+          "correct": "large",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "later",
@@ -18906,12 +20781,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "arn",
+          "correct": "learn",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "leaving",
@@ -18977,12 +20862,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "[blank]",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "lead 的过去式是 led；lead to 表示导致。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t33-m1-2",
@@ -18993,6 +20878,15 @@
           "explain": "单词 'led' 是 'lead' 的过去式，意为 '导致'。需要填入 'ed' 构成 'led'，与主语 'Urbanization' 搭配，表示 '城市化导致了...'。",
           "meaning": "",
           "tip": "过去式/过去分词；常表示过去动作或被动状态。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ed",
+          "correct": "led",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -19025,12 +20919,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "gs",
+          "correct": "legs",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "let",
@@ -19061,12 +20965,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "et",
+          "correct": "let",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "life",
@@ -19174,12 +21088,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "live",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "life 是名词；live 通常是动词或形容词。固定搭配 marine life。",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 3,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t31-m1-2",
@@ -19208,6 +21122,15 @@
           "explain": "'li##'需要填入2个字母，与'marine'搭配，常见名词为'life'（生命）。'marine life'意为海洋生物。",
           "meaning": "",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "fe",
+          "correct": "life",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -19464,12 +21387,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "该空需要填入字母 'k' 和 'e'，组成单词 'like'，意为“像”。\n原句：behaviors li## sliding → behaviors like sliding\n解析：'like' 表示举例，意为“例如”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ke",
+          "correct": "like",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ke",
+          "correct": "like",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "literacy",
@@ -19499,12 +21441,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "ture",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t21-m1-2",
@@ -19514,6 +21456,15 @@
           "correct": "literacy",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“financial lite####”，意思是“金融素养”。\n  2. 单词识别：根据上下文，“lite####”应指“素养”，对应单词“literacy”。\n  3. 字母填入：单词“literacy”由“lite”和“racy”组成，其中“lite”已给出，需要填入“racy”。\n  4. 语法和意义：\n     - “literacy”意为“素养”或“读写能力”，常与“financial”搭配为“financial literacy”（金融素养）。\n     - 填入后，是固定术语，指理解和运用金融知识的能力。\n  5. 验证：参考答案为“racy”，与解析一致。"
+        },
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "racy",
+          "correct": "literacy",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -19738,12 +21689,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "ts",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t1-m1-2",
@@ -19753,6 +21704,15 @@
           "correct": "look",
           "origin": "fm-practice-history",
           "explain": "解析：'lo##' 需要填入两个字母，以形成动词 'look'，意为“寻找”。短语 'look for prey' 表示寻找猎物。句子中 'to look for prey' 是目的状语，说明巡逻的目的。因此，填入 'ok' 完成单词 'look'。"
+        },
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ok",
+          "correct": "look",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -19798,12 +21758,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ss",
+          "correct": "loss",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ss",
+          "correct": "loss",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "losses",
@@ -19833,12 +21812,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "sed",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t15-m1-2",
@@ -19848,6 +21827,15 @@
           "correct": "losses",
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 上下文分析：句子为 'Large-scale los### of spe#### are...'，意思是 '大规模的物种丧失是...'。'los###' 需要填入字母以形成一个名词，表示 '丧失' 或 '损失'。\n2. 语法和词性：'los###' 是名词，作为主语的一部分。根据上下文，它描述的是物种的丧失，因此应使用复数形式 'losses'，表示多次或大规模的丧失事件。\n3. 单词构建：'loss' 是基础名词，意为 '丧失'；其复数形式为 'losses'，通过添加 'es' 构成。这里 'los###' 有三个 #，对应 'ses'，形成 'losses'。\n4. 验证：填入 'ses' 后，单词为 'losses'，符合句子意思和语法，与 'Large-scale'（大规模的）搭配，强调多个或严重的丧失事件。"
+        },
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ses",
+          "correct": "losses",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -19965,12 +21953,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "aining",
+          "correct": "maintaining",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "make",
@@ -20001,12 +21999,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ke",
+          "correct": "make",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "makes",
@@ -20037,12 +22045,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 makes 意为“使得”。此处根据上下文“使得个人和机构更容易”可知，需填入字母“kes”。\n- 注意：主语是单数概念“集中”，故用第三人称单数形式。\n- 常见结构：make it + adj. + to do（使做某事变得……）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "kes",
+          "correct": "makes",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "making",
@@ -20109,12 +22127,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "le",
+          "correct": "male",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "males",
@@ -20145,12 +22173,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "les",
+          "correct": "males",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "manage",
@@ -20194,12 +22232,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "age",
+          "correct": "manage",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "many",
@@ -20292,12 +22340,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ine",
+          "correct": "marine",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "marked",
@@ -20551,12 +22609,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "nisms",
+          "correct": "mechanisms",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "melodies",
@@ -20659,12 +22727,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ory",
+          "correct": "memory",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "meticulously",
@@ -20781,7 +22859,7 @@
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-1",
@@ -20791,6 +22869,15 @@
           "correct": "millennia",
           "origin": "fm-practice-history",
           "explain": "解析：\n    1. 单词分析：根据题干文本“This prac#### has sust##### human soci##### for mill#####.”，这里需要填入一个名词，表示“千年”的复数形式，与“for”搭配表示时间长度。\n    2. 上下文线索：句子描述农业的长期历史，需要一个表示长时间段的词。\n    3. 字母数量：mill##### 有5个#，表示需要填入5个字母。\n    4. 答案推导：基础单词是“millennium”，意思是“一千年”，复数形式为“millennia”，填入“ennia”后形成“millennia”。\n    5. 验证：填入后句子为“This practice has sustained human societies for millennia.”，意思为“数千年”，符合历史背景。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ennia",
+          "correct": "millennia",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -20823,12 +22910,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 心灵；思维",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "nd",
+          "correct": "mind",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "minerals",
@@ -20917,12 +23014,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "ings",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t5-m1-2",
@@ -20932,6 +23029,15 @@
           "correct": "missions",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“frequency of miss####”，这里“miss####”是名词，与“missions”相关，指“任务”。\n  2. 语法和词性：空格在“miss####”中，需要填入后缀使成为名词复数“missions”。\n  3. 单词推断：前文提到“multiple missions”，这里应保持一致，用“missions”表示多次任务。\n  4. 字母匹配：空格有4个#，对应“ions”，将“miss”和“ions”组合成“missions”。\n  5. 验证：填入后句子为“frequency of missions”，与前文呼应，意思完整。"
+        },
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ions",
+          "correct": "missions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -20964,12 +23070,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：model，意为“模式，模型”。\n分析：原词为model，题干中给出mo###，需要填入3个字母。根据上下文“reliance of this mo###”，可知此处为model。\n填入字母：d, e, l。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "del",
+          "correct": "model",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "models",
@@ -21432,13 +23548,23 @@
           "qno": 8
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "mythorder",
+      "status": "historical-error",
+      "tip": "myth + -ology；-ology 结尾是 o-l-o-g-y。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m2-1",
+          "qno": 8,
+          "userAnswer": "mythorder",
+          "missingLetters": "ology",
+          "correct": "mythology",
+          "origin": "screenshot",
+          "explain": "截图中该空被判错；mythology 表示“神话”，由 myth + ology 构成。"
+        }
+      ]
     },
     {
       "id": "narrative",
@@ -21592,12 +23718,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "ures",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "单词：natural\n意思：自然的\n解析：该单词意为“自然的”。这里需要填入4个字母“ural”，构成“natural”，修饰“forces”，表示“自然力量”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-2",
@@ -21607,6 +23733,15 @@
           "correct": "natural",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里需要一个形容词来描述珊瑚礁的形成是自然的。原句是“These nat#### formations provide critical habitats...”，所以单词应为“natural”，意思是“自然的”或“天然的”。填入“ural”后，完整单词为“natural”，符合句意：这些天然构造提供关键的栖息地...\n\n注意：单词“natural”的拼写为n-a-t-u-r-a-l，这里需要填入的是“ural”部分，因为“nat”已经给出。"
+        },
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ural",
+          "correct": "Natural",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -21652,12 +23787,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "待填入字母的单词是“nat###”，需要填入3个字母以构成完整单词“nature”（特性）。名词，与“perishable”搭配，表示“易腐烂的特性”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ure",
+          "correct": "nature",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "navigate-v",
@@ -21757,12 +23902,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ed",
+          "correct": "need",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "needed",
@@ -22152,12 +24307,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"observations\"意为“观察”。该词由\"observation\"（观察）加复数后缀\"-s\"构成。在上下文\"specific observations\"（具体观察）中，需要填入字母\"ations\"以完成单词。注意：前面已有\"observ\"，因此填入\"ations\"共6个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ations",
+          "correct": "observations",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "obtain",
@@ -22237,12 +24402,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ean",
+          "correct": "Ocean",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "oceans",
@@ -22582,12 +24757,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "on",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "这里是 adaptations of the organisms。注意：第 8 题应是 reliance on，两个搭配不同。",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 5,
+      "historicalErrors": 9,
       "historyOccurrences": [
         {
           "sourceId": "t31-m2-1",
@@ -22634,6 +24809,42 @@
           "explain": "of 是介词，意为“的”。表示所属关系，the remarkable adaptations of the organisms（生物的显著适应性）。填写的字母为 f，构成完整单词。",
           "meaning": "的",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "f",
+          "correct": "of",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "f",
+          "correct": "of",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "f",
+          "correct": "of",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "f",
+          "correct": "of",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -22718,12 +24929,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词填空：of### → often。\n词义：经常，常常。\n解析：此处需要填入3个字母构成副词often，修饰referred to，表示“通常被称为”。注意：原题中“of###”实际上是“of###”，但根据上下文应该是“often”，而参考答案给出的是“ten”，但“often”由o,f,t,e,n组成，而题干是“of###”，所以填入“ten”后得到“often”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ten",
+          "correct": "often",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ten",
+          "correct": "often",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "on",
@@ -22831,12 +25061,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "f",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "单词：on\n释义：prep. 在……上；关于；在……时候\n解析：此处需要填入一个介词与“focuses”搭配。固定短语“focus on”意为“关注、聚焦于”。因此填入字母“n”构成“on”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -22846,6 +25076,24 @@
           "correct": "on",
           "origin": "fm-practice-history",
           "explain": "单词：of，介词，意为“……的”。\n分析：原词为of，题干中给出o#，需要填入1个字母。根据上下文“reliance o# this model”，可知此处为of。\n填入字母：f。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "on",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "n",
+          "correct": "on",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -22878,12 +25126,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ce",
+          "correct": "once",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "one",
@@ -23132,12 +25390,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "organical",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "这里需要名词复数 organisms；organic/organical 是形容词。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t35-m1-2",
@@ -23148,6 +25406,24 @@
           "explain": "organisms 是名词复数，意为“生物，有机体”。这里指沙漠中的生物。填写的字母为 nisms，构成完整单词。",
           "meaning": "生物；有机体",
           "tip": "复数或三单；many/some 后多用复数。"
+        },
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "nisms",
+          "correct": "organisms",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "nisms",
+          "correct": "organisms",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -23180,12 +25456,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "er",
+          "correct": "over",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "overall",
@@ -23216,12 +25502,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：overall，意为“整体的，全面的”。\n分析：原词为overall，题干中给出ove####，需要填入4个字母。根据上下文“enhancing ove#### economic produc######”，结合常见搭配“overall economic productivity”，可知此处为overall。\n填入字母：r, a, l, l。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "rall",
+          "correct": "overall",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "own",
@@ -23252,12 +25548,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "wn",
+          "correct": "own",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "paintings",
@@ -23484,12 +25790,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "该空位于'patt####'，需要填入四个字母以构成名词'patterns'，意为'模式'，与'migration'搭配，表示'迁徙模式'。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "erns",
+          "correct": "patterns",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "peace",
@@ -23631,12 +25947,40 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "待填入字母的单词是“pe###”，需要填入3个字母以构成完整单词“people”（人们）。根据上下文，句子主语是“people”，表示“人们开始有目的地……”，符合逻辑。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 3,
+      "historyOccurrences": [
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ple",
+          "correct": "people",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ple",
+          "correct": "people",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ple",
+          "correct": "people",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "perceive",
@@ -23666,12 +26010,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "epte",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t17-m1-2",
@@ -23681,6 +26025,15 @@
           "correct": "perceive",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里需要一个动词来描述“we”（我们）对“the world”（世界）的动作。填入字母“eive”后，形成单词“perceive”，意为“感知”，与“how and why”结合表示探索感知的方式和原因。\n\n语法分析：动词“perceive”作谓语，后接宾语“the world”，形成从句“we perceive the world”。\n\n词汇提示：单词“perceive”拼写为p-e-r-c-e-i-v-e，这里基于“perc-”部分，需要补全“eive”。注意拼写中“ei”的顺序。"
+        },
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "eive",
+          "correct": "perceive",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -23712,12 +26065,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "percetions",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "this 后接单数 perception，不能加 -s。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t35-m1-2",
@@ -23728,6 +26081,15 @@
           "explain": "perception 是名词，意为“看法，认识”。本句中，this perception 指代前文将沙漠视为不毛之地的观点。填写的字母为 ption，构成完整单词。",
           "meaning": "看法，认识",
           "tip": "抽象名词；看到 of / the / adjective 后常需要名词。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ption",
+          "correct": "perception",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -23760,12 +26122,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t13-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "iods",
+          "correct": "periods",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "perspective",
@@ -24081,12 +26453,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 塑料（复数）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "tics",
+          "correct": "plastics",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "play",
@@ -24355,12 +26737,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "arity",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t14-m1-1",
@@ -24370,6 +26752,15 @@
           "correct": "population",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“Natural selection explains how advantageous traits increase in frequency in a popul#####.”，意思是“自然选择解释了有利特征如何在种群中增加频率。”\n  2. 语法和逻辑：这里需要一个名词，作为介词“in”的宾语，表示“种群”或“群体”。\n  3. 单词推断：在生物学和进化论中，“population”是核心术语，指代一个物种的个体群。\n  4. 字母填入：原单词为“popul#####”，有5个#，对应填入“ation”，形成“population”。\n  5. 验证：填入后单词为“population”，名词形式正确，句子完整表达了自然选择在种群中的作用。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ation",
+          "correct": "population",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -24487,12 +26878,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词填空：powe#### → powerful。\n词义：强大的，有力量的。\n解析：此处需要填入4个字母构成形容词powerful，修饰kingdoms，表示“强大的王国”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "rful",
+          "correct": "powerful",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "practice",
@@ -24523,12 +26924,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "tice",
+          "correct": "practice",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "practices",
@@ -24749,12 +27160,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"principles\"意为“原则”。该词由\"principle\"（原则）加复数后缀\"-s\"构成。在上下文\"general principles\"（一般原则）中，需要填入字母\"iples\"以完成单词。注意：前面已有\"princ\"，因此填入\"iples\"共5个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "iples",
+          "correct": "principles",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "private",
@@ -24784,12 +27205,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "mary",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-2",
@@ -24799,6 +27220,15 @@
           "correct": "private",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里描述收藏家是私人的。单词 'private' 是形容词，意为“私人的”或“私有的”，用于修饰 collectors（收藏家）。\n待填入部分 'pri####' 中，'pri' 是常见开头，需要添加字母形成 'private'。\n填入 'vate' 后，形成 'private'，符合句意：'private collectors'（私人收藏家）。\n注意：'private' 的拼写是 p-r-i-v-a-t-e，共7个字母，待填入部分有4个#，对应 'vate' 4个字母。"
+        },
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "vate",
+          "correct": "private",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -24830,12 +27260,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "duce",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t6-m1-2",
@@ -24845,6 +27275,15 @@
           "correct": "process",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，'This pro#### was ti##-consuming'，意思是 '这个过程是耗时的'。'process' 意为 '过程、流程'，指代前文提到的艺术家制作颜料的行为，符合语境。\n\n   - 词义分析：'process' 是一个名词，描述一系列步骤或活动。\n   - 语境分析：前文描述了制作颜料的方法，这里用 'this process' 来指代它。\n   - 字母数：'pro####' 有四个 '#'，需要填入四个字母，'cess' 填入后形成 'process'，共七个字母。"
+        },
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "cess",
+          "correct": "process",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -24934,12 +27373,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "vide",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先识别前缀，再看词性和上下文。",
       "priority": 4,
       "kind": "error",
-      "historicalErrors": 2,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t31-m1-2",
@@ -24958,6 +27397,24 @@
           "correct": "produce",
           "origin": "fm-practice-history",
           "explain": "单词：produce（生产，产生）。\n解析：produce 意为“生产、产生”，与第一题相同。\n此处 produce clean and renewable energy 意为“产生清洁和可再生的能源”。\n注意：原文中第二个“pro####”应补全为“produce”。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "duce",
+          "correct": "produce",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t31-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "duce",
+          "correct": "produce",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -25003,12 +27460,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "uced",
+          "correct": "produced",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "uced",
+          "correct": "produced",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "producing",
@@ -25121,12 +27597,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ction",
+          "correct": "production",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "productivity",
@@ -25156,12 +27642,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "[blank]",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "形容经济“生产率”要用名词 productivity：produc + tivity。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -25172,6 +27658,15 @@
           "explain": "单词：productivity，意为“生产力，生产率”。 分析：原词为productivity，题干中给出produc######，需要填入7个字母。根据上下文“enhancing overall economic produc######”，结合常见短语“economic productivity”，可知此处为productivity。 填入字母：t, i, v, i, t, y。注意：实际需要7个字母，但tivity只有6个？检查：productivity有12个字母，produc是6个，剩余6个字母是tivity，但题干中######是6个#，而答案tivity是6个字母，正确。",
           "meaning": "生产力，生产率",
           "tip": "先识别前缀，再看词性和上下文。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "tivity",
+          "correct": "productivity",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -25204,12 +27699,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "oting",
+          "correct": "promoting",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "prosthetics-v",
@@ -25263,12 +27768,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "tect",
+          "correct": "protect",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "provide",
@@ -25324,12 +27839,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "duce",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 3,
+      "historicalErrors": 5,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-2",
@@ -25357,6 +27872,24 @@
           "correct": "provide",
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 根据上下文，博物馆“提供”一个空间，这是博物馆的基本功能之一。\n2. 单词“pro####”以“pro”开头，提示可能是“provide”（提供），这是一个常见动词。\n3. 填入“vide”后，形成“provide”，符合语法和语义：博物馆提供一个空间。\n4. 检查字母数：“pro####”有6个#，需要填入4个字母，而“vide”正好是4个字母，匹配。\n5. 在句子中：“They provide a space...” 意思通顺，与后文“where people can engage...” 逻辑连贯。"
+        },
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "vide",
+          "correct": "provide",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "vide",
+          "correct": "provide",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -25425,12 +27958,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 provide，意为“提供”。\n- 动词形式：providing 是现在分词，表示主动进行。\n- 句子结构：vassals providing military service，封臣提供军事服务。\n- 词根：pro- 向前，vid- 看，合起来“预见”，引申为“提供”。\n- 注意：单词为 prov#####，所以前四个字母是 prov，后五个字母是 iding，合起来为 providing。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "iding",
+          "correct": "providing",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "purposefully",
@@ -25460,12 +28003,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "uation",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "副词；通常修饰动词、形容词或整句。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t30-m1-2",
@@ -25475,6 +28018,15 @@
           "correct": "purposefully",
           "origin": "fm-practice-history",
           "explain": "待填入字母的单词是“purpos######”，需要填入6个字母以构成完整单词“purposefully”（有目的地）。副词修饰动词“began”，表示“开始有目的地塑造”，符合语义。"
+        },
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "efully",
+          "correct": "purposefully",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -25543,12 +28095,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 问题（复数）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "tions",
+          "correct": "questions",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "rain",
@@ -25687,12 +28249,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ched",
+          "correct": "reached",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "realist",
@@ -25727,7 +28299,7 @@
       "tip": "这里修饰 plays，是形容词 Realist，不能给形容词再加复数 -s。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t39-m1-2",
@@ -25737,6 +28309,15 @@
           "correct": "Realist",
           "origin": "fm-practice-history",
           "explain": "单词'realists'意为'现实主义者'。此处指现实主义戏剧的倡导者。由'real'（真实的）和'-ist'（……主义者）及复数'-s'组成。"
+        },
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "st",
+          "correct": "Realist",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -25769,12 +28350,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词\"reasoning\"意为“推理”。该词由\"reason\"（推理）加后缀\"-ing\"构成。在上下文\"Deductive reasoning\"（演绎推理）中，需要填入字母\"oning\"以完成单词。注意：前面已有\"reas\"，因此填入\"oning\"共5个字母。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "oning",
+          "correct": "reasoning",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "recipients",
@@ -25804,12 +28395,12 @@
           "qno": 1
         }
       ],
-      "userAnswer": "tions",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t21-m1-2",
@@ -25819,6 +28410,15 @@
           "correct": "recipients",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“These loans empower recip##### to st### or exp### small busin#####”，意思是“这些贷款使接受者能够创办或扩展小型企业”。\n  2. 单词识别：根据上下文，“recip#####”应指“接受者”，对应单词“recipients”。\n  3. 字母填入：单词“recipients”由“recip”和“ients”组成，其中“recip”已给出，需要填入“ients”。\n  4. 语法和意义：\n     - “recipients”是“recipient”的复数形式，意为“接受者”，符合句子中贷款受益人的描述。\n     - 填入后，句子完整表达为“empower recipients to start or expand small businesses”，逻辑通顺。\n  5. 验证：参考答案为“ients”，与解析一致。"
+        },
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ients",
+          "correct": "recipients",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -25897,12 +28497,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "uce",
+          "correct": "reduce",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "reefs",
@@ -25969,12 +28579,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "lect",
+          "correct": "reflect",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "region",
@@ -26086,12 +28706,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "lates",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t1-m1-2",
@@ -26101,6 +28721,15 @@
           "correct": "regularly",
           "origin": "fm-practice-history",
           "explain": "解析：'regu#####' 需要填入六个字母，以形成副词 'regularly'，意为“定期地”。该词修饰动词 'patrols'，表示老虎定期巡逻领地。'regularly' 来自形容词 'regular'，加上后缀 '-ly' 构成副词。因此，填入 'larly' 完成单词 'regularly'。"
+        },
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "larly",
+          "correct": "regularly",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26241,12 +28870,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "remarkable 是形容词，意为“显著的，非凡的”。修饰 adaptations（适应性）。填写的字母为 kable，构成完整单词。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "kable",
+          "correct": "remarkable",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "removing",
@@ -26348,12 +28987,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "ment",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t8-m1-2",
@@ -26363,6 +29002,15 @@
           "correct": "replicate",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里需要填入一个动词，表示“复制”或“模仿”。原文是“carefully repli#### natural habi####”，意思是“精心复制自然栖息地”。\n单词“replicate”意为“复制、模仿”。\n待填入部分有4个#，对应“cate”，因为“replicate”的拼写是“replicate”，其中“repli”已给出，剩余部分是“cate”。\n因此，答案填入“cate”，形成完整单词“replicate”。"
+        },
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "cate",
+          "correct": "replicate",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26395,12 +29043,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "require 是动词，意为“需要”。主语 these severe environments 需要 resilience and innovation。填写的字母为 uire，构成完整单词。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "uire",
+          "correct": "require",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "requires",
@@ -26430,12 +29088,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "ests",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "动词第三人称单数；先看空格在句子里要什么词性，再填对应形式。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t32-m1-2",
@@ -26445,6 +29103,15 @@
           "correct": "requires",
           "origin": "fm-practice-history",
           "explain": "该空位于'requ####'，需要填入四个字母以构成动词'requires'，意为'需要'，主语是'interpreting'（动名词作主语），谓语动词用单数形式。"
+        },
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ires",
+          "correct": "requires",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26594,12 +29261,12 @@
           "qno": 6
         }
       ],
-      "userAnswer": "lves",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t26-m1-2",
@@ -26609,6 +29276,15 @@
           "correct": "resource",
           "origin": "fm-practice-history",
           "explain": "名词，意为'资源'。由re-（再）和source（来源）组成。此处为单数，与allocation搭配表示'资源分配'。"
+        },
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "urce",
+          "correct": "resource",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26653,12 +29329,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "resolving",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "reso + urces；和 people 并列的是名词 resources，不是动词 resolving。",
       "priority": 4,
       "kind": "error",
-      "historicalErrors": 2,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t12-m1-2",
@@ -26678,6 +29354,24 @@
           "explain": "单词 resources 意为“资源”。此处根据上下文“人口和资源”中的“资源”可知，需填入字母“urces”。 - 词根：re-（再）+ source（来源） - 常见搭配：natural resources（自然资源）",
           "meaning": "资源",
           "tip": "复数或三单；检查主谓一致和名词单复数。"
+        },
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "urces",
+          "correct": "resources",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "urces",
+          "correct": "resources",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26796,7 +29490,7 @@
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t7-m1-1",
@@ -26806,6 +29500,15 @@
           "correct": "retrieve",
           "origin": "fm-practice-history",
           "explain": "解析：根据题干上下文，'h## we st### and retr#### information'，意思是'我们如何存储和检索信息'。'retr####' 需要填入字母以形成一个单词，表示'检索'。结合参考答案'ieve'，填入后得到单词'retrieve'。\n单词'retrieve'是动词，意为'检索、取回'，常用于描述从记忆中提取信息。\n在句子中，'retrieve'与'store'并列，是记忆过程的关键步骤。\n因此，填入'ieve'是正确的，完成单词'retrieve'。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ieve",
+          "correct": "retrieve",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26837,12 +29540,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "88888",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t24-m1-2",
@@ -26852,6 +29555,15 @@
           "correct": "retrieves",
           "origin": "fm-practice-history",
           "explain": "解析：\n    1. 根据题干上下文，短语为“and retr##### information”，与“stores”并列，意思是“和检索信息”。\n    2. 动词“retrieve”意为“检索、取回”，这里用第三人称单数形式“retrieves”与“brain”匹配，表示大脑的功能。\n    3. 单词“retrieve”源自拉丁语“retrahere”（拉回），常用于描述记忆或数据访问过程。\n    4. 待填空部分“retr#####”有6个#，对应“ieves”，因为“retr”已给出，所以填入“ieves”完成单词。"
+        },
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ieves",
+          "correct": "retrieves",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -26884,12 +29596,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "able",
+          "correct": "reusable",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "reveals",
@@ -27073,12 +29795,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "rises",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "risk 的复数是 risks，中间保留 sk；rise 是“上升”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t36-m1-2",
@@ -27089,6 +29811,15 @@
           "explain": "单词：risks，名词，意为“风险，危险”。 分析：原词为risks，题干中给出ri###，需要填入3个字母。根据上下文“significant ri###”，可知此处为risks。 填入字母：s, k, s。",
           "meaning": "风险，危险",
           "tip": "复数或三单；many/some 后多用复数。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "sks",
+          "correct": "risks",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -27203,12 +29934,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词rock意思是“岩石”。这里指固体岩石，即沉积物经过压力作用后形成的岩石。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ck",
+          "correct": "rock",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "rocks",
@@ -27320,12 +30061,12 @@
           "qno": 6
         }
       ],
-      "userAnswer": "led",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t16-m1-2",
@@ -27335,6 +30076,15 @@
           "correct": "scarce",
           "origin": "fm-practice-history",
           "explain": "解析：'sca###' 有6个字母，其中前三个字母是 'sca'，后三个字母需要填入。根据上下文 'sca### water'，意思是“稀缺的水源”，因此应填入 'scarce'。参考答案 'rce' 与 'sca' 组合成 'scarce'。\n\n  语法分析：'scarce' 是形容词，修饰名词 'water'，表示水资源不足。\n\n  词义确认：'scarce' 意为“稀少的、缺乏的”，常用于描述资源有限的情况，在沙漠环境中水是稀缺的。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "rce",
+          "correct": "scarce",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -27366,13 +30116,23 @@
           "qno": 7
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "scenre",
+      "status": "historical-error",
+      "tip": "scene 的复数是 scenes，结尾是 -nes；注意 e 后接 s。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m2-1",
+          "qno": 7,
+          "userAnswer": "scenre",
+          "missingLetters": "nes",
+          "correct": "scenes",
+          "origin": "screenshot",
+          "explain": "截图中该空被判错；scene 的复数是 scenes，表示“场景”。"
+        }
+      ]
     },
     {
       "id": "science",
@@ -27511,12 +30271,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ntality",
+          "correct": "sentimentality",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "sentiments",
@@ -27636,12 +30406,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 service，意为“服务”。\n- 名词：military service 军事服务。\n- 词根：serv- 来自拉丁语 servire，意为“服务”。\n- 注意：单词为 ser####，所以前三个字母是 ser，后四个字母是 vice，合起来为 service。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "vice",
+          "correct": "service",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "settings",
@@ -27672,12 +30452,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ings",
+          "correct": "settings",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "several",
@@ -27708,12 +30498,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "eral",
+          "correct": "several",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "severe",
@@ -27743,12 +30543,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "sevice",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "sev + ere；结尾是 -ere。service 才是“服务”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t35-m1-2",
@@ -27759,6 +30559,15 @@
           "explain": "severe 是形容词，意为“严酷的，严峻的”。修饰 environments（环境），指沙漠的严酷环境。填写的字母为 ere，构成完整单词。",
           "meaning": "严酷的，严峻的",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ere",
+          "correct": "severe",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -27837,12 +30646,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "待填入字母的单词是“sh###”，需要填入3个字母以构成完整单词“shape”（塑造）。动词原形，与“wood and stone”搭配，表示“将木头和石头塑造成工具”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ape",
+          "correct": "shape",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "shaped",
@@ -28063,12 +30882,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词show意思是“显示、表明”。这里指化石显示了过去曾经生活在那里的有机体。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ow",
+          "correct": "show",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "signals",
@@ -28099,12 +30928,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "nals",
+          "correct": "signals",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "significant",
@@ -28148,12 +30987,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词填空：signi###### → significant。\n词义：显著的，重要的。\n解析：此处需要填入6个字母，构成形容词significant，修饰changes。表示“显著的变化”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ficant",
+          "correct": "significant",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "significantly",
@@ -28508,13 +31357,23 @@
           "qno": 1
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "smart",
+      "status": "historical-error",
+      "tip": "small 是 sm + all；不要把后缀写成 art。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t39-m2-1",
+          "qno": 1,
+          "userAnswer": "smart",
+          "missingLetters": "all",
+          "correct": "small",
+          "origin": "screenshot",
+          "explain": "截图中该空被判错；句意是“这些小型作品”，正确拼写为 small。"
+        }
+      ]
     },
     {
       "id": "so",
@@ -28685,12 +31544,58 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 social，意为“社会的”。\n- 形容词：修饰 structure。\n- 词根：soci- 来自拉丁语 socius，意为“同伴”。\n- 同根词：society（社会），sociable（好交际的）。\n- 注意：单词为 soc###，所以前三个字母是 soc，后三个字母是 ial，合起来为 social。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 5,
+      "historyOccurrences": [
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "ial",
+          "correct": "social",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ial",
+          "correct": "social",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ial",
+          "correct": "social",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ial",
+          "correct": "social",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ial",
+          "correct": "social",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "socially",
@@ -28793,12 +31698,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词：societies\n含义：社会（复数形式）\n解析：根据上下文“These soci##### have gre#### influenced mod### governance”，这里需要填入一个名词复数，表示“这些社会”。societies 是 society 的复数形式，意为“社会”。注意拼写：s-o-c-i-e-t-i-e-s。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "eties",
+          "correct": "societies",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "sounds",
@@ -28926,12 +31841,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "are",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "单词\"space\"意为\"空间\"。结合上文\"in regions of\"，这里指在\"空间\"中。\"sp\"后加\"ace\"构成完整单词。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t11-m1-1",
@@ -28941,6 +31856,15 @@
           "correct": "space",
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 根据上下文，博物馆提供一个“空间”让人们接触艺术和历史文物，这是一个常见的表达。\n2. 单词“sp###”以“sp”开头，提示可能是“space”（空间），这是一个名词。\n3. 填入“ace”后，形成“space”，符合语义：博物馆提供一个物理或虚拟的空间。\n4. 检查字母数：“sp###”有3个#，需要填入3个字母，而“ace”正好是3个字母，匹配。\n5. 在句子中：“...a space where people can engage...” 意思清晰，指代一个场所或环境。"
+        },
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ace",
+          "correct": "space",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -28972,12 +31896,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "ding",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t1-m1-2",
@@ -28987,6 +31911,15 @@
           "correct": "spanning",
           "origin": "fm-practice-history",
           "explain": "解析：'span####' 需要填入四个字母，以形成动词 'spanning'，意为“绵延”或“跨越”。该词是 'span' 的现在分词形式，用作形容词修饰 'territory'，表示领地覆盖的范围。句子中 'a large territory spanning several square miles' 意为一片绵延数平方英里的大领地。因此，填入 'ning' 完成单词 'spanning'。"
+        },
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ning",
+          "correct": "spanning",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -29032,12 +31965,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "cies",
+          "correct": "species",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "cies",
+          "correct": "species",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "specifically",
@@ -29291,12 +32243,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "are",
+          "correct": "square",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "stability",
@@ -29327,12 +32289,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "名词，意为'稳定性'。由stable（稳定的）变y为i加-ity构成抽象名词。与growth并列，表示'稳定性和增长'。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ility",
+          "correct": "stability",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "start",
@@ -29362,12 +32334,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "and",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t21-m1-2",
@@ -29377,6 +32349,15 @@
           "correct": "start",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“to st### or exp### small busin#####”，意思是“能够创办或扩展小型企业”。\n  2. 单词识别：根据上下文，“st###”应指“创办”或“开始”，对应单词“start”。\n  3. 字母填入：单词“start”由“st”和“art”组成，其中“st”已给出，需要填入“art”。\n  4. 语法和意义：\n     - “start”意为“开始”或“创办”，常用于描述创业或启动项目。\n     - 填入后，与“expand”（扩展）形成并列结构，表示贷款的两个目的。\n  5. 验证：参考答案为“art”，与解析一致。"
+        },
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "art",
+          "correct": "start",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -29531,7 +32512,7 @@
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t7-m1-1",
@@ -29541,6 +32522,15 @@
           "correct": "store",
           "origin": "fm-practice-history",
           "explain": "解析：根据题干上下文，'h## we st### and retr#### information'，意思是'我们如何存储和检索信息'。'st###' 需要填入字母以形成一个单词，表示'存储'。结合参考答案'ore'，填入后得到单词'store'。\n单词'store'是动词，意为'存储、保存'，常用于描述信息或数据的保留。\n在句子中，'store'与'retrieve'并列，表示记忆过程。\n因此，填入'ore'是正确的，完成单词'store'。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ore",
+          "correct": "store",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -29573,12 +32563,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "res",
+          "correct": "stores",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "strategies",
@@ -29608,12 +32608,12 @@
           "qno": 7
         }
       ],
-      "userAnswer": "agies",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t18-m1-2",
@@ -29623,6 +32623,15 @@
           "correct": "strategies",
           "origin": "fm-practice-history",
           "explain": "根据上下文，'to develop strat##### for maint###### ecological bal####' 表示 '制定维持生态平衡的策略'。这里需要一个名词的复数形式，指代计划或方法。因此，需要填入 'egies' 来完成单词 'strategies'（策略）。\n\n解析步骤：\n1. 识别语境：句子讨论保护生态学的行动，'strat#####' 应是 'develop' 的宾语，表示具体的措施。\n2. 分析单词结构：'strat#####' 有 10 个字符，其中 5 个是已知的 'strat'，需要填入 5 个字母。\n3. 匹配单词：以 'strat' 开头的常见名词是 'strategy'，但这里需要复数形式 'strategies'，因为涉及多种策略。\n4. 确认答案：填入 'egies' 后，形成 'strategies'，使句子通顺：'strategies for maintaining ecological balance'（维持生态平衡的策略）。\n\n注意：'strategies' 在保护生态学中常指长期计划，如栖息地恢复或政策制定。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "egies",
+          "correct": "strategies",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -29700,12 +32709,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "stress",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "这里和 lightweight 并列，需要形容词 strong；stress 是“压力”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t38-m1-2",
@@ -29716,6 +32725,15 @@
           "explain": "单词：strong，意为“坚固的，强壮的”。 题目中“str###”需要填入3个字母，构成单词strong。 解析：形容词，描述部件特性，与“lightweight”并列，表示“轻巧坚固”，因此填入“ong”形成strong。",
           "meaning": "轻巧坚固",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ong",
+          "correct": "strong",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -29823,12 +32841,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 结构（复数）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "tures",
+          "correct": "structures",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "students",
@@ -29859,12 +32887,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ents",
+          "correct": "students",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "study",
@@ -29980,12 +33018,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t7-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "ying",
+          "correct": "Studying",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ying",
+          "correct": "Studying",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "submerged",
@@ -30182,12 +33239,49 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "形容词，意为'这样的、如此的'。修饰decisions，指代前文提到的选择。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 4,
+      "historyOccurrences": [
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "ch",
+          "correct": "such",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ch",
+          "correct": "such",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t26-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ch",
+          "correct": "such",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ch",
+          "correct": "such",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "sun",
@@ -30421,12 +33515,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ained",
+          "correct": "sustained",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "system",
@@ -30505,12 +33609,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "chnisms",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t9-m1-2",
@@ -30520,6 +33624,15 @@
           "correct": "systematically",
           "origin": "fm-practice-history",
           "explain": "解析：根据题干上下文，'systema#######' 应该是副词，修饰动词 'approach'。结合参考答案 'tically'，填入后形成 'systematically'（系统地）。句子 'approach problems systema#######' 意思是系统地处理问题，所以 'systematically' 符合。\n单词 'systematically' 是形容词 'systematic' 的副词形式，由 'systematic' + 'ally' 构成。\n填入过程：systema####### → 填入 'tically' → systematically。"
+        },
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "tically",
+          "correct": "systematically",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -30595,7 +33708,7 @@
       "tip": "复数或三单；检查主谓一致和名词单复数。",
       "priority": 4,
       "kind": "error",
-      "historicalErrors": 2,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t34-m2-1",
@@ -30610,10 +33723,19 @@
           "sourceId": "t23-m1-1",
           "qno": 6,
           "userAnswer": "ology",
-          "missingLetters": "ology",
-          "correct": "techniques",
+          "missingLetters": "iques",
+          "correct": "Techniques",
           "origin": "fm-practice-history",
-          "explain": "解析：\n    1. 单词分析：根据题干文本“Farmers emp### various techn##### such a# plowing a## irrigation t# manage la## effectively.”，这里需要填入一个名词的复数形式，表示“技术”或“方法”。\n    2. 上下文线索：前文提到“employ”，后文举例“plowing and irrigation”，说明这些是具体的技术。\n    3. 字母数量：techn##### 有5个#，表示需要填入5个字母。\n    4. 答案推导：基础单词是“technique”，意思是“技术”，复数形式为“techniques”，填入“iques”后形成“techniques”。\n    5. 验证：填入后句子为“Farmers employ various techniques such as plowing and irrigation to manage land effectively.”，符合复数形式，表示多种技术。"
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "iques",
+          "correct": "Techniques",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -30682,12 +33804,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "ll",
+          "correct": "tell",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "temperature",
@@ -30757,12 +33889,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "rature",
+          "correct": "temperature",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "than",
@@ -31444,21 +34586,93 @@
           "qno": 5
         }
       ],
-      "userAnswer": "op",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "单词 'the' 是定冠词，意为“这，那”。\n题干中 'from t## soil' 表示“从土壤中”，\n't##' 由 't' 和两个 '#' 组成，\n填入 'he' 后得到 'the'，\n与上下文 'from the soil' 相符。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 9,
       "historyOccurrences": [
         {
           "sourceId": "t22-m1-1",
           "qno": 5,
           "userAnswer": "op",
-          "missingLetters": "op",
-          "correct": "the",
+          "missingLetters": "he",
+          "correct": "The",
           "origin": "fm-practice-history",
-          "explain": "解析：\n1. 上下文分析：短语为“from t## growing awar#####”，这里需要一个冠词修饰“growing awareness”。\n2. 单词推断：待填单词是“t##”，需要填入两个字母。根据英语语法，冠词“the”用于特指“日益增长的认识”。\n3. 语法和搭配：在“from t## growing awar#####”中，填入“the”形成“from the growing awareness”，表示从特定的认识中发展而来。\n4. 答案确认：填入“he”后，单词为“the”，与参考答案一致，且符合冠词用法。"
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t1-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t5-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t15-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "he",
+          "correct": "The",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -31495,13 +34709,22 @@
       "tip": "theatre/theater 的形容词是 theatrical：theat + rical。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t39-m1-2",
           "userAnswer": "theaterist",
           "correct": "theatrical",
           "origin": "earlier-screenshot"
+        },
+        {
+          "sourceId": "t39-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "rical",
+          "correct": "theatrical",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -31663,12 +34886,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "these",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "significance 前需要所有格 their；these 是指示限定词“这些”。",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 4,
+      "historicalErrors": 9,
       "historyOccurrences": [
         {
           "sourceId": "t34-m2-1",
@@ -31706,6 +34929,51 @@
           "explain": "their 是形容词性物主代词，意为“它们的”。这里指代前文提到的 deserts（沙漠）的 critical ecological significance。填写的字母为 eir，构成完整单词。",
           "meaning": "它们的",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "eir",
+          "correct": "their",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "eir",
+          "correct": "their",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t21-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "eir",
+          "correct": "their",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "eir",
+          "correct": "their",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t35-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "eir",
+          "correct": "their",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -31825,12 +35093,12 @@
           "qno": 8
         }
       ],
-      "userAnswer": "This（两次把 th__ 补成了 this）",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "两张图里都需要复数代词 they。th + ey；先找复数先行词 AUVs / ancestors。",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 3,
+      "historicalErrors": 4,
       "historyOccurrences": [
         {
           "sourceId": "t2-m1-1",
@@ -31856,6 +35124,15 @@
           "userAnswer": "This（两次把 th__ 补成了 this）",
           "correct": "they",
           "origin": "earlier-screenshot"
+        },
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ey",
+          "correct": "They",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -31901,12 +35178,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t9-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "king",
+          "correct": "thinking",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "this",
@@ -31950,12 +35237,31 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t2-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "is",
+          "correct": "this",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t19-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "is",
+          "correct": "this",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "though",
@@ -32168,12 +35474,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "ny",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "单词：time\n意思：时间\n解析：该单词意为“时间”。这里需要填入2个字母“me”，构成“time”，与“over”搭配，表示“随着时间”。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t6-m1-2",
@@ -32183,6 +35489,15 @@
           "correct": "time",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，'ti##-consuming'，意思是 '耗时的'。'time' 意为 '时间'，与 'consuming' 组合成复合形容词 'time-consuming'，表示需要大量时间，符合语境。\n\n   - 词义分析：'time' 是名词，在这里作为复合词的一部分。\n   - 搭配分析：'time-consuming' 是固定搭配，意为 '耗时的'，常用于描述任务或过程。\n   - 字母数：'ti##' 有两个 '#'，需要填入两个字母，'me' 填入后形成 'time'，共四个字母。"
+        },
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "me",
+          "correct": "time",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -32287,12 +35602,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "ny",
+          "correct": "tiny",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "to",
@@ -32583,12 +35908,103 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词为'to'，意为'到'。这里需要填入字母'o'，构成完整的单词。'connected to'意为'与……相连'。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 10,
+      "historyOccurrences": [
+        {
+          "sourceId": "t3-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t18-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t32-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t36-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-1",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "o",
+          "correct": "to",
+          "origin": "fm-test-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "together",
@@ -32645,12 +36061,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ther",
+          "correct": "together",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "tools",
@@ -32800,12 +36226,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词transforms由前缀trans-（表示“转变、转移”）和词根form（形状、形式）组成。在这里，主语是pressure（压力），宾语是sediments（沉积物），因此transforms意为“将……转变为……”，即压力将沉积物转变为固体岩石。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "forms",
+          "correct": "transforms",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "transportation",
@@ -33121,12 +36557,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "cally",
+          "correct": "typically",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "uncover",
@@ -33193,12 +36639,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "ergo",
+          "correct": "undergo",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "underground",
@@ -33359,12 +36815,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "cover",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "v. 理解",
       "priority": 5,
       "kind": "error",
-      "historicalErrors": 3,
+      "historicalErrors": 6,
       "historyOccurrences": [
         {
           "sourceId": "t24-m1-2",
@@ -33392,6 +36848,33 @@
           "correct": "understand",
           "origin": "fm-practice-history",
           "explain": "解析：教育资源帮助游客理解多元文化、历史时期等。单词 'understand' 意思是理解，其拼写为 u-n-d-e-r-s-t-a-n-d。在题干中，'under#####' 表示需要填入六个字母，以完成 'understand' 单词。填入 'stand' 后，形成 'understand'，符合句意。\n\n句子翻译：帮助游客理解多元文化。"
+        },
+        {
+          "sourceId": "t12-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "stand",
+          "correct": "understand",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t24-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "stand",
+          "correct": "understand",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "stand",
+          "correct": "understand",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -33602,12 +37085,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词 urban 意为“城市的”。此处根据上下文“在城市地区”可知，需填入字母“ban”。\n- 词根：urb（城市）+ -an（形容词后缀）\n- 常见搭配：urban area（城区）",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t34-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ban",
+          "correct": "urban",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "use",
@@ -33664,12 +37157,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "该空需要填入字母 's' 和 'e'，组成单词 'use'，意为“使用”。\n原句：They u## tools... → They use tools...\n解析：根据上下文，乌鸦使用工具，所以动词应为 'use'。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t11-m1-2",
+          "qno": 6,
+          "userAnswer": "",
+          "missingLetters": "se",
+          "correct": "use",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "used",
@@ -33971,12 +37474,12 @@
           "qno": 10
         }
       ],
-      "userAnswer": "ables",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 4,
       "kind": "error",
-      "historicalErrors": 2,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t17-m1-1",
@@ -33995,6 +37498,15 @@
           "correct": "vegetation",
           "origin": "fm-practice-history",
           "explain": "解析：'veget#####' 有10个字母，其中前5个字母是 'veget'，后5个字母需要填入。根据上下文 'limited veget#####'，意思是“有限的植被”，因此应填入 'vegetation'。参考答案 'ation' 与 'veget' 组合成 'vegetation'。\n\n  语法分析：'vegetation' 是名词，作 'limited' 的宾语，表示植物覆盖。\n\n  词义确认：'vegetation' 意为“植被、植物”，指一个地区的植物总体，在沙漠中通常有限。"
+        },
+        {
+          "sourceId": "t16-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "ation",
+          "correct": "vegetation",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -34063,12 +37575,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "tors",
+          "correct": "visitors",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "visual",
@@ -34252,12 +37774,12 @@
           "qno": 9
         }
       ],
-      "userAnswer": "ter",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t22-m1-2",
@@ -34267,6 +37789,15 @@
           "correct": "warms",
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为\"The Gulf Stream, for instance, wa### the North Atlantic Current, ...\"，意为\"例如，湾流...北大西洋洋流\"。\n  2. 单词识别：根据科学知识，湾流是暖流，会温暖周边水域。\"wa###\"应为\"warms\"，动词意为\"使温暖\"。\n  3. 字母填入：\"wa###\"有5个字母，已知部分为\"wa\"，后面有3个#。完整单词为\"warms\"，所以填入\"rms\"。\n  4. 验证：\"warms the North Atlantic Current\"表示湾流温暖北大西洋洋流，符合上下文对洋流作用的描述。"
+        },
+        {
+          "sourceId": "t22-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "rms",
+          "correct": "warms",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -34386,12 +37917,12 @@
           "qno": 3
         }
       ],
-      "userAnswer": "on",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t37-m2-1",
@@ -34401,6 +37932,24 @@
           "correct": "was",
           "origin": "fm-practice-history",
           "explain": "单词 'was' 是 be 动词的过去式，意为“是”。\n题干中 'w##' 需要填入 'as' 构成完整单词。\n此处描述封建主义是主导的社会结构。"
+        },
+        {
+          "sourceId": "t6-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "as",
+          "correct": "was",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "as",
+          "correct": "was",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -34494,12 +38043,12 @@
           "qno": 2
         }
       ],
-      "userAnswer": "nt",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t7-m1-1",
@@ -34509,6 +38058,24 @@
           "correct": "ways",
           "origin": "fm-practice-history",
           "explain": "解析：根据题干上下文，'the wa## that peo### interpret sensory sig####'，意思是'人们解释感官信号的方式'。'wa##' 需要填入字母以形成一个单词，表示'方式'。结合参考答案'ys'，填入后得到单词'ways'。\n单词'ways'是名词'way'的复数形式，意为'方式、方法'。\n在句子中，'the ways that...' 是常见结构，用于描述行为或过程。\n因此，填入'ys'是正确的，完成单词'ways'。"
+        },
+        {
+          "sourceId": "t14-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ys",
+          "correct": "ways",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t7-m1-1",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "ys",
+          "correct": "ways",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -34541,12 +38108,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "e",
+          "correct": "we",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "weapons",
@@ -34659,12 +38236,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m1-2",
+          "qno": 1,
+          "userAnswer": "",
+          "missingLetters": "at",
+          "correct": "what",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "wheels",
@@ -34857,12 +38444,12 @@
           "qno": 5
         }
       ],
-      "userAnswer": "ere",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 3,
       "historyOccurrences": [
         {
           "sourceId": "t23-m1-2",
@@ -34872,6 +38459,24 @@
           "correct": "which",
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里需要一个关系代词来引导非限制性定语从句，指代前面的“coral polyps”。原句是“coral polyps, wh### secrete calcium carbonate...”，所以单词应为“which”，意思是“它们”或“这些”，用于连接从句。填入“ich”后，完整单词为“which”，符合句意：珊瑚虫，它们分泌碳酸钙...\n\n注意：单词“which”的拼写为w-h-i-c-h，这里需要填入的是“ich”部分，因为“wh”已经给出。"
+        },
+        {
+          "sourceId": "t20-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "ich",
+          "correct": "which",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t23-m1-2",
+          "qno": 5,
+          "userAnswer": "",
+          "missingLetters": "ich",
+          "correct": "which",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -35008,12 +38613,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t17-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "hy",
+          "correct": "why",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "widely",
@@ -35240,12 +38855,40 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "原词为 with，意为“和，与”。\n- 介词：表示伴随关系。\n- 注意：单词为 wi##，所以前两个字母是 wi，后两个字母是 th，合起来为 with。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 3,
+      "historyOccurrences": [
+        {
+          "sourceId": "t27-m1-2",
+          "qno": 3,
+          "userAnswer": "",
+          "missingLetters": "th",
+          "correct": "with",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t29-m1-2",
+          "qno": 2,
+          "userAnswer": "",
+          "missingLetters": "th",
+          "correct": "with",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t38-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "th",
+          "correct": "with",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "within",
@@ -35276,12 +38919,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "单词within意思是“在……之内”。这里指化石在岩石层内部。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t28-m1-2",
+          "qno": 8,
+          "userAnswer": "",
+          "missingLetters": "hin",
+          "correct": "within",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "without",
@@ -35324,13 +38977,32 @@
           "qno": 6
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
+      "userAnswer": "hout",
+      "status": "historical-error",
       "tip": "介词 'without' 意为‘没有’。这里 'without finding any food or water' 表示‘没有找到任何食物或水’。'without' 后接动名词或名词。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 2,
+      "historyOccurrences": [
+        {
+          "sourceId": "t8-m1-2",
+          "qno": 7,
+          "userAnswer": "",
+          "missingLetters": "out",
+          "correct": "without",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        },
+        {
+          "sourceId": "t35-m1-1",
+          "qno": 6,
+          "userAnswer": "hout",
+          "missingLetters": "out",
+          "correct": "without",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "wood",
@@ -35361,12 +39033,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "待填入字母的单词是“wo##”，需要填入2个字母以构成完整单词“wood”（木材）。名词，与“stone”并列，表示“木材和石头”。",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t30-m1-2",
+          "qno": 9,
+          "userAnswer": "",
+          "missingLetters": "od",
+          "correct": "wood",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "words",
@@ -35504,12 +39186,12 @@
           "qno": 4
         }
       ],
-      "userAnswer": "worried",
+      "userAnswer": "",
       "status": "historical-error",
       "tip": "wor + kers；此处需要名词复数。",
       "priority": 3,
       "kind": "error",
-      "historicalErrors": 1,
+      "historicalErrors": 2,
       "historyOccurrences": [
         {
           "sourceId": "t33-m1-2",
@@ -35520,6 +39202,15 @@
           "explain": "单词 'workers' 是 'worker' 的复数形式，意为 '工人、劳动者'。需要填入 'kers' 完成单词，注意 'worker' 加 s 变为复数。",
           "meaning": "",
           "tip": "复数或三单；many/some 后多用复数。"
+        },
+        {
+          "sourceId": "t33-m1-2",
+          "qno": 4,
+          "userAnswer": "",
+          "missingLetters": "kers",
+          "correct": "workers",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
       ]
     },
@@ -35601,12 +39292,22 @@
         }
       ],
       "userAnswer": "",
-      "status": "reference",
+      "status": "historical-error",
       "tip": "n. 世界",
-      "priority": 0,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t37-m1-2",
+          "qno": 10,
+          "userAnswer": "",
+          "missingLetters": "rld",
+          "correct": "world",
+          "origin": "fm-practice-history",
+          "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
+        }
+      ]
     },
     {
       "id": "years",
@@ -35711,7 +39412,7 @@
       "userAnswer": "ouse",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -35757,7 +39458,7 @@
       "userAnswer": "rates",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -35803,7 +39504,7 @@
       "userAnswer": "ner",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -35921,7 +39622,7 @@
       "userAnswer": "esses",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -35967,7 +39668,7 @@
       "userAnswer": "sj",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36085,7 +39786,7 @@
       "userAnswer": "lite",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36131,7 +39832,7 @@
       "userAnswer": "duce",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36177,7 +39878,7 @@
       "userAnswer": "led",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36259,7 +39960,7 @@
       "userAnswer": "oduce",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36341,7 +40042,7 @@
       "userAnswer": "de",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36423,7 +40124,7 @@
       "userAnswer": "olics",
       "status": "historical-error",
       "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "priority": 3,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -36440,69 +40141,3 @@
     }
   ]
 };
-  const screenshotCorrections = {
-    small: {
-      userAnswer: "smart",
-      qno: 1,
-      tip: "small 是 sm + all；不要把后缀写成 art。",
-      explain: "截图中该空被判错；句意是“这些小型作品”，正确拼写为 small。"
-    },
-    commissioned: {
-      userAnswer: "commistagtes",
-      qno: 2,
-      tip: "commission + -ed：commissioned 结尾是 -sioned，注意 s-i-o-n-e-d。",
-      explain: "截图中该空被判错；commissioned 表示“受委托创作的”，拼写为 commis+sioned。"
-    },
-    emperors: {
-      userAnswer: "empeires",
-      qno: 3,
-      tip: "emperor 的复数是 emperors；中间是 -or-，不要写成 -eir-。",
-      explain: "截图中该空被判错；emperor 的复数直接加 s，正确拼写是 emperors。"
-    },
-    depicted: {
-      userAnswer: "depistes",
-      qno: 4,
-      tip: "depict 的过去式是 depicted；结尾是 -cted，不要写成 -stes。",
-      explain: "截图中该空被判错；depicted 是 depict 的过去式，表示“描绘”。"
-    },
-    scenes: {
-      userAnswer: "scenre",
-      qno: 7,
-      tip: "scene 的复数是 scenes，结尾是 -nes；注意 e 后接 s。",
-      explain: "截图中该空被判错；scene 的复数是 scenes，表示“场景”。"
-    },
-    mythology: {
-      userAnswer: "mythorder",
-      qno: 8,
-      tip: "myth + -ology；-ology 结尾是 o-l-o-g-y。",
-      explain: "截图中该空被判错；mythology 表示“神话”，由 myth + ology 构成。"
-    }
-  };
-  Object.entries(screenshotCorrections).forEach(([id, correction]) => {
-    const word = window.TOEFL_NOTEBOOK_DATA.words.find((item) => item.id === id);
-    if (!word) return;
-    const history = Array.isArray(word.historyOccurrences) ? word.historyOccurrences : [];
-    const exists = history.some((item) => item.sourceId === "t39-m2-1" && item.qno === correction.qno);
-    const nextHistory = exists ? history : [...history, {
-      sourceId: "t39-m2-1",
-      qno: correction.qno,
-      userAnswer: correction.userAnswer,
-      missingLetters: word.split[1],
-      correct: word.word,
-      origin: "screenshot",
-      explain: correction.explain
-    }];
-    Object.assign(word, {
-      userAnswer: correction.userAnswer,
-      status: "historical-error",
-      tip: correction.tip,
-      priority: 3,
-      kind: "error",
-      historicalErrors: Math.max(1, nextHistory.length),
-      historyOccurrences: nextHistory
-    });
-  });
-  window.TOEFL_NOTEBOOK_DATA.version = "2026-07-17.2";
-  window.TOEFL_NOTEBOOK_DATA.updatedAt = "2026-07-17";
-  window.TOEFL_NOTEBOOK_DATA.historicalErrorOccurrences = 256;
-})();
