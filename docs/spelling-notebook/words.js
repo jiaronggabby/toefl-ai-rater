@@ -2,8 +2,8 @@
   "use strict";
 
   window.TOEFL_NOTEBOOK_DATA = {
-  "version": "2026-07-16.4",
-  "updatedAt": "2026-07-16",
+  "version": "2026-07-17.1",
+  "updatedAt": "2026-07-17",
   "dailyGoal": 20,
   "completedTests": 40,
   "rawSources": 120,
@@ -13,9 +13,9 @@
   "model2Sources": 40,
   "targetOccurrences": 1180,
   "attemptedTargetOccurrences": 930,
-  "historicalErrorOccurrences": 249,
+  "historicalErrorOccurrences": 250,
   "uniqueCompletedWords": 712,
-  "historyRule": "只把实际提交过且答错的字母记入历史；整篇未开始不计错，做过的原文中留空才计为不会。历史错词永久保留；答对或订正后移出当前队列，需要时可从错题本恢复。",
+  "historyRule": "只把实际提交过且答错的字母记入历史；整篇未开始不计错，做过的原文中留空才计为不会。历史错词永久保留；独立答对后移出当前队列，订正会滚动到队尾再测，需要时可从错题本恢复。",
   "sources": [
     {
       "id": "t1-m1-1",
@@ -12445,13 +12445,23 @@
           "qno": 6
         }
       ],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
-      "kind": "fm-history",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "userAnswer": "未显示",
+      "status": "historical-error",
+      "tip": "exhaust + -ion：exhaustion 结尾是 -tion，注意 t 后接 ion，不要多写一个 s。",
+      "priority": 3,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "t25-m2-1",
+          "qno": 6,
+          "userAnswer": "未显示",
+          "missingLetters": "stion",
+          "correct": "exhaustion",
+          "origin": "screenshot",
+          "explain": "截图显示该填空被判错；标准拼写是 exhaustion，句意为“疲惫；耗尽”。"
+        }
+      ]
     },
     {
       "id": "exhibit",

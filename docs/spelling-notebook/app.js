@@ -48,14 +48,25 @@
 
   function createDefaultState() {
     return {
-      schema: 3,
+      schema: 4,
       settings: { dailyGoal: DATA.dailyGoal || 20 },
       words: {},
       daily: {}
     };
   }
 
-  function migrateProgress(progress = {}) {
+  function looksLikeLegacyCorrectionExit(progress, word) {
+    if (!word || !Boolean(progress.mastered || progress.exitedAt)) return false;
+    const lastAnswer = normalizeAnswer(progress.lastAnswer);
+    if (!lastAnswer) return true;
+    const accepted = [word.word, word.split && word.split[1]]
+      .filter(Boolean)
+      .map(normalizeAnswer);
+    return !accepted.includes(lastAnswer);
+  }
+
+  function migrateProgress(progress = {}, word = null) {
+    const wasExited = Boolean(progress.mastered || progress.exitedAt);
     return {
       attempts: Number(progress.attempts || 0),
       correct: Number(progress.correct || 0),
@@ -66,7 +77,7 @@
       lastSeen: progress.lastSeen || null,
       lastAnswer: progress.lastAnswer || "",
       exitedAt: progress.exitedAt || null,
-      mastered: Boolean(progress.mastered || progress.exitedAt)
+      mastered: wasExited && !looksLikeLegacyCorrectionExit(progress, word)
     };
   }
 
@@ -80,12 +91,12 @@
       }
       const parsed = JSON.parse(raw);
       const migratedWords = Object.fromEntries(
-        Object.entries(parsed.words || {}).map(([id, progress]) => [id, migrateProgress(progress)])
+        Object.entries(parsed.words || {}).map(([id, progress]) => [id, migrateProgress(progress, wordMap.get(id))])
       );
       const migrated = {
         ...fallback,
         ...parsed,
-        schema: 3,
+        schema: 4,
         settings: { ...fallback.settings, ...(parsed.settings || {}) },
         words: migratedWords,
         daily: parsed.daily || {}
@@ -454,7 +465,8 @@
       activeSession.correctionPending = false;
       activeSession.answered = true;
       activeSession.answerWasCorrect = false;
-      completeAnswer(word, markMastered(word));
+      activeSession.queue.push(word);
+      completeAnswer(word, progressFor(word.id));
       return;
     }
 
@@ -512,7 +524,9 @@
       ? `<strong>正确。</strong> <span class="answer-reveal">${escapeHtml(word.word)}</span>${activeSession.assisted ? "（用了提示，本次不计入退出次数）" : ""}`
       : `<strong>已订正。</strong> <span class="answer-reveal">${escapeHtml(word.word)}</span>`;
     const queueText = remaining > 0
-      ? "本词保留在待复习池，下次进入时会重新随机抽取。"
+      ? (activeSession.answerWasCorrect
+        ? "本词会保留在待复习池；使用提示拼对不算独立掌握。"
+        : "已完成订正；本词已滚动到本轮队尾，稍后还要独立拼写一次。")
       : "已退出当前复习队列；历史记录仍永久保留，需要时可从错题本恢复。";
     const sentenceZh = sentenceMeaning(word);
     const chineseContext = sentenceZh
@@ -730,7 +744,7 @@
           schema: 2,
           settings: { ...fallback.settings, ...(imported.settings || {}) },
           words: Object.fromEntries(
-            Object.entries(imported.words || {}).map(([id, progress]) => [id, migrateProgress(progress)])
+            Object.entries(imported.words || {}).map(([id, progress]) => [id, migrateProgress(progress, wordMap.get(id))])
           ),
           daily: imported.daily || {}
         };
