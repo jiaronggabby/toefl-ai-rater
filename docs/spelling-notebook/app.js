@@ -457,7 +457,9 @@
         const feedback = byId("feedback");
         feedback.hidden = false;
         feedback.className = "feedback feedback-wrong";
-        feedback.innerHTML = `<strong>再订正一次。</strong> 请按上面显示的正确拼写重新输入；订正正确后才能进入下一词。`;
+        feedback.innerHTML = `
+          <strong>再订正一次。</strong> 正确拼写是 <span class="answer-reveal">${escapeHtml(word.word)}</span>。<br>
+          <span class="small">本次应填写：<strong>${escapeHtml(expected)}</strong>；订正正确后才进入下一词，订正失败时答案会一直保留。</span>`;
         input.focus();
         return;
       }
