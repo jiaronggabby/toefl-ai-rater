@@ -36440,4 +36440,69 @@
     }
   ]
 };
+  const screenshotCorrections = {
+    small: {
+      userAnswer: "smart",
+      qno: 1,
+      tip: "small 是 sm + all；不要把后缀写成 art。",
+      explain: "截图中该空被判错；句意是“这些小型作品”，正确拼写为 small。"
+    },
+    commissioned: {
+      userAnswer: "commistagtes",
+      qno: 2,
+      tip: "commission + -ed：commissioned 结尾是 -sioned，注意 s-i-o-n-e-d。",
+      explain: "截图中该空被判错；commissioned 表示“受委托创作的”，拼写为 commis+sioned。"
+    },
+    emperors: {
+      userAnswer: "empeires",
+      qno: 3,
+      tip: "emperor 的复数是 emperors；中间是 -or-，不要写成 -eir-。",
+      explain: "截图中该空被判错；emperor 的复数直接加 s，正确拼写是 emperors。"
+    },
+    depicted: {
+      userAnswer: "depistes",
+      qno: 4,
+      tip: "depict 的过去式是 depicted；结尾是 -cted，不要写成 -stes。",
+      explain: "截图中该空被判错；depicted 是 depict 的过去式，表示“描绘”。"
+    },
+    scenes: {
+      userAnswer: "scenre",
+      qno: 7,
+      tip: "scene 的复数是 scenes，结尾是 -nes；注意 e 后接 s。",
+      explain: "截图中该空被判错；scene 的复数是 scenes，表示“场景”。"
+    },
+    mythology: {
+      userAnswer: "mythorder",
+      qno: 8,
+      tip: "myth + -ology；-ology 结尾是 o-l-o-g-y。",
+      explain: "截图中该空被判错；mythology 表示“神话”，由 myth + ology 构成。"
+    }
+  };
+  Object.entries(screenshotCorrections).forEach(([id, correction]) => {
+    const word = window.TOEFL_NOTEBOOK_DATA.words.find((item) => item.id === id);
+    if (!word) return;
+    const history = Array.isArray(word.historyOccurrences) ? word.historyOccurrences : [];
+    const exists = history.some((item) => item.sourceId === "t39-m2-1" && item.qno === correction.qno);
+    const nextHistory = exists ? history : [...history, {
+      sourceId: "t39-m2-1",
+      qno: correction.qno,
+      userAnswer: correction.userAnswer,
+      missingLetters: word.split[1],
+      correct: word.word,
+      origin: "screenshot",
+      explain: correction.explain
+    }];
+    Object.assign(word, {
+      userAnswer: correction.userAnswer,
+      status: "historical-error",
+      tip: correction.tip,
+      priority: 3,
+      kind: "error",
+      historicalErrors: Math.max(1, nextHistory.length),
+      historyOccurrences: nextHistory
+    });
+  });
+  window.TOEFL_NOTEBOOK_DATA.version = "2026-07-17.2";
+  window.TOEFL_NOTEBOOK_DATA.updatedAt = "2026-07-17";
+  window.TOEFL_NOTEBOOK_DATA.historicalErrorOccurrences = 256;
 })();
