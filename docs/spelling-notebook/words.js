@@ -1,6 +1,6 @@
 window.TOEFL_NOTEBOOK_DATA = {
-  "version": "2026-07-17.5",
-  "updatedAt": "2026-07-17",
+  "version": "2026-07-18.1",
+  "updatedAt": "2026-07-18",
   "dailyGoal": 20,
   "completedTests": 40,
   "rawSources": 120,
@@ -1990,7 +1990,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "sition"
       ],
       "part": "n.",
-      "meaning": "语言习得",
+      "meaning": "获得；习得",
       "phrase": "including language acquisition, motor skills",
       "sentence": "They encompass various aspects of development, including language acquisition, motor skills, and social interactions.",
       "sourceIds": [
@@ -2012,8 +2012,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "rement",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "acquire → acquisition；acqui 后接 -sition，不能写成 aquisition。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -2026,7 +2026,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "单词：acquisition\n解析：根据上下文，句子意思是“语言习得”，所以需要填入一个表示“习得”或“获得”的名词。acqui###### 是单词的一部分，完整单词应为 acquisition，意思是“获得、习得”。acqui 是词根，后面需要填入 sition，形成 acquisition。acquisition 常用于描述语言、知识或技能的获取过程。\n语法和用法：acquisition 在这里作名词，与 language 搭配，形成复合名词 language acquisition（语言习得）。\n常见搭配：language acquisition（语言习得）。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "across",
@@ -2435,7 +2438,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ageous"
       ],
       "part": "adj.",
-      "meaning": "自然选择解释了有利特征如何在种群中增加频率",
+      "meaning": "有利的；有优势的",
       "phrase": "explains how advantageous traits increase",
       "sentence": "Natural selection explains how advantageous traits increase in frequency in a population.",
       "sourceIds": [
@@ -2457,8 +2460,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "urales",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "advantage + ous；先写完整 advantage，再接 -ous。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -2471,7 +2474,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 上下文分析：句子为“Natural selection explains how advant###### traits incr#### in freq##### in a popul#####.”，意思是“自然选择解释了有利特征如何在种群中增加频率。”\n  2. 语法和逻辑：这里需要一个形容词修饰“traits”（特征），表示“有利的”或“有优势的”。\n  3. 单词推断：根据进化论背景，“advantageous”是常用词，意为“有利的”，描述在自然选择中具有优势的特征。\n  4. 字母填入：原单词为“advant######”，有6个#，对应填入“ageous”，形成“advantageous”。\n  5. 验证：填入后单词为“advantageous”，符合上下文，句子意思完整。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "affect",
@@ -3118,8 +3124,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ana",
         "tomy"
       ],
-      "part": "word",
-      "meaning": "在文艺复兴时期",
+      "part": "n.",
+      "meaning": "解剖；解剖学",
       "phrase": "Michelangelo explored anatomy and perspective",
       "sentence": "During the Renaissance, figures like Leonardo da Vinci and Michelangelo explored anatomy and perspective, echoing the era's interest in science and nature.",
       "sourceIds": [
@@ -3141,8 +3147,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "logy",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "anatomy = ana + -tomy；注意 a-n-a-t-o-m-y 的顺序。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -3155,7 +3161,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 根据上下文，句子提到“During the Renaissance, figures like Leonardo da Vinci and Michelangelo explored ana#### and persp######”，意思是“在文艺复兴时期，像列奥纳多·达·芬奇和米开朗基罗这样的人物探索了解剖学和透视法”。\n  2. 文艺复兴时期，艺术家如达·芬奇和米开朗基罗确实对解剖学（anatomy）有深入研究，以更准确地描绘人体。\n  3. 单词“anatomy”由8个字母组成，对应“ana####”中的6个#（因为“ana”已给出），需要填入“tomy”来补全。\n  4. 因此，答案填入“tomy”，形成完整单词“anatomy”。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": "anotomy"
     },
     {
       "id": "ancestors",
@@ -4805,7 +4814,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "sans"
       ],
       "part": "n.",
-      "meaning": "工匠、手艺人",
+      "meaning": "工匠；手艺人（复数）",
       "phrase": "and bamboo, artisans create functional",
       "sentence": "Using natural materials like reeds and bamboo, artisans create functional and decorative baskets.",
       "sourceIds": [
@@ -4827,11 +4836,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "artisan + s；先记 art（艺术），末尾再加复数 s。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "artistic",
@@ -7211,7 +7223,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "catast",
         "rophic"
       ],
-      "part": "n.",
+      "part": "adj.",
       "meaning": "灾难性的",
       "phrase": "loss, and catastrophic events",
       "sentence": "These incidents can be caused by varying factors, such as environmental changes, habitat loss, and catastrophic events.",
@@ -7234,8 +7246,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "catastrophe 的词干是 catastroph-，再接 -ic。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -7257,7 +7269,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "cats",
@@ -8119,7 +8134,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "rent"
       ],
       "part": "adj.",
-      "meaning": "连贯的",
+      "meaning": "连贯的；条理清晰的",
       "phrase": "and constructing coherent conclusions based",
       "sentence": "These skills involve evaluating arguments, identifying fallacies, and constructing coherent conclusions based on evidence.",
       "sourceIds": [
@@ -8141,11 +8156,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "coherent = co + herent；注意 h 在 o 后面。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "colder",
@@ -11876,7 +11894,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "orate"
       ],
       "part": "adj.",
-      "meaning": "精心制作的、复杂的",
+      "meaning": "精心制作的；复杂的",
       "phrase": "paintings to elaborate cathedral architecture",
       "sentence": "Religious beliefs often inspire artistic creations from ancient cave paintings to elaborate cathedral architecture.",
       "sourceIds": [
@@ -11898,11 +11916,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "elaborate 可分成 e-lab-or-ate；记住中间是 lab，不是 leb。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": "eleborate"
     },
     {
       "id": "emperors",
@@ -12108,7 +12129,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "mpass"
       ],
       "part": "v.",
-      "meaning": "它们涵盖了发展的各个方面",
+      "meaning": "包含；涵盖",
       "phrase": "They encompass various aspects",
       "sentence": "They encompass various aspects of development, including language acquisition, motor skills, and social interactions.",
       "sourceIds": [
@@ -12130,8 +12151,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "urage",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "en + compass；compass 末尾有双 s。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -12144,7 +12165,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "单词：encompass\n解析：根据上下文，句子意思是“它们涵盖了发展的各个方面”，所以需要填入一个表示“涵盖”或“包括”的动词。enco##### 是单词的一部分，完整单词应为 encompass，意思是“包含、涵盖”。enco 是前缀，后面需要填入 mpass，形成 encompass。encompass 是及物动词，常用于描述包含多个方面或范围。\n语法和用法：encompass 在这里作谓语动词，主语是 They（指代 milestones），宾语是 various aspects。\n常见搭配：encompass various aspects（涵盖各个方面）。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "encouraging",
@@ -12541,7 +12565,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "pped"
       ],
       "part": "adj.",
-      "meaning": "配备先进仪器的任务",
+      "meaning": "配备有；装备好的",
       "phrase": "Missions equipped with advanced",
       "sentence": "Missions equipped with advanced instruments collect and examine surface and atmospheric samples to detect signs of liquid water and geothermal activity.",
       "sourceIds": [
@@ -12563,11 +12587,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "equip + ped；加 -ed 时保留双 p：equipped。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "era",
@@ -13420,7 +13447,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ess"
       ],
       "part": "adj.",
-      "meaning": "过剩的",
+      "meaning": "过量的；过剩的",
       "phrase": "Conversely, an excess supply can",
       "sentence": "Conversely, an excess supply can lead to price reductions.",
       "sourceIds": [
@@ -13442,8 +13469,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "ept",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "ex-cess；末尾有双 s，表示超过需要的量。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -13456,7 +13483,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：根据题干“an exc### supply”，这里需要填入字母使“exc###”成为一个单词。结合参考答案“ess”，填入后为“excess”，意思是“过剩的”。\n\n上下文分析：句子描述供应过多的情况，“excess supply”意思是过剩供应，与需求不足相对。\n\n语法和拼写：单词“excess”是形容词，拼写正确，修饰“supply”。\n\n所以，填入“ess”完成单词“excess”。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "excessive",
@@ -13968,7 +13998,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "iment"
       ],
       "part": "v.",
-      "meaning": "实验、尝试",
+      "meaning": "尝试；进行实验",
       "phrase": "peers and experiment with new",
       "sentence": "The community environment allows artists to receive feedback from peers and experiment with new techniques, enriching their artistic practice.",
       "sourceIds": [
@@ -13990,11 +14020,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "ex + periment；中间是 per，不是 par。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "explains",
@@ -14487,7 +14520,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "at"
       ],
       "part": "n.",
-      "meaning": "工程壮举",
+      "meaning": "壮举；成就",
       "phrase": "remarkable engineering feat and pioneered",
       "sentence": "Its construction was a remarkable engineering feat and pioneered many innovative techniques.",
       "sourceIds": [
@@ -14509,11 +14542,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "feat 与 feet 同音：feat 是“壮举”，feet 才是“脚”。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "features",
@@ -14641,7 +14677,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "eld"
       ],
       "part": "n.",
-      "meaning": "领域",
+      "meaning": "领域；学科",
       "phrase": "This field encompasses the",
       "sentence": "This field encompasses the exploration of ocean currents, marine ecosystems, and geological seabed structures.",
       "sourceIds": [
@@ -14676,8 +14712,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "nal",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "field 记作 f-i-e-l-d；这里指一个研究领域。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -14690,7 +14726,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，'This fi### examines...' 意为 '这一领域考察...'，'fi###' 需要填入三个字母以形成一个表示 '领域' 的单词。结合常识和托福阅读常见词汇，'field' 意为 '领域'，符合语境。因此，填入 'eld' 完成单词 'field'。\n\n单词分析：\n- 词性：名词\n- 含义：领域、范围\n- 用法：在科学或学术语境中常指研究领域。\n\n填入过程：\n- 原词：fi###\n- 猜测：可能为 'field'\n- 验证：'This field examines...' 逻辑通顺，与前后文衔接自然。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "first",
@@ -15742,8 +15781,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "gala",
         "xies"
       ],
-      "part": "word",
-      "meaning": "答题后查看中文语境",
+      "part": "n.",
+      "meaning": "星系（复数）",
       "phrase": "planets, and galaxies using observations",
       "sentence": "Scientists examine stars, planets, and galaxies using observations and models to describe cosmic events.",
       "sourceIds": [
@@ -15765,11 +15804,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "galaxy → galaxies：y 变 ies；注意是 gala-xies。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": "glaxies"
     },
     {
       "id": "genre",
@@ -16947,8 +16989,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "actors",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "hibernate → hibernation：去掉 e，再接 -ation。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -16961,7 +17003,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "待填入单词是\"hiber######\"，根据上下文，光周期和温度变化影响冬眠，因此需要填入\"nation\"以形成单词\"hibernation\"，意为\"冬眠\"。\n解析：\"hibernation\"是一个名词，指动物在冬季进入的一种休眠状态，以减少能量消耗。\n单词结构：\"hibernation\"由词根\"hibern-\"（意为冬季）和后缀\"-ation\"（表示状态或过程）组成，但在这个上下文中，直接填入\"nation\"即可完成单词。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "his",
@@ -19110,7 +19155,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ectual"
       ],
       "part": "adj.",
-      "meaning": "智力的、知识的",
+      "meaning": "智力的；知识的",
       "phrase": "artistic, and intellectual revival, the",
       "sentence": "A vibrant period of cultural, artistic, and intellectual revival, the Renaissance marked a renewed interest in classical literature, and science.",
       "sourceIds": [
@@ -19132,11 +19177,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "intellect + ual；开头 intell- 有双 l。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "intense",
@@ -19481,8 +19529,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "intr",
         "icate"
       ],
-      "part": "n.",
-      "meaning": "表演复杂的舞蹈...",
+      "part": "adj.",
+      "meaning": "复杂精巧的；错综复杂的",
       "phrase": "bees perform intricate dances to",
       "sentence": "For instance, bees perform intricate dances to communicate the location of food sources.",
       "sourceIds": [
@@ -19504,8 +19552,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "in + tricate；开头是 intr-，不要写成 inter-。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -19527,7 +19575,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "invention",
@@ -19573,7 +19624,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ebrates"
       ],
       "part": "n.",
-      "meaning": "...包括鱼类、无脊椎动物和藻类",
+      "meaning": "无脊椎动物（复数）",
       "phrase": "including fish, invertebrates, and algae",
       "sentence": "Built by colonies of tiny coral polyps, the underwater structures support an incredible range of marine life, including fish, invertebrates, and algae.",
       "sourceIds": [
@@ -19595,11 +19646,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "in-（没有）+ vertebrate；注意 verte 后接 -brates。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "investigate",
@@ -19609,7 +19663,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "igate"
       ],
       "part": "v.",
-      "meaning": "研究人员调查认知过程背后的机制",
+      "meaning": "调查；研究",
       "phrase": "Researchers investigate the mechanisms",
       "sentence": "Researchers investigate the mechanisms underlying cognitive processes, aiming to understand how the brain stores and retrieves information.",
       "sourceIds": [
@@ -19631,8 +19685,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "in + vestigate；词尾是 -gate，注意中间的 i。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -19654,7 +19708,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "investigations",
@@ -22751,8 +22808,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "meticu",
         "lously"
       ],
-      "part": "v.",
-      "meaning": "细致地'或'一丝不苟地",
+      "part": "adv.",
+      "meaning": "一丝不苟地；细致地",
       "phrase": "which he meticulously mapped coastlines",
       "sentence": "He is best known for his three voyages across the Pacific Ocean, during which he meticulously mapped coastlines and collected data on astronomy, natural history, and oceanography.",
       "sourceIds": [
@@ -22774,11 +22831,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "meticulous + ly；先记 meticulous，再加 -ly。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "migration",
@@ -22788,7 +22848,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ation"
       ],
       "part": "n.",
-      "meaning": "迁徙",
+      "meaning": "迁徙；迁移",
       "phrase": "impact seasonal migration, mating rituals",
       "sentence": "Photoperiods, together with temperature changes, impact seasonal migration, mating rituals, and hibernation.",
       "sourceIds": [
@@ -22810,8 +22870,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "igate",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "migrate → migration：去掉 e，再接 -ation。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -22824,7 +22884,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "待填入单词是\"migr#####\"，根据上下文，光周期和温度变化影响季节性迁徙，因此需要填入\"ation\"以形成单词\"migration\"，意为\"迁徙\"。\n解析：\"migration\"是一个名词，指动物或人群的季节性或周期性移动，在这里特指季节性迁徙。\n单词结构：\"migration\"由词根\"migr-\"（意为移动）和后缀\"-ation\"（表示动作或过程）组成，但在这个上下文中，直接填入\"ation\"即可完成单词。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "millennia",
@@ -22834,7 +22897,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ennia"
       ],
       "part": "n.",
-      "meaning": "一千年",
+      "meaning": "几千年；千年（复数）",
       "phrase": "societies for millennia",
       "sentence": "This practice has sustained human societies for millennia.",
       "sourceIds": [
@@ -22856,8 +22919,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "meter",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "millennium 的复数是 millennia；重点记 -ennia，不写成 -enia。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -22879,7 +22942,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-test-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "mind",
@@ -25644,8 +25710,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "partic",
         "ularly"
       ],
-      "part": "word",
-      "meaning": "特别是",
+      "part": "adv.",
+      "meaning": "尤其；特别是",
       "phrase": "Cooking food, particularly meat and",
       "sentence": "Cooking food, particularly meat and tubers, made digesting nutrients much easier.",
       "sourceIds": [
@@ -25667,11 +25733,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "particular + ly；先写 particular，再加 -ly。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "parts",
@@ -25990,7 +26059,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "eive"
       ],
       "part": "v.",
-      "meaning": "感知",
+      "meaning": "感知；察觉",
       "phrase": "why we perceive the world",
       "sentence": "The discipline explores how and why we perceive the world as we do, examining the mechanisms behind thought, emotion, and awareness.",
       "sourceIds": [
@@ -26012,8 +26081,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "perceive 的词尾是 -ceive；注意 e-i 顺序，不是 percieve。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -26035,7 +26104,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "perception",
@@ -26278,7 +26350,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "eered"
       ],
       "part": "v.",
-      "meaning": "先驱”或“开创",
+      "meaning": "开创；率先采用",
       "phrase": "feat and pioneered many innovative",
       "sentence": "Its construction was a remarkable engineering feat and pioneered many innovative techniques.",
       "sourceIds": [
@@ -26300,11 +26372,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "pioneer + ed；pioneer 中间有 -ee-，写成 pioneered。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "pivotal-v",
@@ -26808,7 +26883,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ts"
       ],
       "part": "n.",
-      "meaning": "答题后查看中文语境",
+      "meaning": "锅；罐；陶罐（复数）",
       "phrase": "Early pots were shaped",
       "sentence": "Early pots were shaped by hand and heated in simple kilns, producing ceramics that lasted longer.",
       "sourceIds": [
@@ -26830,11 +26905,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "pot + s；只有一个 t，末尾加复数 s。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "powerful",
@@ -27007,11 +27085,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "pre + cipitation；注意是 precip-，不是 pricip-，中间有两个 i。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": "pricipatation"
     },
     {
       "id": "predict",
@@ -27185,7 +27266,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "vate"
       ],
       "part": "adj.",
-      "meaning": "私人的”或“私有的",
+      "meaning": "私人的；私有的",
       "phrase": "abroad, where private collectors and",
       "sentence": "The population of this vibrant blue bird declined because of habitat loss and illegal trapping for sale abroad, where private collectors and pet stores spent large sums of money on the birds.",
       "sourceIds": [
@@ -27207,8 +27288,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "priv + ate；词尾是 -vate，不是 -vite。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -27230,7 +27311,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "process",
@@ -27295,7 +27379,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "esses"
       ],
       "part": "n.",
-      "meaning": "理解这类过程",
+      "meaning": "过程；流程（复数）",
       "phrase": "Understanding processes of this",
       "sentence": "Understanding processes of this kind helps in assessing sleep disorders and optimizing work schedules.",
       "sourceIds": [
@@ -27317,8 +27401,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "process + es；词尾是 -sses，不能只加一个 s。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -27331,7 +27415,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：'proc#####' 需要填入五个字母以形成一个表示 '过程' 的单词。上下文为 'Understanding proc##### of this kind'，意为 '理解这类过程'，指代前文提到的睡眠和节律调节过程。单词 'processes' 是 'process' 的复数形式，意为 '过程'，符合学术语境。因此，填入 'esses' 完成单词 'processes'。\n\n单词分析：\n- 词性：名词（复数形式）\n- 含义：过程、流程\n- 用法：在科学文章中，常指生物或生理过程。\n\n填入过程：\n- 原词：proc#####\n- 猜测：可能为 'processes'\n- 验证：'Understanding processes of this kind' 语法正确，意思为理解这类（睡眠节律）过程。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "produce",
@@ -28374,8 +28461,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "recip",
         "ients"
       ],
-      "part": "word",
-      "meaning": "这些贷款使接受者能够创办或扩展小型企业",
+      "part": "n.",
+      "meaning": "接受者；收款人（复数）",
       "phrase": "loans empower recipients to start",
       "sentence": "These loans empower recipients to start or expand small businesses, improving their living conditions and communities.",
       "sourceIds": [
@@ -28397,8 +28484,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "receive → recipient；recipients 中间是 -cipi-，不要写成 -cepi-。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -28420,7 +28507,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "redefined",
@@ -28429,8 +28519,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "rede",
         "fined"
       ],
-      "part": "word",
-      "meaning": "重新定义了传统边界",
+      "part": "v.",
+      "meaning": "重新定义；重新界定",
       "phrase": "Abstract Expressionism redefined traditional boundaries",
       "sentence": "Later, movements such as Impressionism and Abstract Expressionism redefined traditional boundaries.",
       "sourceIds": [
@@ -28452,8 +28542,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "ction",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "re-（重新）+ defined（定义）；结尾是 -fined，不是 -finded。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -28466,7 +28556,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：\n  1. 句子提到“rede##### traditional boundaries”，意思是“重新定义了传统边界”。\n  2. 单词“redefined”是“redefine”的过去式，表示“重新定义”，符合上下文，艺术运动改变了传统艺术边界。\n  3. 单词“redefined”由9个字母组成，对应“rede#####”中的5个#（因为“rede”已给出），需要填入“fined”来补全。\n  4. 因此，答案填入“fined”，形成完整单词“redefined”。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "reduce",
@@ -28741,7 +28834,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "ated"
       ],
       "part": "adj.",
-      "meaning": "相关的、有亲属关系的",
+      "meaning": "有关的；有亲缘关系的",
       "phrase": "typically include related females, their",
       "sentence": "They are the only truly social big cats, living in prides, which are groups that typically include related females, their offspring, and some males.",
       "sourceIds": [
@@ -28763,8 +28856,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "relate + d；related 中间是 -lat-，不要漏 a。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -28777,7 +28870,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 上下文分析：句子描述狮群包括“相关雌性”，因此需要填入一个形容词来描述雌性之间的关系。\n2. 单词结构：待填入部分“rel####”是单词“related”的一部分。\n3. 语法和语义：\n   - “related”意为“相关的、有亲属关系的”，在这里指狮群中的雌性通常是亲属关系。\n   - 在句子中，它修饰“females”，说明这些雌性之间的血缘联系。\n4. 答案确认：填入“ated”后，完整单词为“related”，与参考答案“ated”一致。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "remains",
@@ -28786,8 +28882,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "rem",
         "ains"
       ],
-      "part": "word",
-      "meaning": "研究这些遗骸",
+      "part": "n.",
+      "meaning": "遗骸；遗迹；剩余物",
       "phrase": "studying these remains, paleontologists can",
       "sentence": "By studying these remains, paleontologists can reconstruct the appearance, behavior, and ecological relationships of extinct species.",
       "sourceIds": [
@@ -28809,11 +28905,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "remain + s；remain 中间是 ai，不是 ei。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "remarkable",
@@ -28967,7 +29066,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "cate"
       ],
       "part": "v.",
-      "meaning": "精心复制自然栖息地",
+      "meaning": "复制；复现",
       "phrase": "facilities carefully replicate natural habitats",
       "sentence": "These facilities carefully replicate natural habitats, allowing visitors to learn about marine life without venturing into the ocean.",
       "sourceIds": [
@@ -28989,8 +29088,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "re + plicate；中间是 -plic-，不要漏 l。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 2,
       "historyOccurrences": [
@@ -29012,7 +29111,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "require",
@@ -29145,8 +29247,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "lists",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "research + er；-er 表示“做某事的人”。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -29159,7 +29261,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 单词分析：根据题干文本“resea##### can bet### understand”，这里需要一个名词，意思是“研究人员”，作主语。\n2. 上下文线索：后文提到理解演变，因此主语应是从事研究的人，如研究人员或学者。\n3. 字母数量：待填入部分有5个#，对应5个字母“rcher”，加上前缀“resea”形成完整单词“researcher”。注意：单词是单数形式，但可泛指研究人员群体。\n4. 验证：填入后为“researcher can better understand”，意思为“研究人员可以更好地理解”。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "researchers",
@@ -29621,7 +29726,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "eals"
       ],
       "part": "v.",
-      "meaning": "揭示",
+      "meaning": "揭示；显示",
       "phrase": "Anatomy reveals how different",
       "sentence": "Anatomy reveals how different parts of the body interact and function together to maintain life.",
       "sourceIds": [
@@ -29643,11 +29748,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "reveal + s；reveal 中间是 ea，不能写成 reeveal。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "rhythm",
@@ -29831,7 +29939,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "uals"
       ],
       "part": "n.",
-      "meaning": "仪式",
+      "meaning": "仪式；习俗（复数）",
       "phrase": "migration, mating rituals, and hibernation",
       "sentence": "Photoperiods, together with temperature changes, impact seasonal migration, mating rituals, and hibernation.",
       "sourceIds": [
@@ -29853,8 +29961,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "ials",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "ritual + s；中间是 -ual，不要写成 -uals 之外的变体。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -29867,7 +29975,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "待填入单词是\"rit####\"，根据上下文，光周期和温度变化影响交配仪式，因此需要填入\"uals\"以形成单词\"rituals\"，意为\"仪式\"。\n解析：\"rituals\"是一个名词，指一系列固定的、通常具有象征意义的动作或行为，在这里指动物的交配仪式。\n单词结构：\"rituals\"是\"ritual\"的复数形式，由词根\"rit-\"（可能与仪式相关）和后缀\"-ual\"组成，但在这个上下文中，直接填入\"uals\"即可完成单词。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "rivers",
@@ -30579,7 +30690,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "age"
       ],
       "part": "n.",
-      "meaning": "污水、废水",
+      "meaning": "污水；废水",
       "phrase": "such as sewage systems and",
       "sentence": "Innovations such as sewage systems and clean water supplies developed from the growing awareness of the connection between poor hygiene and illness, and reduced the spread of infectious diseases like cholera and typhoid.",
       "sourceIds": [
@@ -30601,8 +30712,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "ing",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "sew + age；sewage 结尾是 -age，不是 sewerage。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -30615,7 +30726,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：\n1. 上下文分析：句子描述19世纪城市卫生实践，提到“Innovations such as sew### systems”，结合常识和上下文，这指的是“污水系统”。\n2. 单词推断：待填单词是“sew###”，需要填入三个字母。根据“sewage”一词，意为“污水、废水”，是“sewer”（下水道）的衍生词，常用于描述卫生系统。\n3. 语法和搭配：在“sew### systems”中，应填入名词修饰“systems”，形成“sewage systems”（污水系统），符合公共卫生主题。\n4. 答案确认：填入“age”后，单词为“sewage”，与参考答案一致，且逻辑通顺。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "shape",
@@ -31216,7 +31330,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         "etons"
       ],
       "part": "n.",
-      "meaning": "骨架”或“骨骼",
+      "meaning": "骨骼；骨架（复数）",
       "phrase": "their hard skeletons",
       "sentence": "Coral reefs are produced by colonies of tiny animals called coral polyps, which secrete calcium carbonate to build their hard skeletons.",
       "sourceIds": [
@@ -31238,8 +31352,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "skeleton + s；按 ske-le-ton 分段，末尾直接加 s。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -31252,7 +31366,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "解析：根据上下文，这里需要一个名词来表示珊瑚虫构建的坚硬结构。原句是“hard skel#####”，结合常识，珊瑚虫分泌碳酸钙形成骨架，所以单词应为“skeleton”，意思是“骨架”或“骨骼”。填入“etons”后，完整单词为“skeleton”，符合句意：坚硬的骨架。\n\n注意：单词“skeleton”的拼写为s-k-e-l-e-t-o-n，这里需要填入的是“etons”部分，因为“skel”已经给出。注意拼写中的“e”在“skel”之后，完整为skeleton。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "skills",
@@ -32642,8 +32759,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "str",
         "etch"
       ],
-      "part": "word",
-      "meaning": "答题后查看中文语境",
+      "part": "v.",
+      "meaning": "延伸；拉伸",
       "phrase": "and may stretch its full",
       "sentence": "Spider silk has a breaking point far greater than steel and may stretch its full length before breaking: a 0.01 centimeter thread can support eighty grams.",
       "sourceIds": [
@@ -32665,8 +32782,8 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "engh",
       "status": "historical-error",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 3,
+      "tip": "stretch 结尾是 -tch；记住 str + etch。",
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -32679,7 +32796,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "这里描述蜘蛛丝的弹性，表示“拉伸”。\n“str####”中，第一个“#”对应字母“e”，第二个“#”对应字母“t”，第三个“#”对应字母“c”，第四个“#”对应字母“h”，因此填入“etch”形成完整单词“stretch”。\n解析：拉伸是弹性材料的关键特性，蜘蛛丝能在断裂前拉伸至全长，这体现了其高弹性，与开头的“弹性”描述一致。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "strong",
@@ -33051,8 +33171,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "subm",
         "erged"
       ],
-      "part": "v.",
-      "meaning": "淹没在水下的文物",
+      "part": "adj.",
+      "meaning": "浸没的；淹没在水下的",
       "phrase": "discover artifacts submerged underwater",
       "sentence": "Sometimes, however, they discover artifacts submerged underwater.",
       "sourceIds": [
@@ -33074,11 +33194,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "submerge + d；保留 -merged，注意中间的 e。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "such",
@@ -37517,8 +37640,8 @@ window.TOEFL_NOTEBOOK_DATA = {
         "vib",
         "rant"
       ],
-      "part": "word",
-      "meaning": "充满活力的、生机勃勃的",
+      "part": "adj.",
+      "meaning": "充满活力的；鲜艳的",
       "phrase": "A vibrant period of",
       "sentence": "A vibrant period of cultural, artistic, and intellectual revival, the Renaissance marked a renewed interest in classical literature, and science.",
       "sourceIds": [
@@ -37540,11 +37663,14 @@ window.TOEFL_NOTEBOOK_DATA = {
       ],
       "userAnswer": "",
       "status": "reference",
-      "tip": "先判断词性，再锁定已给字母与缺失长度。",
-      "priority": 1,
+      "tip": "vibrate 的词干变为 vibr-；结尾是 -brant，不是 -brent。",
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "visitors",
@@ -40139,5 +40265,7 @@ window.TOEFL_NOTEBOOK_DATA = {
         }
       ]
     }
-  ]
+  ],
+  "focusBatch": "2026-07-18-focus-1",
+  "focusWordCount": 42
 };

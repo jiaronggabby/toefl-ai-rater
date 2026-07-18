@@ -81,7 +81,10 @@
       lastAnswer: progress.lastAnswer || "",
       exitedAt: progress.exitedAt || null,
       correctionPending: legacyCorrection,
-      mastered: wasExited && !legacyCorrection
+      mastered: wasExited && !legacyCorrection,
+      focusBatch: progress.focusBatch || null,
+      focusPending: Boolean(word?.focusReview)
+        && progress.focusBatch !== word.focusBatch
     };
   }
 
@@ -130,7 +133,7 @@
   }
 
   function progressFor(wordId) {
-    return state.words[wordId] || migrateProgress();
+    return state.words[wordId] || migrateProgress({}, wordMap.get(wordId));
   }
 
   function baseConfirmations(word) {
@@ -139,11 +142,13 @@
   }
 
   function requiredConfirmations(word, progress = progressFor(word.id)) {
+    if (word.focusReview && progress.focusPending) return 1;
     if (word.kind === "error") return progress.mastered && !progress.correctionPending ? 0 : 1;
     return Math.min(MAX_CONFIRMATIONS, baseConfirmations(word) + Number(progress.practiceWrong || 0));
   }
 
   function remainingConfirmations(word, progress = progressFor(word.id)) {
+    if (word.focusReview && progress.focusPending) return 1;
     if (word.kind === "error") return progress.mastered && !progress.correctionPending ? 0 : 1;
     return Math.max(0, requiredConfirmations(word, progress) - Number(progress.practiceCorrect || 0));
   }
@@ -168,6 +173,10 @@
       progress.correct += 1;
       progress.streak += 1;
       if (!assisted) progress.practiceCorrect += 1;
+      if (word.focusReview && !assisted) {
+        progress.focusPending = false;
+        progress.focusBatch = word.focusBatch || null;
+      }
       if (word.kind === "error" && !assisted) {
         progress.mastered = true;
         progress.correctionPending = false;
@@ -181,6 +190,10 @@
       // progress where a correction was mistakenly treated as mastery.
       progress.mastered = false;
       if (word.kind === "error") progress.correctionPending = true;
+      if (word.focusReview) {
+        progress.focusPending = true;
+        progress.focusBatch = null;
+      }
       progress.exitedAt = null;
     }
 
@@ -258,12 +271,14 @@
   }
 
   function kindLabel(word) {
+    if (word.focusReview) return "重点复习";
     if (word.kind === "error") return "历史错词";
     if (word.kind === "fm-history") return "已做题";
     return "拓展生词";
   }
 
   function kindClass(word) {
+    if (word.focusReview) return "pill-focus";
     if (word.kind === "error") return "pill-error";
     if (word.kind === "vocabulary") return "pill-vocab";
     return "";
@@ -305,13 +320,15 @@
 
   function restoreWord(wordId) {
     const word = wordMap.get(wordId);
-    if (!word || word.kind !== "error") return;
+    if (!word || (word.kind !== "error" && !word.focusReview)) return;
     state.words[word.id] = {
         ...progressFor(word.id),
         mastered: false,
         correctionPending: false,
         practiceCorrect: 0,
-      exitedAt: null
+        focusPending: Boolean(word.focusReview),
+        focusBatch: null,
+        exitedAt: null
     };
     saveState();
     renderHome();
@@ -321,7 +338,7 @@
   function buildQueue(limit = state.settings.dailyGoal, onlyIds = null) {
     const allowedIds = onlyIds ? new Set(onlyIds) : null;
     const candidates = DATA.words.filter((word) => (
-      word.kind === "error" &&
+      (word.kind === "error" || word.focusReview) &&
       (!allowedIds || allowedIds.has(word.id)) &&
       !isRetired(word)
     ));
@@ -331,7 +348,11 @@
     const cycle = state.reviewCycle || (state.reviewCycle = { phase: "first", seen: [] });
     const seen = new Set(Array.isArray(cycle.seen) ? cycle.seen : []);
     const unseen = candidates.filter((word) => !seen.has(word.id));
-    if (unseen.length) return shuffle(unseen).slice(0, size);
+    if (unseen.length) {
+      const focused = shuffle(unseen.filter((word) => word.focusReview));
+      const regular = shuffle(unseen.filter((word) => !word.focusReview));
+      return [...focused, ...regular].slice(0, size);
+    }
 
     // The broad first pass is complete. From here, keep the most frequently
     // missed words at the front; mastered words are already excluded above.
@@ -340,6 +361,8 @@
     saveState();
     return [...candidates]
       .sort((a, b) => {
+        const focusRank = Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview));
+        if (focusRank) return focusRank;
         const scoreA = Number(a.historicalErrors || 0) + Number(progressFor(a.id).practiceWrong || 0);
         const scoreB = Number(b.historicalErrors || 0) + Number(progressFor(b.id).practiceWrong || 0);
         return scoreB - scoreA || a.word.localeCompare(b.word, "en");
@@ -358,7 +381,8 @@
 
   function renderHome() {
     const errors = DATA.words.filter((word) => word.kind === "error");
-    const active = errors.filter((word) => !isRetired(word));
+    const reviewable = DATA.words.filter((word) => word.kind === "error" || word.focusReview);
+    const active = reviewable.filter((word) => !isRetired(word));
     const retired = errors.length - active.length;
     const progressValues = Object.values(state.words);
     const attempts = progressValues.reduce((sum, item) => sum + Number(item.attempts || 0), 0);
@@ -378,7 +402,9 @@
     byId("goal-select").value = String(goal);
     byId("today-progress").style.width = `${Math.min(100, (reviewedToday / goal) * 100)}%`;
 
-    const weakWords = shuffle(active).slice(0, 5);
+    const weakWords = shuffle(active)
+      .sort((a, b) => Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview)))
+      .slice(0, 5);
     byId("weak-list").innerHTML = weakWords.length ? weakWords.map((word) => {
       const remaining = remainingConfirmations(word);
       const history = Number(word.historicalErrors || 0);
@@ -629,14 +655,16 @@
     summary.hidden = false;
     const attempts = activeSession.attempts;
     const accuracy = attempts ? Math.round((activeSession.correct / attempts) * 100) : 0;
-    const remainingPool = DATA.words.filter((word) => word.kind === "error" && !isRetired(word)).length;
+    const remainingPool = DATA.words.filter((word) => (
+      (word.kind === "error" || word.focusReview) && !isRetired(word)
+    )).length;
     const retryableIds = uniqueIds(activeSession.wrongIds).filter((id) => {
       const word = wordMap.get(id);
       return word && !isRetired(word);
     });
     byId("summary-score").textContent = attempts ? `${activeSession.correct} / ${attempts}` : "队列已清空";
     byId("summary-detail").textContent = attempts
-      ? `本轮正确率 ${accuracy}%。${remainingPool ? `还有 ${remainingPool} 个未掌握错词，下次会重新随机抽取。` : "全部错词都已过完；历史错词仍保留在错题本。"}`
+      ? `本轮正确率 ${accuracy}%。${remainingPool ? `还有 ${remainingPool} 个未掌握复习词，下次会重新随机抽取。` : "当前复习词都已过完；历史记录仍保留在错题本。"}`
       : "当前没有需要复习的词。";
     byId("retry-wrong").hidden = retryableIds.length === 0;
     byId("retry-wrong").dataset.ids = JSON.stringify(retryableIds);
@@ -674,7 +702,7 @@
     const kind = byId("kind-filter").value;
     const source = byId("source-filter").value;
     const words = DATA.words
-      .filter((word) => kind === "all" || word.kind === kind)
+      .filter((word) => kind === "all" || (kind === "focus" ? word.focusReview : word.kind === kind))
       .filter((word) => source === "all" || word.sourceIds.includes(source))
       .filter((word) => {
         if (!query) return true;
@@ -683,6 +711,7 @@
       })
       .sort((a, b) => {
         const kindRank = { error: 0, "fm-history": 1, vocabulary: 2 };
+        if (a.focusReview !== b.focusReview) return Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview));
         const rank = (kindRank[a.kind] ?? 9) - (kindRank[b.kind] ?? 9);
         if (rank) return rank;
         const remaining = remainingConfirmations(b) - remainingConfirmations(a);
@@ -703,8 +732,12 @@
       const errorNote = word.kind === "error"
         ? `<p class="error-note">历史错误写法：${escapeHtml(word.userAnswer || "空白")}</p>`
         : "";
+      const focusNote = word.focusReview
+        ? `<p class="focus-note">订正后仍不熟 · 已加入本批重点复习${word.focusInput ? ` · 你写过：${escapeHtml(word.focusInput)}` : ""}</p>
+           <p class="sentence-note"><strong>原句：</strong>${escapeHtml(word.sentence)}</p>`
+        : "";
       const queueNote = remaining > 0 ? "尚未掌握" : "已退出队列（记录保留）";
-      const restoreButton = word.kind === "error" && isRetired(word)
+      const restoreButton = (word.kind === "error" || word.focusReview) && isRetired(word)
         ? `<button class="button button-small" type="button" data-restore="${escapeHtml(word.id)}">重新加入队列</button>`
         : "";
       return `
@@ -719,6 +752,7 @@
           <p class="phrase">${escapeHtml(word.phrase)}</p>
           <p class="muted small">${escapeHtml(sourceLabel(word))}</p>
           ${errorNote}
+          ${focusNote}
           <p class="tip-note">${escapeHtml(memoryTipFor(word))}</p>
           <div class="mastery-line">
             <span>${escapeHtml(queueNote)}</span>
@@ -731,7 +765,7 @@
 
   function highlightPassage(source) {
     const terms = DATA.words
-      .filter((word) => word.kind === "error" && word.sourceIds.includes(source.id))
+      .filter((word) => (word.kind === "error" || word.focusReview) && word.sourceIds.includes(source.id))
       .map((word) => word.word)
       .sort((a, b) => b.length - a.length);
     const escapedPassage = escapeHtml(source.passage);
@@ -757,11 +791,13 @@
     }).join("");
 
     byId("passage-list").innerHTML = DATA.sources.map((source) => {
-      const count = DATA.words.filter((word) => word.kind === "error" && word.sourceIds.includes(source.id)).length;
+      const count = DATA.words.filter((word) => (
+        (word.kind === "error" || word.focusReview) && word.sourceIds.includes(source.id)
+      )).length;
       const targetText = source.origin && source.origin.startsWith("fm-") ? `${source.targetCount} 个填词位` : "截图补充记录";
       return `
         <details>
-          <summary>${escapeHtml(sourceName(source))} · ${escapeHtml(source.title)} <span class="muted small">${targetText} · ${count} 个历史错词</span></summary>
+          <summary>${escapeHtml(sourceName(source))} · ${escapeHtml(source.title)} <span class="muted small">${targetText} · ${count} 个复习词</span></summary>
           <div class="passage-body">${highlightPassage(source)}</div>
         </details>`;
     }).join("");
