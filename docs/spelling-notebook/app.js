@@ -416,9 +416,10 @@
     byId("goal-select").value = String(goal);
     byId("today-progress").style.width = `${Math.min(100, (reviewedToday / goal) * 100)}%`;
     const focusButton = byId("start-focus");
+    const focusLabel = `重点词（${focusPool.length}）`;
     focusButton.textContent = activeFocus.length
-      ? `重点42词 · 待复习 ${activeFocus.length}/${focusPool.length}`
-      : "重点42词 · 已过完";
+      ? `${focusLabel} · 待复习 ${activeFocus.length}/${focusPool.length}`
+      : `${focusLabel} · 已过完`;
     focusButton.disabled = activeFocus.length === 0;
 
     const weakWords = shuffle(active)

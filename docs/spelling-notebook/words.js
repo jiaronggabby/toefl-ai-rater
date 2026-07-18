@@ -1,5 +1,5 @@
 window.TOEFL_NOTEBOOK_DATA = {
-  "version": "2026-07-18.1",
+  "version": "2026-07-18.2",
   "updatedAt": "2026-07-18",
   "dailyGoal": 20,
   "completedTests": 40,
@@ -1672,6 +1672,20 @@ window.TOEFL_NOTEBOOK_DATA = {
       "origin": "fm-practice-1-40",
       "duplicateSourceRefs": [],
       "number": 118
+    },
+    {
+      "id": "screenshot-kinship-2026-07-18",
+      "number": 0,
+      "testNumber": null,
+      "model": null,
+      "modelOrder": null,
+      "title": "The role of kinship was central to the social structure…",
+      "topic": "截图补充 · 史前社会中的亲属关系",
+      "passage": "The role of kinship was central to the social structure of prehistoric communities. Kinship not only structured family relationships but also shaped how resources were shared, labor was organized, and social hierarchies were maintained within the group. Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor. The intricacy of these social structures is further evidenced by the existence of ceremonial sites, which indicate collective activities and social gatherings.",
+      "passageZh": "亲属关系在史前群体的社会结构中起着核心作用。亲属关系不仅组织了家庭关系，也塑造了群体内部资源分配、劳动组织和社会等级维持的方式。考古证据表明，个人会根据年龄和性别承担特定角色，从而促成了复杂的劳动分工。这些社会结构的复杂性还体现在仪式场所的存在上，它们表明群体曾进行集体活动和社会聚会。",
+      "targetCount": 4,
+      "origin": "screenshot-kinship-2026-07-18",
+      "duplicateSourceRefs": []
     }
   ],
   "issues": [
@@ -4381,21 +4395,42 @@ window.TOEFL_NOTEBOOK_DATA = {
         "logical"
       ],
       "part": "adj.",
-      "meaning": "考古学的",
-      "phrase": "archaeological sites",
-      "sentence": "Researchers explore underwater archaeological sites.",
+      "meaning": "考古学的；考古证据的",
+      "phrase": "Archaeological evidence suggests",
+      "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor.",
       "sourceIds": [
+        "screenshot-kinship-2026-07-18",
         "t38-m1-1",
         "t37-m1-1"
       ],
-      "occurrences": [],
-      "userAnswer": "",
-      "status": "reference",
-      "tip": "archaeo + logical；注意 ae 的顺序。",
-      "priority": 0,
-      "kind": "vocabulary",
-      "historicalErrors": 0,
-      "historyOccurrences": []
+      "occurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "split": [
+            "archaeo",
+            "logical"
+          ],
+          "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor."
+        }
+      ],
+      "userAnswer": "未显示",
+      "status": "historical-error",
+      "tip": "archaeo + logical；注意 archaeo 中 a-e 的顺序。",
+      "priority": 5,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "userAnswer": "未显示",
+          "correct": "archaeological",
+          "origin": "screenshot",
+          "explain": "截图中该词被标红；标准拼写是 archaeological。"
+        }
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "archaeologists",
@@ -34210,7 +34245,7 @@ window.TOEFL_NOTEBOOK_DATA = {
       "userAnswer": "this",
       "status": "historical-error",
       "tip": "先判断词性，再用已给字母和 # 数量补完整。",
-      "priority": 3,
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -34224,7 +34259,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "meaning": "",
           "tip": "先判断词性，再用已给字母和 # 数量补完整。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "the",
@@ -35257,7 +35295,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "origin": "fm-practice-history",
           "explain": "来自已开始题目的留空或拼写不一致；标准拼写按词库核对。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "thinking",
@@ -37504,7 +37545,7 @@ window.TOEFL_NOTEBOOK_DATA = {
       "userAnswer": "varies",
       "status": "historical-error",
       "tip": "diet 前需要形容词 varied；varies 是动词第三人称单数。",
-      "priority": 3,
+      "priority": 5,
       "kind": "error",
       "historicalErrors": 1,
       "historyOccurrences": [
@@ -37518,7 +37559,10 @@ window.TOEFL_NOTEBOOK_DATA = {
           "meaning": "多样化的饮食",
           "tip": "过去式/过去分词；常表示过去动作或被动状态。"
         }
-      ]
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "vegetables",
@@ -37551,10 +37595,13 @@ window.TOEFL_NOTEBOOK_DATA = {
       "userAnswer": "",
       "status": "reference",
       "tip": "单词：vegetables（蔬菜）。\n填空解析：根据上下文，列举的食物包括蔬菜，填入“ables”后构成“vegetables”，注意拼写。",
-      "priority": 0,
+      "priority": 5,
       "kind": "fm-history",
       "historicalErrors": 0,
-      "historyOccurrences": []
+      "historyOccurrences": [],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     },
     {
       "id": "vegetation",
@@ -40264,8 +40311,137 @@ window.TOEFL_NOTEBOOK_DATA = {
           "explain": "单词 symbolism 意为“象征主义；象征意义”。这里指抽象艺术关注象征主义（symbolism）。注意拼写：sym- + bolism，但正确拼写是 s-y-m-b-o-l-i-s-m，题干中给出 symb#####，共5个#，填入 olism 得到 symbolism。"
         }
       ]
+    },
+    {
+      "id": "age",
+      "word": "age",
+      "split": [
+        "a",
+        "ge"
+      ],
+      "part": "n.",
+      "meaning": "年龄；年龄阶段",
+      "phrase": "based on age and gender",
+      "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor.",
+      "sourceIds": [
+        "screenshot-kinship-2026-07-18"
+      ],
+      "occurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "split": [
+            "a",
+            "ge"
+          ],
+          "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor."
+        }
+      ],
+      "userAnswer": "未显示",
+      "status": "historical-error",
+      "tip": "age 结尾是 -ge；记住 a-g-e，不要写成 aje。",
+      "priority": 5,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "userAnswer": "未显示",
+          "correct": "age",
+          "origin": "screenshot",
+          "explain": "截图中该词被标红；标准拼写是 age。"
+        }
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
+    },
+    {
+      "id": "gender",
+      "word": "gender",
+      "split": [
+        "gen",
+        "der"
+      ],
+      "part": "n.",
+      "meaning": "性别",
+      "phrase": "age and gender",
+      "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor.",
+      "sourceIds": [
+        "screenshot-kinship-2026-07-18"
+      ],
+      "occurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "split": [
+            "gen",
+            "der"
+          ],
+          "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor."
+        }
+      ],
+      "userAnswer": "未显示",
+      "status": "historical-error",
+      "tip": "gen + der；中间是 gen，结尾是 -der。",
+      "priority": 5,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "userAnswer": "未显示",
+          "correct": "gender",
+          "origin": "screenshot",
+          "explain": "截图中该词被标红；标准拼写是 gender。"
+        }
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
+    },
+    {
+      "id": "sophisticated",
+      "word": "sophisticated",
+      "split": [
+        "sophisti",
+        "cated"
+      ],
+      "part": "adj.",
+      "meaning": "复杂精密的；老练的",
+      "phrase": "a sophisticated division of labor",
+      "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor.",
+      "sourceIds": [
+        "screenshot-kinship-2026-07-18"
+      ],
+      "occurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "split": [
+            "sophisti",
+            "cated"
+          ],
+          "sentence": "Archaeological evidence suggests that individuals held specific roles based on age and gender, contributing to a sophisticated division of labor."
+        }
+      ],
+      "userAnswer": "未显示",
+      "status": "historical-error",
+      "tip": "sophisticate + d；开头是 soph-，词尾是 -cated。",
+      "priority": 5,
+      "kind": "error",
+      "historicalErrors": 1,
+      "historyOccurrences": [
+        {
+          "sourceId": "screenshot-kinship-2026-07-18",
+          "userAnswer": "未显示",
+          "correct": "sophisticated",
+          "origin": "screenshot",
+          "explain": "截图中该词被标红；标准拼写是 sophisticated。"
+        }
+      ],
+      "focusReview": true,
+      "focusBatch": "2026-07-18-focus-1",
+      "focusInput": ""
     }
   ],
   "focusBatch": "2026-07-18-focus-1",
-  "focusWordCount": 42
+  "focusWordCount": 50
 };
