@@ -379,11 +379,25 @@
     saveState();
   }
 
+  function focusWords() {
+    const batch = DATA.focusBatch;
+    return DATA.words.filter((word) => (
+      word.focusReview && (!batch || word.focusBatch === batch)
+    ));
+  }
+
+  function focusIds() {
+    return focusWords().filter((word) => !isRetired(word)).map((word) => word.id);
+  }
+
   function renderHome() {
     const errors = DATA.words.filter((word) => word.kind === "error");
     const reviewable = DATA.words.filter((word) => word.kind === "error" || word.focusReview);
     const active = reviewable.filter((word) => !isRetired(word));
-    const retired = errors.length - active.length;
+    const activeErrors = errors.filter((word) => !isRetired(word));
+    const focusPool = focusWords();
+    const activeFocus = focusPool.filter((word) => !isRetired(word));
+    const retired = errors.length - activeErrors.length;
     const progressValues = Object.values(state.words);
     const attempts = progressValues.reduce((sum, item) => sum + Number(item.attempts || 0), 0);
     const correct = progressValues.reduce((sum, item) => sum + Number(item.correct || 0), 0);
@@ -401,6 +415,11 @@
     byId("daily-goal").textContent = goal;
     byId("goal-select").value = String(goal);
     byId("today-progress").style.width = `${Math.min(100, (reviewedToday / goal) * 100)}%`;
+    const focusButton = byId("start-focus");
+    focusButton.textContent = activeFocus.length
+      ? `重点42词 · 待复习 ${activeFocus.length}/${focusPool.length}`
+      : "重点42词 · 已过完";
+    focusButton.disabled = activeFocus.length === 0;
 
     const weakWords = shuffle(active)
       .sort((a, b) => Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview)))
@@ -430,6 +449,9 @@
 
   function startSession(mode, onlyIds = null) {
     const queue = buildQueue(onlyIds ? onlyIds.length : state.settings.dailyGoal, onlyIds);
+    const focusOnly = Boolean(
+      onlyIds && onlyIds.length && onlyIds.every((id) => wordMap.get(id)?.focusReview)
+    );
     activeSession = {
       mode,
       queue,
@@ -443,7 +465,8 @@
       answerWasCorrect: false,
       wrongIds: [],
       initialIds: uniqueIds(queue.map((word) => word.id)),
-      onlyIds: Boolean(onlyIds)
+      onlyIds: Boolean(onlyIds),
+      focusOnly
     };
     byId("session-summary").hidden = true;
     byId("practice-panel").hidden = false;
@@ -496,7 +519,9 @@
     byId("practice-source").textContent = sourceLabel(word);
     byId("practice-kind").textContent = kindLabel(word);
     byId("practice-kind").className = `pill ${kindClass(word)}`;
-    byId("practice-title").textContent = "先根据英文语境完成拼写";
+    byId("practice-title").textContent = activeSession.focusOnly
+      ? "重点词 · 先根据英文语境完成拼写"
+      : "先根据英文语境完成拼写";
     byId("practice-prompt").innerHTML = maskedSentence(word, activeSession.mode);
     byId("answer-label").textContent = activeSession.mode === "cloze"
       ? `填写 ${word.split[0]} 后缺失的 ${word.split[1].length} 个字母`
@@ -862,6 +887,10 @@
 
   byId("start-cloze").addEventListener("click", () => startSession("cloze"));
   byId("start-spelling").addEventListener("click", () => startSession("spelling"));
+  byId("start-focus").addEventListener("click", () => {
+    const ids = focusIds();
+    if (ids.length) startSession("cloze", ids);
+  });
   byId("answer-form").addEventListener("submit", handleAnswer);
   byId("hint-button").addEventListener("click", showHint);
   byId("next-button").addEventListener("click", nextQuestion);
@@ -916,6 +945,7 @@
     remainingConfirmations,
     isRetired,
     recordAttempt,
+    focusIds,
     startSession,
     currentWord,
     getActiveSession: () => activeSession,

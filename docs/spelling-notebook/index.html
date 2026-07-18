@@ -328,6 +328,17 @@
       background: var(--accent-strong);
     }
 
+    .button-focus {
+      border-color: #e8b14b;
+      background: #fff8e8;
+      color: #8b5200;
+    }
+
+    .button-focus:hover {
+      border-color: #c98d24;
+      background: #fff1cf;
+    }
+
     .button-dark {
       border-color: var(--surface-strong);
       background: var(--surface-strong);
@@ -992,6 +1003,7 @@
           <div class="button-row">
             <button id="start-cloze" class="button button-primary" type="button">开始错词冲刺</button>
             <button id="start-spelling" class="button" type="button">错词整词默写</button>
+            <button id="start-focus" class="button button-focus" type="button">重点42词 · 待复习 42/42</button>
           </div>
           <p class="muted small">快速顺序：判断词性 → 锁定已给字母 → 核对缺失长度 → 输入缺失部分。</p>
           <div class="stats-grid" aria-label="学习概况">
