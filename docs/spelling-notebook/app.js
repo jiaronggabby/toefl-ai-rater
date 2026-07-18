@@ -390,6 +390,25 @@
     return focusWords().filter((word) => !isRetired(word)).map((word) => word.id);
   }
 
+  function resetFocusQueue() {
+    const focusPool = focusWords();
+    focusPool.forEach((word) => {
+      state.words[word.id] = {
+        ...progressFor(word.id),
+        mastered: false,
+        correctionPending: false,
+        practiceCorrect: 0,
+        focusPending: true,
+        focusBatch: null,
+        exitedAt: null
+      };
+    });
+    saveState();
+    renderHome();
+    renderNotebook();
+    return focusPool.map((word) => word.id);
+  }
+
   function renderHome() {
     const errors = DATA.words.filter((word) => word.kind === "error");
     const reviewable = DATA.words.filter((word) => word.kind === "error" || word.focusReview);
@@ -421,6 +440,9 @@
       ? `${focusLabel} · 待复习 ${activeFocus.length}/${focusPool.length}`
       : `${focusLabel} · 已过完`;
     focusButton.disabled = activeFocus.length === 0;
+    const resetFocusButton = byId("reset-focus");
+    resetFocusButton.textContent = `重新导入重点词（${focusPool.length}）`;
+    resetFocusButton.disabled = focusPool.length === 0;
 
     const weakWords = shuffle(active)
       .sort((a, b) => Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview)))
@@ -892,6 +914,10 @@
     const ids = focusIds();
     if (ids.length) startSession("cloze", ids);
   });
+  byId("reset-focus").addEventListener("click", () => {
+    const ids = resetFocusQueue();
+    if (ids.length) startSession("cloze", ids);
+  });
   byId("answer-form").addEventListener("submit", handleAnswer);
   byId("hint-button").addEventListener("click", showHint);
   byId("next-button").addEventListener("click", nextQuestion);
@@ -947,6 +973,7 @@
     isRetired,
     recordAttempt,
     focusIds,
+    resetFocusQueue,
     startSession,
     currentWord,
     getActiveSession: () => activeSession,
