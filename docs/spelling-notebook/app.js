@@ -409,6 +409,37 @@
     return focusPool.map((word) => word.id);
   }
 
+  function errorFrequency(word) {
+    return Number(progressFor(word.id).practiceWrong || 0);
+  }
+
+  function highFrequencyWords(limit = 80) {
+    return DATA.words
+      .filter((word) => errorFrequency(word) > 0)
+      .sort((a, b) => errorFrequency(b) - errorFrequency(a)
+        || a.word.localeCompare(b.word, "en"))
+      .slice(0, limit);
+  }
+
+  function resetHighFrequencyQueue() {
+    const queueWords = highFrequencyWords();
+    queueWords.forEach((word) => {
+      state.words[word.id] = {
+        ...progressFor(word.id),
+        mastered: false,
+        correctionPending: false,
+        practiceCorrect: 0,
+        focusPending: Boolean(word.focusReview),
+        focusBatch: null,
+        exitedAt: null
+      };
+    });
+    saveState();
+    renderHome();
+    renderNotebook();
+    return queueWords.map((word) => word.id);
+  }
+
   function renderHome() {
     const errors = DATA.words.filter((word) => word.kind === "error");
     const reviewable = DATA.words.filter((word) => word.kind === "error" || word.focusReview);
@@ -443,6 +474,12 @@
     const resetFocusButton = byId("reset-focus");
     resetFocusButton.textContent = `重新导入重点词（${focusPool.length}）`;
     resetFocusButton.disabled = focusPool.length === 0;
+    const highFrequencyButton = byId("start-high-frequency");
+    const highFrequencyCount = highFrequencyWords().length;
+    highFrequencyButton.textContent = highFrequencyCount
+      ? `网页错词（${highFrequencyCount}）·重新导入`
+      : "网页错词（暂无记录）";
+    highFrequencyButton.disabled = highFrequencyCount === 0;
 
     const weakWords = shuffle(active)
       .sort((a, b) => Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview)))
@@ -918,6 +955,10 @@
     const ids = resetFocusQueue();
     if (ids.length) startSession("cloze", ids);
   });
+  byId("start-high-frequency").addEventListener("click", () => {
+    const ids = resetHighFrequencyQueue();
+    if (ids.length) startSession("cloze", ids);
+  });
   byId("answer-form").addEventListener("submit", handleAnswer);
   byId("hint-button").addEventListener("click", showHint);
   byId("next-button").addEventListener("click", nextQuestion);
@@ -974,6 +1015,8 @@
     recordAttempt,
     focusIds,
     resetFocusQueue,
+    highFrequencyWords,
+    resetHighFrequencyQueue,
     startSession,
     currentWord,
     getActiveSession: () => activeSession,
