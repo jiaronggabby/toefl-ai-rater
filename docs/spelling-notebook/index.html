@@ -220,6 +220,7 @@
     .goal-card,
     .panel,
     .practice-card,
+    .passage-card,
     .summary-card {
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
@@ -518,6 +519,116 @@
       max-width: 920px;
       margin: 0 auto;
       padding: clamp(22px, 5vw, 48px);
+    }
+
+    .passage-card {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: clamp(22px, 5vw, 48px);
+    }
+
+    .passage-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 24px 0 14px;
+    }
+
+    .passage-topic {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .passage-title {
+      margin: 10px 0 8px;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    .passage-instruction {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .passage-text {
+      margin: 26px 0 20px;
+      padding: clamp(18px, 3vw, 30px);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: var(--surface-soft);
+      color: var(--text);
+      font-size: clamp(1.03rem, 2vw, 1.24rem);
+      line-height: 2;
+    }
+
+    .passage-blank {
+      display: inline-flex;
+      align-items: baseline;
+      margin: 0 0.08em;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    .passage-prefix {
+      color: var(--accent-strong);
+      font-weight: 800;
+    }
+
+    .passage-input {
+      min-width: 2.7ch;
+      margin-left: 1px;
+      border: 0;
+      border-bottom: 2px solid var(--accent);
+      border-radius: 0;
+      padding: 1px 2px 0;
+      background: transparent;
+      color: var(--text);
+      font: inherit;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-align: center;
+      outline: 0;
+    }
+
+    .passage-input:focus {
+      border-bottom-color: var(--accent-strong);
+      box-shadow: 0 3px 0 rgba(22, 127, 114, 0.12);
+    }
+
+    .passage-blank--correct .passage-input {
+      border-bottom-color: var(--success);
+      background: var(--success-soft);
+      color: #104e33;
+    }
+
+    .passage-blank--wrong .passage-input {
+      border-bottom-color: var(--danger);
+      background: var(--danger-soft);
+      color: #702929;
+    }
+
+    .passage-input:disabled {
+      opacity: 1;
+      cursor: default;
+    }
+
+    .passage-meaning {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(22, 127, 114, 0.16);
+      line-height: 1.8;
+    }
+
+    .passage-notes {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(22, 127, 114, 0.16);
+    }
+
+    .passage-notes ul,
+    .feedback ul {
+      margin: 8px 0 0;
+      padding-left: 1.35rem;
     }
 
     .practice-meta {
@@ -916,14 +1027,16 @@
       .hero-copy,
       .goal-card,
       .panel,
-      .practice-card {
+      .practice-card,
+      .passage-card {
         border-radius: 18px;
       }
 
       .hero-copy,
       .goal-card,
       .panel,
-      .practice-card {
+      .practice-card,
+      .passage-card {
         padding: 20px;
       }
 
@@ -937,6 +1050,12 @@
         padding: 16px;
         font-size: 1rem;
         line-height: 1.7;
+      }
+
+      .passage-text {
+        padding: 16px;
+        font-size: 1rem;
+        line-height: 1.85;
       }
 
       .answer-input {
@@ -1006,6 +1125,7 @@
             <button id="start-focus" class="button button-focus" type="button">重点词 · 待复习</button>
             <button id="reset-focus" class="button button-focus button-small" type="button">重新导入重点词</button>
             <button id="start-high-frequency" class="button button-small" type="button">网页错词（暂无记录）</button>
+            <button id="start-passage" class="button button-dark" type="button">整篇重做</button>
           </div>
           <p class="muted small">快速顺序：判断词性 → 锁定已给字母 → 核对缺失长度 → 输入缺失部分。</p>
           <div class="stats-grid" aria-label="学习概况">
@@ -1116,6 +1236,30 @@
         <div class="button-row" style="justify-content:center">
           <button id="retry-wrong" class="button button-primary" type="button">只练本轮错词</button>
           <button id="back-home" class="button" type="button">回到今日</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="passage-view" class="view" aria-labelledby="passage-title" hidden>
+      <div id="passage-panel" class="passage-card">
+        <div class="practice-topline">
+          <button id="quit-passage" class="button button-ghost button-small" type="button">结束本篇</button>
+          <span id="passage-progress" class="muted small">整篇填词</span>
+        </div>
+
+        <div class="passage-meta">
+          <span id="passage-source" class="pill pill-focus">题源</span>
+          <span id="passage-topic" class="passage-topic">—</span>
+          <span id="passage-count" class="pill">— 个空</span>
+        </div>
+        <h1 id="passage-title" class="passage-title">整篇挖空重做</h1>
+        <p id="passage-instruction" class="passage-instruction">按原题格式填写每个空。</p>
+        <div id="passage-content" class="passage-text" aria-live="polite"></div>
+        <div id="passage-feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+
+        <div class="button-row">
+          <button id="check-passage" class="button button-primary" type="button">检查整篇</button>
+          <button id="next-passage" class="button button-dark" type="button" hidden>下一篇</button>
         </div>
       </div>
     </section>

@@ -31,6 +31,7 @@
   const views = new Map([
     ["home", byId("home-view")],
     ["practice", byId("practice-view")],
+    ["passage", byId("passage-view")],
     ["notebook", byId("notebook-view")],
     ["sources", byId("sources-view")]
   ]);
@@ -38,6 +39,7 @@
   let storageEnabled = true;
   let state = loadState();
   let activeSession = null;
+  let activePassageSession = null;
 
   function localDateKey(date = new Date()) {
     const year = date.getFullYear();
@@ -480,6 +482,10 @@
       ? `网页错词（${highFrequencyCount}）·重新导入`
       : "网页错词（暂无记录）";
     highFrequencyButton.disabled = highFrequencyCount === 0;
+    const passageButton = byId("start-passage");
+    const passageCount = passageSources().length;
+    passageButton.textContent = `整篇重做（${passageCount} 篇）`;
+    passageButton.disabled = passageCount === 0;
 
     const weakWords = shuffle(active)
       .sort((a, b) => Number(Boolean(b.focusReview)) - Number(Boolean(a.focusReview)))
@@ -540,6 +546,223 @@
 
   function currentWord() {
     return activeSession ? activeSession.queue[activeSession.index] : null;
+  }
+
+  function passageSources() {
+    return DATA.sources.filter((source) => (
+      source.origin && source.origin.startsWith("fm-")
+      && source.passage && Number(source.targetCount || 0) > 0
+    ));
+  }
+
+  function passageBlanks(source) {
+    const raw = [];
+    DATA.words.forEach((word) => {
+      (word.occurrences || []).forEach((occurrence) => {
+        if (occurrence.sourceId === source.id) raw.push({ word, occurrence });
+      });
+    });
+
+    const groups = new Map();
+    raw.forEach((item) => {
+      const key = `${item.occurrence.sentence}\u0000${normalizeAnswer(item.word.word)}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(item);
+    });
+
+    const positions = [];
+    const usedPositions = new Set();
+    groups.forEach((items) => {
+      const sentence = items[0].occurrence.sentence;
+      const sentenceStart = source.passage.indexOf(sentence);
+      const exemplar = items[0].word.word;
+      const pattern = new RegExp(`\\b${escapeRegExp(exemplar)}\\b`, "gi");
+      const sentenceMatches = sentenceStart < 0
+        ? []
+        : [...sentence.matchAll(pattern)].map((match) => ({ ...match, index: sentenceStart + match.index }));
+      const globalMatches = [...source.passage.matchAll(pattern)];
+      items.sort((a, b) => Number(a.occurrence.qno || 0) - Number(b.occurrence.qno || 0));
+      items.forEach((item) => {
+        const match = sentenceMatches.find((candidate) => !usedPositions.has(candidate.index))
+          || globalMatches.find((candidate) => !usedPositions.has(candidate.index));
+        if (!match) return;
+        usedPositions.add(match.index);
+        const split = item.occurrence.split || item.word.split || ["", item.word.word];
+        const surface = match[0];
+        const start = match.index;
+        positions.push({
+          id: item.word.id,
+          wordData: item.word,
+          qno: Number(item.occurrence.qno || 0),
+          start,
+          end: start + surface.length,
+          surface,
+          prefix: surface.slice(0, split[0].length),
+          missing: split[1]
+        });
+      });
+    });
+
+    return positions.sort((a, b) => a.start - b.start || a.qno - b.qno);
+  }
+
+  function passageAnswerMatches(blank, value) {
+    const answer = normalizeAnswer(value);
+    return answer === normalizeAnswer(blank.missing)
+      || answer === normalizeAnswer(blank.wordData.word);
+  }
+
+  function passageInputs() {
+    return [...document.querySelectorAll("#passage-content input[data-passage-index]")];
+  }
+
+  function passageInputMap() {
+    return new Map(passageInputs().map((input) => [Number(input.dataset.passageIndex), input]));
+  }
+
+  function renderPassageText() {
+    const session = activePassageSession;
+    if (!session) return;
+    let cursor = 0;
+    let html = "";
+    session.blanks.forEach((blank, index) => {
+      html += escapeHtml(session.source.passage.slice(cursor, blank.start));
+      const result = session.results[index] || "";
+      const inputValue = session.answers[index] || "";
+      const locked = result === "correct" || session.stage === "complete";
+      const classes = ["passage-blank", result ? `passage-blank--${result}` : ""]
+        .filter(Boolean).join(" ");
+      const width = Math.min(13, Math.max(3, blank.missing.length + 1));
+      html += `<span class="${classes}">
+        <span class="passage-prefix">${escapeHtml(blank.prefix)}</span>
+        <input class="passage-input" data-passage-index="${index}" type="text" inputmode="text" spellcheck="false" autocapitalize="off" autocomplete="off" maxlength="${blank.wordData.word.length}" size="${width}" style="width:${width}ch" aria-label="第 ${blank.qno} 空，补全 ${escapeHtml(blank.wordData.word)}" placeholder="${"_".repeat(Math.min(5, blank.missing.length))}" value="${escapeHtml(inputValue)}"${locked ? " disabled" : ""}>
+      </span>`;
+      cursor = blank.end;
+    });
+    html += escapeHtml(session.source.passage.slice(cursor));
+    byId("passage-content").innerHTML = html;
+  }
+
+  function passageAnswerList(indices) {
+    const session = activePassageSession;
+    return indices.map((index) => {
+      const blank = session.blanks[index];
+      return `<li>第 ${blank.qno} 空：<strong>${escapeHtml(blank.wordData.word)}</strong>，应填 <span class="answer-reveal">${escapeHtml(blank.missing)}</span></li>`;
+    }).join("");
+  }
+
+  function renderPassageComplete() {
+    const session = activePassageSession;
+    const wrongIndices = session.initialWrongIndices || session.wrongIndices;
+    const notes = wrongIndices.length
+      ? `<div class="passage-notes"><strong>本篇需要继续巩固：</strong><ul>${wrongIndices.map((index) => {
+        const word = session.blanks[index].wordData;
+        return `<li><strong>${escapeHtml(word.word)}</strong>：${escapeHtml(meaningFor(word))} · ${escapeHtml(memoryTipFor(word))}</li>`;
+      }).join("")}</ul></div>`
+      : "";
+    const feedback = byId("passage-feedback");
+    const firstAttempt = session.firstAttemptCorrect === session.blanks.length
+      ? `${session.blanks.length}/${session.blanks.length} 个空首次答对。`
+      : `${session.firstAttemptCorrect}/${session.blanks.length} 个空首次答对，红色空格已完成订正。`;
+    feedback.hidden = false;
+    feedback.className = "feedback feedback-correct";
+    feedback.innerHTML = `
+      <strong>整篇完成。</strong> ${firstAttempt}<br>
+      <span class="small">错空已经订正；相关单词仍按错题本规则保留或退出当前词队列。</span>
+      <div class="passage-meaning"><strong>中文语境：</strong>${escapeHtml(session.source.passageZh || "")}</div>
+      ${notes}`;
+    byId("check-passage").hidden = true;
+    byId("next-passage").hidden = false;
+  }
+
+  function renderPassage() {
+    const session = activePassageSession;
+    if (!session) return;
+    byId("passage-source").textContent = sourceName(session.source);
+    byId("passage-topic").textContent = session.source.topic || session.source.title;
+    byId("passage-count").textContent = `${session.blanks.length} 个空`;
+    byId("passage-progress").textContent = `${session.blanks.length} 个空 · 完成后可换下一篇`;
+    byId("passage-title").textContent = "整篇挖空重做";
+    byId("passage-instruction").textContent = session.stage === "answer"
+      ? "按原题格式填写每个空；只填前缀后缺失的字母，也接受填写完整单词。"
+      : "先把红色空格订正正确；订正完成后才能进入下一篇。";
+    renderPassageText();
+    if (session.stage === "complete") renderPassageComplete();
+  }
+
+  function startPassage(source = null) {
+    const pool = passageSources();
+    if (!pool.length) return;
+    const currentId = activePassageSession?.source?.id;
+    const choices = source ? [source] : pool.filter((item) => item.id !== currentId);
+    const selected = source || shuffle(choices.length ? choices : pool)[0];
+    activeSession = null;
+    activePassageSession = {
+      source: selected,
+      blanks: passageBlanks(selected),
+      stage: "answer",
+      results: [],
+      answers: [],
+      wrongIndices: [],
+      initialWrongIndices: [],
+      firstAttemptCorrect: 0
+    };
+    showView("passage");
+    renderPassage();
+  }
+
+  function finishPassage() {
+    activePassageSession = null;
+    showView("home");
+  }
+
+  function checkPassage() {
+    const session = activePassageSession;
+    if (!session || session.stage === "complete") return;
+    const inputs = passageInputMap();
+    const indices = session.stage === "correction"
+      ? session.wrongIndices
+      : session.blanks.map((_, index) => index);
+    const wrongIndices = [];
+
+    indices.forEach((index) => {
+      const blank = session.blanks[index];
+      const value = inputs.get(index)?.value || "";
+      const correct = passageAnswerMatches(blank, value);
+      session.answers[index] = value;
+      session.results[index] = correct ? "correct" : "wrong";
+      if (!correct) wrongIndices.push(index);
+      if (session.stage === "answer") recordAttempt(blank.wordData, correct, value, false);
+    });
+
+    session.wrongIndices = wrongIndices;
+    if (session.stage === "answer") {
+      session.initialWrongIndices = [...wrongIndices];
+      session.firstAttemptCorrect = session.blanks.length - wrongIndices.length;
+    }
+
+    if (wrongIndices.length) {
+      session.stage = "correction";
+      renderPassage();
+      const feedback = byId("passage-feedback");
+      feedback.hidden = false;
+      feedback.className = "feedback feedback-wrong";
+      feedback.innerHTML = `
+        <strong>先订正红色空格。</strong> ${session.blanks.length - wrongIndices.length}/${session.blanks.length} 个空已答对。<br>
+        <span class="small">正确答案保留在这里，订正错误时不会消失：</span>
+        <ul>${passageAnswerList(wrongIndices)}</ul>`;
+      byId("check-passage").textContent = "提交订正";
+      return;
+    }
+
+    session.stage = "complete";
+    renderPassage();
+    renderPassageComplete();
+  }
+
+  function nextPassage() {
+    if (!activePassageSession) return;
+    startPassage();
   }
 
   function maskedSentence(word, mode) {
@@ -959,6 +1182,10 @@
     const ids = resetHighFrequencyQueue();
     if (ids.length) startSession("cloze", ids);
   });
+  byId("start-passage").addEventListener("click", () => startPassage());
+  byId("quit-passage").addEventListener("click", finishPassage);
+  byId("check-passage").addEventListener("click", checkPassage);
+  byId("next-passage").addEventListener("click", nextPassage);
   byId("answer-form").addEventListener("submit", handleAnswer);
   byId("hint-button").addEventListener("click", showHint);
   byId("next-button").addEventListener("click", nextQuestion);
@@ -1017,6 +1244,11 @@
     resetFocusQueue,
     highFrequencyWords,
     resetHighFrequencyQueue,
+    passageSources,
+    passageBlanks,
+    startPassage,
+    checkPassage,
+    getActivePassageSession: () => activePassageSession,
     startSession,
     currentWord,
     getActiveSession: () => activeSession,
