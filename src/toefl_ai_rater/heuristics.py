@@ -13,6 +13,40 @@ def _clamp(value: float, low: float = 0.0, high: float = 5.0) -> float:
     return max(low, min(high, round(value, 1)))
 
 
+def _speaking_theme(prompt: str) -> str:
+    lower = prompt.lower()
+    if any(token in lower for token in ("diet", "food", "nutrition", "healthy", "eat")):
+        return "health/food"
+    if any(token in lower for token in ("money", "budget", "purchase", "spending", "financial")):
+        return "money/spending"
+    if any(token in lower for token in ("app", "online", "tool", "technology")):
+        return "technology/apps"
+    if any(token in lower for token in ("volunteer", "community", "service")):
+        return "community/volunteering"
+    if any(token in lower for token in ("travel", "trip", "vacation")):
+        return "travel/service"
+    if any(token in lower for token in ("study", "course", "class", "assignment", "learn")):
+        return "study/work"
+    return "general student life"
+
+
+def _speaking_template(prompt: str) -> str:
+    theme = _speaking_theme(prompt)
+    examples = {
+        "health/food": "For example, I usually choose simple healthy food, such as vegetables or fruit, instead of changing everything at once.",
+        "money/spending": "For example, I compare prices before buying something expensive and write down my monthly expenses.",
+        "technology/apps": "For example, I use a simple app to track tasks, deadlines, or money, so I do not forget important things.",
+        "community/volunteering": "For example, I helped at a school event last semester, and it improved my communication with other students.",
+        "travel/service": "For example, I check transportation, hotels, and local attractions before a trip, so the plan feels less stressful.",
+        "study/work": "For example, I review notes after class and practice difficult points for thirty minutes.",
+        "general student life": "For example, in my daily life, I choose one simple habit and keep doing it for several weeks.",
+    }
+    return (
+        "State a clear answer first, then add one reason. "
+        f"{examples[theme]} As a result, ... / That is why I think ..."
+    )
+
+
 def score_speaking(item: PracticeInput) -> EvaluationResult:
     transcript = item.transcript_text.strip()
     words = _words(transcript)
@@ -95,10 +129,7 @@ def score_speaking(item: PracticeInput) -> EvaluationResult:
         weaknesses.append("Repeated `I think` weakens delivery and language variety.")
         revision_plan.append("Replace repeated starters with `because`, `for example`, or `therefore`.")
 
-    sample_revision = (
-        "I would answer directly, give one reason, add a concrete example, and end with the result. "
-        "That structure usually sounds more complete and more TOEFL-ready."
-    )
+    sample_revision = _speaking_template(prompt)
     return EvaluationResult(
         item_id=item.item_id,
         item_type=item.item_type,
